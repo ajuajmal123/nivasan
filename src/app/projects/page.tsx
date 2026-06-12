@@ -7,27 +7,73 @@ interface Project {
   id: string;
   name: string;
   status: string;
+  tag: string;
   image: string;
 }
 
 const projectsList: Project[] = [
   {
-    id: "the-pavilion-residence",
-    name: "The Pavilion Residence",
+    id: "nivasan-swarnapuraa",
+    name: "Nivasan Swarnapuraa",
+    status: "Ongoing",
+    tag: "Premium 4 BHK Gated Villas",
+    image: "/ongoing/p1/image.png",
+  },
+  {
+    id: "nivasan-vakulam",
+    name: "Nivasan Vakulam",
+    status: "Ongoing",
+    tag: "Premium 2 & 3 BHK Apartments",
+    image: "/ongoing/p2/image2.png",
+  },
+  {
+    id: "nivasan-udhyana",
+    name: "Nivasan Udhyana",
     status: "Completed",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
+    tag: "Ultra Luxury Gated Villas",
+    image: "/completed/p1/image.png",
   },
   {
-    id: "aether-penthouse",
-    name: "Aether Penthouse",
-    status: "Ongoing",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
+    id: "nivasan-bliss",
+    name: "Nivasan Bliss",
+    status: "Completed",
+    tag: "Luxury Residential Apartments",
+    image: "/completed/p2/image.png",
   },
   {
-    id: "oasis-coastal-retreat",
-    name: "Oasis Coastal Retreat",
-    status: "Ongoing",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    id: "nivasan-ramaas",
+    name: "Nivasan Ramaas",
+    status: "Completed",
+    tag: "Premium Residential Apartments",
+    image: "/completed/p3/image.png",
+  },
+  {
+    id: "echo-point-plaza",
+    name: "Echo Point Plaza",
+    status: "Completed",
+    tag: "Premium Commercial Spaces",
+    image: "/completed/p4/image.png",
+  },
+  {
+    id: "echo-point-aavaas",
+    name: "Echo Point Aavaas",
+    status: "Completed",
+    tag: "Designer Luxury Apartments",
+    image: "/completed/p5/image.png",
+  },
+  {
+    id: "saradha-greens",
+    name: "Saradha Greens",
+    status: "Completed",
+    tag: "Ultra Luxury Independent Villas",
+    image: "/completed/p6/image.png",
+  },
+  {
+    id: "nivasan-springs",
+    name: "Nivasan Springs",
+    status: "Completed",
+    tag: "Premium Residential Apartments",
+    image: "/completed/p7/image.png",
   },
 ];
 
@@ -40,45 +86,43 @@ export default function ProjectsPage() {
   });
 
   const getStatusBadgeClass = (status: string) => {
-    if (status === "Completed") return "bg-[#10b981] border-[#10b981]/20 text-white";
+    if (status === "Completed") {
+      return "bg-emerald-600 border-emerald-600/20 text-white";
+    }
     return "bg-primary border-primary/20 text-white"; // Ongoing
   };
 
   return (
     <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        {/* Header Section */}
-        <div className="max-w-3xl mb-12">
-          <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold block mb-3">
-            Our Portfolio
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none mb-6">
-            Luxury Creations
+        {/* Header Section - Centered, Heading "Our Creations" Only */}
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none select-none">
+            Our Creations
           </h1>
-          <p className="text-primary/70 text-base leading-relaxed">
-            Discover our collection of landmark residential developments across South India, designed with uncompromising attention to detail.
-          </p>
         </div>
 
-        {/* Filters Panel */}
-        <div className="flex items-center gap-3 mb-12 overflow-x-auto pb-4 scrollbar-none">
-          {(["All", "Ongoing", "Completed"] as const).map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setFilter(tab)}
-              className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
-                filter === tab
-                  ? "bg-primary text-white shadow-md shadow-primary/20"
-                  : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
+        {/* Filters Panel - Centered with Filter Options Heading */}
+        <div className="flex flex-col items-center justify-center mb-12">
+
+          <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+            {(["All", "Ongoing", "Completed"] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setFilter(tab)}
+                className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
+                    ? "bg-primary text-white shadow-md shadow-primary/20"
+                    : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
+                  }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Projects Grid - Fully Responsive */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
@@ -92,7 +136,7 @@ export default function ProjectsPage() {
                   alt={project.name}
                   className="w-full h-full object-cover transition-transform duration-750 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/95 via-black-luxury/60 to-transparent transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
               </div>
 
               {/* Status Badge */}
@@ -103,10 +147,15 @@ export default function ProjectsPage() {
               </div>
 
               {/* Text content - highly readable */}
-              <div className="relative z-10 p-8 flex flex-col gap-4">
-                <h3 className="font-sans text-xl font-extrabold tracking-tight text-white group-hover:text-accent transition-colors duration-300 leading-tight">
-                  {project.name}
-                </h3>
+              <div className="relative z-10 p-8 flex flex-col gap-3 drop-shadow-md">
+                <div className="flex flex-col gap-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-accent drop-shadow-sm">
+                    {project.tag}
+                  </span>
+                  <h3 className="font-sans text-xl font-extrabold tracking-tight text-white group-hover:text-accent transition-colors duration-300 leading-tight">
+                    {project.name}
+                  </h3>
+                </div>
                 <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs tracking-wider uppercase font-bold text-white/80 group-hover:text-accent transition-colors duration-300">
                   <span>View Details</span>
                   <svg

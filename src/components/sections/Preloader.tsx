@@ -64,7 +64,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             >
-              <Logo size={100} showText={true} textColor="white" />
+              <Logo size={140} showText={true} textColor="white" />
             </motion.div>
           </div>
 

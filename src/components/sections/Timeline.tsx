@@ -12,24 +12,34 @@ interface Milestone {
 
 const milestones: Milestone[] = [
   {
-    year: "1996",
-    title: "The Genesis",
-    description: "Nivasan Homes was founded in Coimbatore with a clear architectural mission: to introduce geometric clarity, structural integrity, and custom construction standards to residential building.",
+    year: "2010",
+    title: "Nivasan Homes Founded",
+    description: "Established with a vision to deliver quality homes in Coimbatore with customer-first values and ethical practices.",
   },
   {
-    year: "2008",
-    title: "Luxury Gated Communities",
-    description: "Pioneered luxury gated villa formats in prime locations. We introduced open-volume design, private courtyards, and clean-line concrete work, shifting from basic builds to spatial art.",
+    year: "2013",
+    title: "First Projects Delivered",
+    description: "Early premium apartment projects demonstrated the Nivasan commitment to quality and on-time possession.",
   },
   {
     year: "2016",
-    title: "Elevating Volumetric Living",
-    description: "Launched high-rise luxury apartment residences. Our designs expanded vertically, introducing double-height ceiling profiles, premium marble finishes, and floating architectural balconies.",
+    title: "Nivasan Bliss & Ramaas",
+    description: "Landmark luxury apartment developments on Avinashi Road set new standards for premium living in the city.",
   },
   {
-    year: "2025",
-    title: "Timeless Masterpieces",
-    description: "Completion of flagship works like The Pavilion Residence. Today, Nivasan Homes stands as a premier luxury developer, recognized for architectural purity, premium textures, and minimalist luxury.",
+    year: "2019",
+    title: "Echo Point Projects",
+    description: "Expanded into commercial real estate with Echo Point Plaza premium offices and retail opposite KMCH.",
+  },
+  {
+    year: "2022",
+    title: "CREDAI Membership",
+    description: "Recognised as a leading Coimbatore developer with formal affiliation to the industry apex body CREDAI.",
+  },
+  {
+    year: "2024",
+    title: "Swarnapuraa & Vakulam",
+    description: "Two simultaneous RERA-registered active projects premium villas and apartments serving multiple buyer profiles.",
   },
 ];
 
@@ -46,20 +56,23 @@ export default function Timeline() {
   const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="py-28 md:py-40 bg-white relative overflow-hidden">
+    <section id="timeline" ref={containerRef} className="py-16 md:py-24 bg-white relative overflow-hidden">
+      {/* Subtle background decoration grid */}
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
-        {/* Header */}
-        <div className="mb-24 md:mb-32 text-center max-w-xl mx-auto">
-          <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6 block">
+        {/* Header - Centered via width="full" on Reveal */}
+        <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">
+          <Reveal delay={0.1} width="full">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-4 block text-center w-full">
               Our Journey
             </span>
           </Reveal>
-          <Reveal delay={0.2}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-black-luxury font-light leading-tight">
+          <Reveal delay={0.2} width="full">
+            <h2 className="font-sans text-3xl md:text-4xl font-extrabold text-black-luxury leading-tight text-center w-full">
               A Legacy in Time. <br />
-              <span className="italic text-accent">Defining Generations.</span>
+              <span className="text-accent">Defining Generations.</span>
             </h2>
           </Reveal>
         </div>
@@ -77,13 +90,13 @@ export default function Timeline() {
           />
 
           {/* Milestones list */}
-          <div className="space-y-20 md:space-y-32">
+          <div className="space-y-12 md:space-y-16">
             {milestones.map((milestone, idx) => {
               const isEven = idx % 2 === 0;
               return (
                 <div
                   key={milestone.year}
-                  className="relative grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start"
+                  className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start"
                 >
                   {/* Gold Node dot on the timeline line */}
                   <div className="absolute left-4 md:left-1/2 top-2 md:top-4 -translate-x-1/2 z-20">
@@ -96,7 +109,7 @@ export default function Timeline() {
                       whileInView="visible"
                       viewport={{ once: true, margin: "-10% 0px" }}
                       transition={{ duration: 0.5 }}
-                      className="w-4 h-4 rounded-full border-2 bg-white flex items-center justify-center"
+                      className="w-4 h-4 rounded-full border-2 bg-white flex items-center justify-center shadow-md"
                     >
                       <div className="w-1.5 h-1.5 rounded-full bg-white" />
                     </motion.div>
@@ -109,26 +122,26 @@ export default function Timeline() {
                     }`}
                   >
                     <Reveal delay={0.1} yOffset={20}>
-                      <span className="font-serif text-4xl md:text-5xl lg:text-6xl text-accent font-light italic">
+                      <span className="font-sans text-4xl md:text-5xl lg:text-6xl text-accent font-extrabold drop-shadow-sm">
                         {milestone.year}
                       </span>
                     </Reveal>
                   </div>
 
-                  {/* Right Column / Content side */}
+                  {/* Right Column / Content side - Premium Card Container */}
                   <div
                     className={`pl-10 md:pl-0 ${
                       isEven ? "md:order-2" : "md:order-1"
                     }`}
                   >
-                    <div className="max-w-md">
+                    <div className="max-w-md bg-background-luxury border border-[#eae7e3] hover:border-accent hover:shadow-xl hover:shadow-primary/5 p-6 rounded-xl transition-all duration-300 group">
                       <Reveal delay={0.2} yOffset={25}>
-                        <h3 className="font-serif text-lg md:text-xl text-black-luxury font-medium mb-3">
+                        <h3 className="font-sans text-lg md:text-xl text-black-luxury font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                           {milestone.title}
                         </h3>
                       </Reveal>
                       <Reveal delay={0.3} yOffset={30}>
-                        <p className="text-black-luxury/60 text-sm leading-relaxed tracking-wide font-light">
+                        <p className="text-black-luxury/80 text-sm leading-relaxed tracking-wide font-medium">
                           {milestone.description}
                         </p>
                       </Reveal>

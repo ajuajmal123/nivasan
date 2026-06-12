@@ -23,14 +23,14 @@ export default function Reveal({
   const ref = useRef<HTMLDivElement>(null);
   const inViewOptions: UseInViewOptions = {
     once: once,
-    margin: "-10% 0px -10% 0px" // Trigger slightly before it hits fully in view
+    margin: "-5% 0px -5% 0px" // Trigger slightly before it hits view
   };
   const isInView = useInView(ref, inViewOptions);
 
   return (
     <div
       ref={ref}
-      className={`${width === "full" ? "w-full" : "w-fit"} overflow-hidden`}
+      className={`${width === "full" ? "w-full" : "w-fit"} relative`}
     >
       <motion.div
         variants={{
@@ -42,7 +42,7 @@ export default function Reveal({
         transition={{
           duration: duration,
           delay: delay,
-          ease: [0.16, 1, 0.3, 1], // Luxury deceleration bezier curve
+          ease: [0.16, 1, 0.3, 1], // Luxury deceleration curve
         }}
       >
         {children}

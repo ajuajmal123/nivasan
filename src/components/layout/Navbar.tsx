@@ -78,7 +78,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="group z-50 flex items-center">
             <Logo
-              size={shouldBeGlass ? 34 : 40}
+              size={shouldBeGlass ? 52 : 64}
               textColor={shouldBeGlass ? "primary" : "white"}
               showText={true}
               className="flex-row items-center space-x-3 mt-0"
@@ -156,10 +156,10 @@ export default function Navbar() {
                       }}
                       className="flex items-baseline group"
                     >
-                      <span className="font-serif text-accent text-sm tracking-[0.1em] mr-4">
+                      <span className="font-sans text-accent text-sm tracking-[0.1em] mr-4 font-bold">
                         {link.num}
                       </span>
-                      <span className={`font-serif text-3xl transition-colors duration-300 ${
+                      <span className={`font-sans text-3xl font-extrabold transition-colors duration-300 ${
                         isActive ? "text-accent" : "text-white/90 group-hover:text-accent"
                       }`}>
                         {link.name}
@@ -185,11 +185,11 @@ export default function Navbar() {
               </p>
               <a
                 href="mailto:info@nivasanhomes.com"
-                className="text-sm font-serif text-accent hover:underline"
+                className="text-sm font-sans font-bold text-accent hover:underline"
               >
                 info@nivasanhomes.com
               </a>
-              <p className="text-xs text-white/60 mt-1">+91 422 245 6789</p>
+              <p className="text-xs text-white/60 mt-1 font-medium">+91 422 245 6789</p>
             </motion.div>
           </motion.div>
         )}

@@ -86,7 +86,7 @@ export default function Footer() {
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <Link href="/" className="group inline-block mb-4">
-                <Logo size={34} showText={true} textColor="white" className="items-start" />
+                <Logo size={52} showText={true} textColor="white" className="items-start" />
               </Link>
               <p className="text-white/60 text-xs leading-relaxed max-w-xs font-sans tracking-wide mt-2">
                 Crafting exceptional living spaces inspired by minimalist purity, premium materiality, and timeless architectural sophistication.
