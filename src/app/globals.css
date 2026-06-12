@@ -1,26 +1,124 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary: #0D8A45;
+  --color-accent: #B3A235;
+  --color-black-luxury: #050505;
+  --color-background-luxury: #F8F7F2;
+  --color-text-onyx: #050505;
+  --color-white: #FFFFFF;
+
+  --font-serif: var(--font-manrope), sans-serif;
+  --font-sans: var(--font-manrope), sans-serif;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F7F2;
+  --foreground: #050505;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  scroll-behavior: auto; /* Handled smoothly by Lenis */
 }
 
 body {
-  background: var(--background);
+  font-family: var(--font-sans);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B3A235;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D8A45;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(5, 5, 5, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(5, 5, 5, 0.05);
+}
+
+.glass-panel-light {
+  background: rgba(248, 247, 242, 0.60);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(13, 138, 69, 0.05);
+}
+
+.glass-navbar {
+  background: rgba(248, 247, 242, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(13, 138, 69, 0.05);
+}
+
+.glass-navbar-dark {
+  background: rgba(5, 5, 5, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Text selections using gold accent */
+::selection {
+  background-color: #B3A235;
+  color: #FFFFFF;
+}
+
+/* Fine-grain animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-up {
+  animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Grid overlay background patterns */
+.grid-pattern-light {
+  background-image: 
+    linear-gradient(to right, rgba(13, 138, 69, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(13, 138, 69, 0.02) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+.grid-pattern-dark {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 4rem 4rem;
 }
