@@ -295,7 +295,7 @@ export default function ProjectDetailsPage() {
 
   return (
     <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Navigation Breadcrumb */}
         <div className="flex justify-center mb-8">
           <button

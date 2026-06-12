@@ -94,7 +94,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Header Section - Centered, Heading "Our Creations" Only */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none select-none">
@@ -102,15 +102,14 @@ export default function ProjectsPage() {
           </h1>
         </div>
 
-        {/* Filters Panel - Centered with Filter Options Heading */}
-        <div className="flex flex-col items-center justify-center mb-12">
-
-          <div className="flex flex-wrap items-center justify-center gap-3 w-full">
+        {/* Filters Panel - Right Aligned & Smaller Buttons */}
+        <div className="flex justify-end mb-8 w-full">
+          <div className="flex flex-wrap items-center justify-end gap-2">
             {(["All", "Ongoing", "Completed"] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
+                className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
                     ? "bg-primary text-white shadow-md shadow-primary/20"
                     : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
                   }`}
@@ -122,12 +121,12 @@ export default function ProjectsPage() {
         </div>
 
         {/* Projects Grid - Fully Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
           {filteredProjects.map((project) => (
             <Link
               key={project.id}
               href={`/projects/${project.id}`}
-              className="group relative overflow-hidden bg-black-luxury border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl h-[440px] flex flex-col justify-end transition-all duration-500 cursor-pointer block"
+              className="group relative overflow-hidden bg-black-luxury border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-[3/4] w-full flex flex-col justify-end transition-all duration-500 cursor-pointer block"
             >
               {/* Background image & gradient overlay */}
               <div className="absolute inset-0 z-0 overflow-hidden">

@@ -60,7 +60,7 @@ export default function ContactCTA() {
       {/* Subtle grid pattern backdrop design */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
@@ -78,7 +78,7 @@ export default function ContactCTA() {
         </div>
 
         {/* 2-Column Responsive Layout: Contact Info & Inquiry Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-[1500px] mx-auto mb-16">
           
           {/* Left Column: Essential Contacts */}
           <div className="lg:col-span-5 flex flex-col gap-5 justify-between">

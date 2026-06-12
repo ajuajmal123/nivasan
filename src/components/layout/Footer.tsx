@@ -80,7 +80,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-black-luxury text-white pt-16 pb-8 overflow-hidden border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
           {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col justify-between">

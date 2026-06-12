@@ -91,7 +91,7 @@ export default function FeaturedProjects() {
       {/* Linear backdrop grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-black-luxury">
@@ -100,7 +100,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* 3-Column Projects Grid - Staggered Animated */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
           {projects.slice(0, 3).map((project, idx) => (
             <motion.div
               key={project.id}
@@ -111,7 +111,7 @@ export default function FeaturedProjects() {
             >
               <Link
                 href={`/projects/${project.id}`}
-                className="group relative overflow-hidden bg-[#1c1a17] border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl h-[440px] flex flex-col justify-end transition-all duration-500 cursor-pointer block"
+                className="group relative overflow-hidden bg-[#1c1a17] border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-[3/4] w-full flex flex-col justify-end transition-all duration-500 cursor-pointer block"
               >
                 {/* Background image & gradient overlay */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
@@ -142,6 +142,16 @@ export default function FeaturedProjects() {
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* View More Projects Link */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-extrabold text-primary hover:text-accent transition-colors duration-300 group/link cursor-pointer border border-primary/20 hover:border-accent px-8 py-3.5 rounded-full bg-white shadow-sm hover:shadow"
+          >
+            View More Projects
+          </Link>
         </div>
       </div>
     </section>

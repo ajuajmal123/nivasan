@@ -58,7 +58,7 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
 export default function Lifestyle() {
   return (
     <section id="gallery" className="py-28 md:py-40 bg-background-luxury overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* Header */}
         <div className="mb-20 md:mb-28 text-center max-w-xl mx-auto">

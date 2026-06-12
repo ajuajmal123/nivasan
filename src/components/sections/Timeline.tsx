@@ -60,7 +60,7 @@ export default function Timeline() {
       {/* Subtle background decoration grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* Header - Centered via width="full" on Reveal */}
         <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">

@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="absolute inset-0 grid-pattern-dark z-10 pointer-events-none" />
 
       {/* Content wrapper - Centered */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-16">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-16">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-5 sm:gap-6">
           
           {/* Animated Heading - Single Line */}

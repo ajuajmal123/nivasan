@@ -33,7 +33,7 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Header Section */}
         <div className="max-w-3xl mb-16 border-b border-black-luxury/10 pb-12">
           <span className="text-xs uppercase tracking-[0.25em] text-accent font-semibold block mb-3">
