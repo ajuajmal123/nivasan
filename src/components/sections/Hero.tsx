@@ -37,9 +37,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-tight sm:leading-none text-center drop-shadow-lg sm:whitespace-nowrap select-none"
+            className="font-sans font-extrabold text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-none text-center drop-shadow-lg whitespace-nowrap select-none"
           >
-            Welcome to <br className="sm:hidden" /> <span className="text-accent">Nivasan</span> <br className="sm:hidden" /> <span className="text-accent">Homes</span>
+            Welcome to <span className="text-accent">Nivasan Homes</span>
           </motion.h1>
 
           {/* Animated Subtitle */}
