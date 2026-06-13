@@ -204,14 +204,14 @@ export default function ContactCTA() {
                     <h3 className="font-sans text-lg font-extrabold text-black-luxury">
                       Request Callback & Brochure
                     </h3>
-                    <p className="text-[11px] text-primary/50 font-bold uppercase tracking-wider mt-0.5">
+                    <p className="text-[11px] text-black-luxury/50 font-bold uppercase tracking-wider mt-0.5">
                       Submit details below for direct consultant advice
                     </p>
                   </div>
 
                   {/* Name */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[9px] font-black uppercase tracking-widest text-primary/60">
+                    <label className="text-[9px] font-black uppercase tracking-widest text-black-luxury/90">
                       Full Name
                     </label>
                     <input
@@ -220,14 +220,14 @@ export default function ContactCTA() {
                       placeholder="Enter your name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary font-bold placeholder-primary/30 transition-colors"
+                      className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-black-luxury font-bold placeholder-primary/30 transition-colors"
                     />
                   </div>
 
                   {/* Email & Phone Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[9px] font-black uppercase tracking-widest text-primary/60">
+                      <label className="text-[9px] font-black uppercase tracking-widest text-black-luxury/90">
                         Email Address
                       </label>
                       <input
@@ -236,11 +236,11 @@ export default function ContactCTA() {
                         placeholder="example@mail.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary font-bold placeholder-primary/30 transition-colors"
+                        className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-black-luxury font-bold placeholder-primary/30 transition-colors"
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label className="text-[9px] font-black uppercase tracking-widest text-primary/60">
+                      <label className="text-[9px] font-black uppercase tracking-widest text-black-luxury/90">
                         Phone Number
                       </label>
                       <input
@@ -249,14 +249,14 @@ export default function ContactCTA() {
                         placeholder="98423 XXXXX"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary font-bold placeholder-primary/30 transition-colors"
+                        className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-black-luxury font-bold placeholder-primary/30 transition-colors"
                       />
                     </div>
                   </div>
 
                   {/* Project Dropdown */}
                   <div className="flex flex-col gap-1.5 relative">
-                    <label className="text-[9px] font-black uppercase tracking-widest text-primary/60">
+                    <label className="text-[9px] font-black uppercase tracking-widest text-black-luxury/90">
                       Project of Interest
                     </label>
                     <div className="relative">
@@ -264,14 +264,16 @@ export default function ContactCTA() {
                         required
                         value={formData.project}
                         onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                        className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 pr-10 text-sm text-primary font-bold transition-colors appearance-none cursor-pointer"
+                        className={`w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 pr-10 text-sm font-bold transition-colors appearance-none cursor-pointer ${
+                          formData.project === "" ? "text-primary/40" : "text-black-luxury"
+                        }`}
                       >
-                        <option value="" disabled>Select a project layout...</option>
+                        <option value="" disabled className="text-primary/40">Select a project layout...</option>
                         {projectsOptions.map((proj) => (
-                          <option key={proj} value={proj}>{proj}</option>
+                          <option key={proj} value={proj} className="text-black-luxury">{proj}</option>
                         ))}
                       </select>
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">
+                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-black-luxury/40">
                         <ChevronDown size={16} />
                       </div>
                     </div>
@@ -279,7 +281,7 @@ export default function ContactCTA() {
 
                   {/* Message */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[9px] font-black uppercase tracking-widest text-primary/60">
+                    <label className="text-[9px] font-black uppercase tracking-widest text-black-luxury/90">
                       Detailed Message
                     </label>
                     <textarea
@@ -288,7 +290,7 @@ export default function ContactCTA() {
                       placeholder="Share your unit configurations, requirements or site visit timeline preferences..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-primary font-bold placeholder-primary/30 transition-colors resize-none leading-relaxed"
+                      className="w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 text-sm text-black-luxury font-bold placeholder-primary/30 transition-colors resize-none leading-relaxed"
                     />
                   </div>
 
