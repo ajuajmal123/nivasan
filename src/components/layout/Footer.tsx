@@ -231,7 +231,6 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors duration-300">
               Terms & Conditions
             </a>
-
           </div>
         </div>
       </div>
