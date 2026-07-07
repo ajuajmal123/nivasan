@@ -185,11 +185,34 @@ export default function Navbar() {
               </p>
               <a
                 href="mailto:info@nivasanhomes.com"
-                className="text-sm font-sans font-bold text-accent hover:underline"
+                className="text-sm font-sans font-bold text-accent hover:underline block mb-4"
               >
                 info@nivasanhomes.com
               </a>
-              <p className="text-xs text-white/60 mt-1 font-medium">+91 422 245 6789</p>
+              <div className="space-y-3 mt-4">
+                <div>
+                  <p className="text-[9px] uppercase tracking-[0.15em] text-white/40 mb-0.5">
+                    Customer Advisory
+                  </p>
+                  <a
+                    href="tel:+919842323071"
+                    className="text-xs text-white hover:text-accent font-semibold transition-colors duration-300"
+                  >
+                    +91 98423 23071
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[9px] uppercase tracking-[0.15em] text-white/40 mb-0.5">
+                    Site Visit Scheduling
+                  </p>
+                  <a
+                    href="tel:+919942223013"
+                    className="text-xs text-white hover:text-accent font-semibold transition-colors duration-300"
+                  >
+                    +91 99422 23013
+                  </a>
+                </div>
+              </div>
             </motion.div>
           </motion.div>
         )}

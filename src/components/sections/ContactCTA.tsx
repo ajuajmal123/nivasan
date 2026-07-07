@@ -146,8 +146,8 @@ export default function ContactCTA() {
                 <h3 className="text-[10px] uppercase tracking-widest text-primary/45 font-bold mb-0.5 select-none">
                   Email Advisory
                 </h3>
-                <a href="mailto:info@nivasanamhomes.com" className="text-sm font-extrabold text-black-luxury hover:text-accent transition-colors duration-300 block break-all">
-                  info@nivasanamhomes.com
+                <a href="mailto:info@nivasanhomes.com" className="text-sm font-extrabold text-black-luxury hover:text-accent transition-colors duration-300 block break-all">
+                  info@nivasanhomes.com
                 </a>
                 <p className="text-[11px] text-primary/60 font-medium mt-1 leading-normal">
                   For e-brochures and corporate queries.

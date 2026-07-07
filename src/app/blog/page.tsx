@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 
 const blogPosts = [
   {
@@ -29,6 +30,12 @@ const blogPosts = [
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
   }
 ];
+
+export const metadata: Metadata = {
+  title: "Journal & Insights | Architectural Design & Luxury Trends | Nivasan Homes",
+  description: "Explore Nivasan Chronicles. Dive into architectural philosophies, interior design trends, sustainability, and real estate innovations behind Coimbatore’s most premium luxury developments.",
+  keywords: ["Nivasan Chronicles", "Minimalist Architecture", "Biophilic Design Coimbatore", "Premium Home Finishes"],
+};
 
 export default function BlogPage() {
   return (

@@ -1,7 +1,5 @@
-"use client";
-
 import React from "react";
-import { useParams, useRouter } from "next/navigation";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, MapPin } from "lucide-react";
 
@@ -263,10 +261,36 @@ const projectsData: Record<string, ProjectDetails> = {
   }
 };
 
-export default function ProjectDetailsPage() {
-  const params = useParams();
-  const router = useRouter();
-  const id = params.id as string;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }> | { id: string };
+}): Promise<Metadata> {
+  const resolvedParams = await params;
+  const id = resolvedParams?.id;
+  const project = projectsData[id];
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Nivasan Homes",
+      description: "The requested residential project could not be found.",
+    };
+  }
+
+  return {
+    title: `${project.name} | Luxury Property in Coimbatore | Nivasan Homes`,
+    description: `${project.description.slice(0, 155)}... Discover gated community specs, premium location, and luxury amenities.`,
+    keywords: [project.name, "Nivasan Homes", project.location, "Luxury Real Estate Coimbatore"],
+  };
+}
+
+export default async function ProjectDetailsPage({
+  params,
+}: {
+  params: Promise<{ id: string }> | { id: string };
+}) {
+  const resolvedParams = await params;
+  const id = resolvedParams?.id;
 
   const project = projectsData[id];
 
@@ -275,12 +299,12 @@ export default function ProjectDetailsPage() {
       <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-primary mb-4">Project Not Found</h2>
-          <button
-            onClick={() => router.push("/projects")}
+          <Link
+            href="/projects"
             className="text-accent font-bold hover:underline cursor-pointer"
           >
             Back to Projects
-          </button>
+          </Link>
         </div>
       </main>
     );
@@ -298,12 +322,12 @@ export default function ProjectDetailsPage() {
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Navigation Breadcrumb */}
         <div className="flex justify-center mb-8">
-          <button
-            onClick={() => router.push("/projects")}
+          <Link
+            href="/projects"
             className="inline-flex items-center gap-2 text-xs uppercase tracking-widest font-bold text-primary/60 hover:text-primary transition-colors duration-300 cursor-pointer"
           >
             <ArrowLeft size={16} /> Back to Projects
-          </button>
+          </Link>
         </div>
 
         {/* Title & Status */}

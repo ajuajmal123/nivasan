@@ -192,19 +192,31 @@ export default function Footer() {
               Peelamedu, Coimbatore,<br />
               Tamil Nadu 641004
             </p>
-            <div className="space-y-2 text-xs text-white/70">
-              <p>
-                T:{" "}
-                <a href="tel:+914222456789" className="hover:text-accent">
-                  +91 422 245 6789
+            <div className="space-y-3.5 text-xs text-white/70">
+              <div>
+                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                  Customer Advisory
+                </span>
+                <a href="tel:+919842323071" className="hover:text-accent text-white font-semibold transition-colors duration-300 block">
+                  +91 98423 23071
                 </a>
-              </p>
-              <p>
-                E:{" "}
-                <a href="mailto:info@nivasanhomes.com" className="hover:text-accent">
+              </div>
+              <div>
+                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                  Site Visit Scheduling
+                </span>
+                <a href="tel:+919942223013" className="hover:text-accent text-white font-semibold transition-colors duration-300 block">
+                  +91 99422 23013
+                </a>
+              </div>
+              <div>
+                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                  Email Inquiry
+                </span>
+                <a href="mailto:info@nivasanhomes.com" className="hover:text-accent transition-colors duration-300 block">
                   info@nivasanhomes.com
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
