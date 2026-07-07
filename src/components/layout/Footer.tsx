@@ -231,13 +231,7 @@ export default function Footer() {
             <a href="#" className="hover:text-white transition-colors duration-300">
               Terms & Conditions
             </a>
-            <a
-              href="#"
-              onClick={handleScrollToTop}
-              className="flex items-center hover:text-accent transition-colors duration-300"
-            >
-              Back to Top <ArrowUpRight size={12} className="ml-1" />
-            </a>
+
           </div>
         </div>
       </div>
