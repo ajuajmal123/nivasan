@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, MapPin } from "lucide-react";
 import ProjectInquiryForm from "@/components/sections/ProjectInquiryForm";
+import ProjectGallery from "@/components/sections/ProjectGallery";
 
 interface ProjectDetails {
   id: string;
@@ -41,7 +42,10 @@ const projectsData: Record<string, ProjectDetails> = {
       "/ongoing/p1/image2.png",
       "/ongoing/p1/image3.png",
       "/ongoing/p1/image4.png",
-      "/ongoing/p1/image5.png"
+      "/ongoing/p1/image5.png",
+      "/ongoing/p1/image6.png",
+      "/ongoing/p1/image7.png",
+      "/ongoing/p1/image8.png"
     ],
     specs: [
       { label: "Configuration", value: "4 & 5 BHK Premium Villa" },
@@ -113,9 +117,12 @@ const projectsData: Record<string, ProjectDetails> = {
     description: "Nivasan Vakulam is a thoughtfully designed residential apartment community near Tidel Park, Coimbatore — crafted for families and professionals who want calm living paired with city convenience. Spacious, well-ventilated 2 & 3 BHK homes are set within a fully-amenitized community, at an address positioned in one of Coimbatore's strongest IT-corridor micro-markets, making it equally attractive to end-users and long-term investors.\n\nWith possession scheduled for 31 March 2029 and full RERA registration (TN/11/BLG/0114/2026), Nivasan Vakulam offers buyers the transparency and track record of Nivasan Homes' 15-year legacy in Coimbatore real estate.\n\nIdeal for: Working professionals near Tidel Park, first-time home buyers, investors seeking rental yield in the IT corridor, and NRIs looking for a long-term appreciation asset.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.208151475735!2d77.0223594!3d11.0134062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sTIDEL%20Park%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
+      "/ongoing/p2/image1.png",
       "/ongoing/p2/image2.png",
       "/ongoing/p2/image3.png",
-      "/ongoing/p2/image1.png"
+      "/ongoing/p2/image4.png",
+      "/ongoing/p2/image5.png",
+      "/ongoing/p2/image6.png"
     ],
     specs: [
       { label: "Configuration", value: "2 & 3 BHK Apartments" },
@@ -610,7 +617,7 @@ export default async function ProjectDetailsPage({
         />
       )}
 
-      <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans text-primary">
+      <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans text-text-onyx">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-16">
           
           {/* HEADER HERO SECTION */}
@@ -634,11 +641,11 @@ export default async function ProjectDetailsPage({
                   <span className="text-[9px] font-black tracking-widest uppercase px-3 py-1 bg-accent text-white rounded-full">
                     {project.status}
                   </span>
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary/50 flex items-center gap-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-onyx/50 flex items-center gap-1">
                     <MapPin size={11} className="text-accent" /> {project.location.split(',')[0]}
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none uppercase">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-onyx tracking-tight leading-none uppercase">
                   {project.name}
                 </h1>
               </div>
@@ -647,10 +654,10 @@ export default async function ProjectDetailsPage({
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-black-luxury/5 mt-2">
                 {project.specs.slice(0, 3).map((spec, index) => (
                   <div key={index} className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-widest text-primary/45 font-bold">
+                    <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
                       {spec.label}
                     </span>
-                    <span className="text-sm text-primary font-black mt-1">
+                    <span className="text-sm text-text-onyx font-black mt-1">
                       {spec.value}
                     </span>
                   </div>
@@ -660,11 +667,13 @@ export default async function ProjectDetailsPage({
 
             {/* Right Hero Showcase Image */}
             <div className="lg:col-span-6 h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
-              <img
-                src={project.images[0]}
-                alt={`${project.name} Hero Elevation`}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-750 ease-out"
-              />
+              <div className="absolute -inset-[2px] overflow-hidden">
+                <img
+                  src={project.images[0]}
+                  alt={`${project.name} Hero Elevation`}
+                  className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-transform duration-750 ease-out"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
@@ -682,28 +691,28 @@ export default async function ProjectDetailsPage({
                 </h2>
                 {project.aioSentence && (
                   <div className="border-l-4 border-accent pl-4 my-2">
-                    <p className="text-primary font-extrabold text-base leading-relaxed italic">
+                    <p className="text-text-onyx font-extrabold text-base leading-relaxed italic">
                       "{project.aioSentence}"
                     </p>
                   </div>
                 )}
-                <p className="text-primary/80 text-base leading-relaxed whitespace-pre-line font-sans">
+                <p className="text-text-onyx/80 text-base leading-relaxed whitespace-pre-line font-sans">
                   {project.description}
                 </p>
               </div>
 
               {/* Full Specs List */}
               <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
-                <h3 className="text-lg font-bold text-primary border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
                   Specifications & Details
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                   {project.specs.map((spec, index) => (
                     <div key={index} className="flex flex-col border-b border-black-luxury/5 pb-2">
-                      <span className="text-[9px] uppercase tracking-widest text-primary/45 font-bold">
+                      <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
                         {spec.label}
                       </span>
-                      <span className="text-sm text-primary font-extrabold mt-1">
+                      <span className="text-sm text-text-onyx font-extrabold mt-1">
                         {spec.value}
                       </span>
                     </div>
@@ -714,12 +723,12 @@ export default async function ProjectDetailsPage({
               {/* Amenities Section */}
               {project.amenities && project.amenities.length > 0 && (
                 <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-bold text-primary border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                  <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
                     Amenities Include
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {project.amenities.map((amenity, index) => (
-                      <div key={index} className="flex items-center gap-3 text-sm font-extrabold text-primary">
+                      <div key={index} className="flex items-center gap-3 text-sm font-extrabold text-text-onyx">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                         {amenity}
                       </div>
@@ -735,7 +744,7 @@ export default async function ProjectDetailsPage({
               {/* Location advantages */}
               {project.locationAdvantages && (
                 <div className="bg-white border border-[#eae7e3] p-6 md:p-8 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-bold text-primary mb-5 border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                  <h3 className="text-lg font-bold text-text-onyx mb-5 border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
                     Location Advantages
                   </h3>
                   <ul className="space-y-4">
@@ -743,16 +752,16 @@ export default async function ProjectDetailsPage({
                       const parts = adv.split(" — ");
                       if (parts.length > 1) {
                         return (
-                          <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-primary/75">
+                          <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text-onyx/75">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                             <span>
-                              <strong className="text-primary font-bold">{parts[0]}</strong> — {parts.slice(1).join(" — ")}
+                              <strong className="text-text-onyx font-bold">{parts[0]}</strong> — {parts.slice(1).join(" — ")}
                             </span>
                           </li>
                         );
                       }
                       return (
-                        <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-primary/75">
+                        <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text-onyx/75">
                           <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                           <span>{adv}</span>
                         </li>
@@ -764,7 +773,7 @@ export default async function ProjectDetailsPage({
 
               {/* Map */}
               <div className="bg-white border border-[#eae7e3] rounded-xl overflow-hidden p-3 flex flex-col h-[320px] shadow-sm">
-                <h3 className="text-xs uppercase tracking-widest font-extrabold text-primary px-3 pt-2 pb-3 flex items-center gap-2">
+                <h3 className="text-xs uppercase tracking-widest font-extrabold text-text-onyx px-3 pt-2 pb-3 flex items-center gap-2">
                   <MapPin size={14} className="text-accent" /> Location Map
                 </h3>
                 <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3]">
@@ -831,13 +840,13 @@ export default async function ProjectDetailsPage({
               <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-2">
                 Information Guide
               </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight mb-8 uppercase">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight mb-8 uppercase">
                 Frequently Asked Questions
               </h2>
               <div className="divide-y divide-black-luxury/5">
                 {project.faqs.map((faq, idx) => (
                   <details key={idx} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary className="flex items-center justify-between font-bold text-primary hover:text-accent cursor-pointer transition-colors duration-300 list-none text-base">
+                    <summary className="flex items-center justify-between font-bold text-text-onyx hover:text-accent cursor-pointer transition-colors duration-300 list-none text-base">
                       <span>{faq.question}</span>
                       <span className="ml-1.5 shrink-0 transition-transform duration-300 group-open:-rotate-180">
                         <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -845,7 +854,7 @@ export default async function ProjectDetailsPage({
                         </svg>
                       </span>
                     </summary>
-                    <p className="mt-3 text-sm text-primary/70 leading-relaxed pl-1 font-sans font-medium">
+                    <p className="mt-3 text-sm text-text-onyx/70 leading-relaxed pl-1 font-sans font-medium">
                       {faq.answer}
                     </p>
                   </details>
@@ -855,142 +864,11 @@ export default async function ProjectDetailsPage({
           )}
 
           {/* PROJECT SHOWCASE GALLERY */}
-          <div className="border-t border-black-luxury/10 pt-12">
-            <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-2">
-              Visual Showcase
-            </span>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-primary tracking-tight mb-8 uppercase">
-              Project Gallery
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {project.images.map((img, index) => {
-                const getSwarnapuraaFeature = (idx: number) => {
-                  const features = [
-                    "Front Elevation",
-                    "Living Room",
-                    "Master Bedroom",
-                    "Kitchen Interior",
-                    "Dining Space",
-                    "Landscape View"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getVakulamFeature = (idx: number) => {
-                  const features = [
-                    "Model Kitchen",
-                    "Living Room",
-                    "Balcony View"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getUdhyanaFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getBlissFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getRamaasFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getPlazaFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getAavaasFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getGreensFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const getSpringsFeature = (idx: number) => {
-                  const features = [
-                    "Exterior Elevation"
-                  ];
-                  return features[idx] || `Showcase Detail ${idx + 1}`;
-                };
-
-                const altText = project.id === "nivasan-swarnapuraa"
-                  ? `Nivasan Swarnapuraa ${getSwarnapuraaFeature(index)} — 4 BHK villa in Kalapatti, Coimbatore`
-                  : project.id === "nivasan-vakulam"
-                  ? `Nivasan Vakulam ${getVakulamFeature(index)} — 2/3 BHK apartment near Tidel Park, Coimbatore`
-                  : project.id === "nivasan-udhyana"
-                  ? `Nivasan Udhyana ${getUdhyanaFeature(index)} — Luxury Independent Villa near CODISSIA, Coimbatore`
-                  : project.id === "nivasan-bliss"
-                  ? `Nivasan Bliss ${getBlissFeature(index)} — Luxury Apartment in Avinashi Road Corridor, Coimbatore`
-                  : project.id === "nivasan-ramaas"
-                  ? `Nivasan Ramaas ${getRamaasFeature(index)} — Premium Apartment in Peelamedu, Coimbatore`
-                  : project.id === "echo-point-plaza"
-                  ? `Echo Point Plaza ${getPlazaFeature(index)} — Premium Commercial Space on Avinashi Road, Coimbatore`
-                  : project.id === "echo-point-aavaas"
-                  ? `Echo Point Aavaas ${getAavaasFeature(index)} — Designer Apartment on Avinashi Road, Coimbatore`
-                  : project.id === "saradha-greens"
-                  ? `Saradha Greens ${getGreensFeature(index)} — Ultra Luxury Villa in Peelamedu, Coimbatore`
-                  : project.id === "nivasan-springs"
-                  ? `Nivasan Springs ${getSpringsFeature(index)} — Premium Apartment in Peelamedu, Coimbatore`
-                  : `${project.name} Gallery ${index + 1}`;
-
-                const hoverLabel = project.id === "nivasan-swarnapuraa"
-                  ? getSwarnapuraaFeature(index)
-                  : project.id === "nivasan-vakulam"
-                  ? getVakulamFeature(index)
-                  : project.id === "nivasan-udhyana"
-                  ? getUdhyanaFeature(index)
-                  : project.id === "nivasan-bliss"
-                  ? getBlissFeature(index)
-                  : project.id === "nivasan-ramaas"
-                  ? getRamaasFeature(index)
-                  : project.id === "echo-point-plaza"
-                  ? getPlazaFeature(index)
-                  : project.id === "echo-point-aavaas"
-                  ? getAavaasFeature(index)
-                  : project.id === "saradha-greens"
-                  ? getGreensFeature(index)
-                  : project.id === "nivasan-springs"
-                  ? getSpringsFeature(index)
-                  : `View Detail ${index + 1}`;
-
-                return (
-                  <div key={index} className="h-64 rounded-xl overflow-hidden border border-[#eae7e3] group cursor-pointer bg-black-luxury relative shadow-sm hover:shadow-md transition-all duration-300">
-                    <img
-                      src={img}
-                      alt={altText}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black-luxury/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-[10px] uppercase tracking-wider text-white font-extrabold">
-                        {hoverLabel}
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <ProjectGallery
+            projectId={project.id}
+            projectName={project.name}
+            images={project.images}
+          />
 
         </div>
       </main>

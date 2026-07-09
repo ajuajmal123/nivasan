@@ -4,6 +4,7 @@ import "./globals.css";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import StickyCTA from "@/components/ui/StickyCTA";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function RootLayout({
             {children}
           </div>
           <Footer />
+          <StickyCTA />
         </LenisProvider>
       </body>
     </html>
