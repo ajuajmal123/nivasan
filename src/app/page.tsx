@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import FeaturedProjects from "@/components/sections/FeaturedProjects";
 import BrandStory from "@/components/sections/BrandStory";
 import Timeline from "@/components/sections/Timeline";
+import FAQSection from "@/components/sections/FAQSection";
 import ContactCTA from "@/components/sections/ContactCTA";
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function Home() {
       <FeaturedProjects />
       <BrandStory />
       <Timeline />
+      <FAQSection />
       <ContactCTA />
     </main>
   );

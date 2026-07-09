@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, MapPin } from "lucide-react";
 import ProjectInquiryForm from "@/components/sections/ProjectInquiryForm";
 import ProjectGallery from "@/components/sections/ProjectGallery";
+import FAQAccordion from "@/components/ui/FAQAccordion";
 
 interface ProjectDetails {
   id: string;
@@ -797,37 +798,37 @@ export default async function ProjectDetailsPage({
 
           {/* DEVELOPER BANNER SECTION (Sophisticated Dark Block) */}
           {project.aboutDeveloper && (
-            <div className="bg-primary text-white p-8 md:p-12 rounded-2xl relative overflow-hidden group shadow-xl">
+            <div className="bg-primary text-white p-8 md:p-12 rounded-2xl relative overflow-hidden group shadow-xl flex flex-col items-center justify-center text-center">
               <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none translate-y-1/4 translate-x-1/4 select-none">
                 <span className="font-serif text-[18rem] text-white">N</span>
               </div>
-              <div className="max-w-4xl relative z-10">
+              <div className="max-w-4xl relative z-10 flex flex-col items-center">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-3">
                   The Builder
                 </span>
                 <h2 className="text-3xl font-extrabold mb-6 uppercase tracking-tight">
                   {project.aboutDeveloper.title}
                 </h2>
-                <p className="text-white/85 text-sm md:text-base leading-relaxed mb-10 font-sans">
+                <p className="text-white/85 text-sm md:text-base leading-relaxed mb-10 font-sans max-w-3xl">
                   {project.aboutDeveloper.content}
                 </p>
-                {/* Stats grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-white/10">
-                  <div>
-                    <span className="block text-3xl font-black text-accent">15+ Years</span>
-                    <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1">Coimbatore Legacy</span>
+                {/* Stats grid - Forced 4 columns on single line with vertical alignment inside */}
+                <div className="grid grid-cols-4 gap-2 md:gap-8 pt-8 border-t border-white/10 w-full text-center">
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">15+ Years</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Coimbatore Legacy</span>
                   </div>
-                  <div>
-                    <span className="block text-3xl font-black text-accent">10+ Projects</span>
-                    <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1">Delivered Successfully</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">10+ Projects</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Delivered</span>
                   </div>
-                  <div>
-                    <span className="block text-3xl font-black text-accent">500+ Housed</span>
-                    <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1">Happy Families</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">500+ Housed</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Happy Families</span>
                   </div>
-                  <div>
-                    <span className="block text-3xl font-black text-accent">CREDAI Member</span>
-                    <span className="text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1">RERA Registered</span>
+                  <div className="flex flex-col items-center">
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">CREDAI Member</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">RERA Registered</span>
                   </div>
                 </div>
               </div>
@@ -843,23 +844,7 @@ export default async function ProjectDetailsPage({
               <h2 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight mb-8 uppercase">
                 Frequently Asked Questions
               </h2>
-              <div className="divide-y divide-black-luxury/5">
-                {project.faqs.map((faq, idx) => (
-                  <details key={idx} className="group py-5 [&_summary::-webkit-details-marker]:hidden">
-                    <summary className="flex items-center justify-between font-bold text-text-onyx hover:text-accent cursor-pointer transition-colors duration-300 list-none text-base">
-                      <span>{faq.question}</span>
-                      <span className="ml-1.5 shrink-0 transition-transform duration-300 group-open:-rotate-180">
-                        <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </span>
-                    </summary>
-                    <p className="mt-3 text-sm text-text-onyx/70 leading-relaxed pl-1 font-sans font-medium">
-                      {faq.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
+              <FAQAccordion faqs={project.faqs} />
             </div>
           )}
 
