@@ -480,6 +480,12 @@ export async function generateMetadata({
   };
 }
 
+export async function generateStaticParams() {
+  return Object.keys(projectsData).map((id) => ({
+    id,
+  }));
+}
+
 export default async function ProjectDetailsPage({
   params,
 }: {

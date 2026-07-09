@@ -39,9 +39,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} h-full antialiased`}
+      className={`${manrope.variable} min-h-screen antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background-luxury text-text-onyx font-sans">
+      <body className="min-h-screen flex flex-col bg-background-luxury text-text-onyx font-sans">
         <LenisProvider>
           <Navbar />
           <div className="flex-1 flex flex-col pt-0">

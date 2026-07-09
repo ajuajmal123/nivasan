@@ -166,6 +166,7 @@ export default function Footer() {
                   Enquiry
                 </Link>
               </li>
+
               <li>
                 <Link
                   href="/blog"
