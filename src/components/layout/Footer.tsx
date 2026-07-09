@@ -54,19 +54,14 @@ const LinkedinIcon = ({ size = 18 }: { size?: number }) => (
   </svg>
 );
 
-const YoutubeIcon = ({ size = 18 }: { size?: number }) => (
+const TwitterIcon = ({ size = 18 }: { size?: number }) => (
   <svg
     viewBox="0 0 24 24"
     width={size}
     height={size}
-    stroke="currentColor"
-    strokeWidth="2"
-    fill="none"
-    strokeLinecap="round"
-    strokeLinejoin="round"
+    fill="currentColor"
   >
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
-    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
   </svg>
 );
 
@@ -95,32 +90,40 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex items-center space-x-6 mt-6">
               <a
-                href="#"
+                href="https://www.instagram.com/nivasanhomes/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/60 hover:text-accent transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/company/nivasan-homes"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/60 hover:text-accent transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/nivasanhomes/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/60 hover:text-accent transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <FacebookIcon size={18} />
               </a>
               <a
-                href="#"
+                href="https://x.com/HomesNivasan?s=09"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/60 hover:text-accent transition-colors duration-300"
-                aria-label="YouTube"
+                aria-label="Twitter"
               >
-                <YoutubeIcon size={18} />
+                <TwitterIcon size={18} />
               </a>
             </div>
           </div>
