@@ -837,14 +837,21 @@ export default async function ProjectDetailsPage({
 
           {/* FAQ SECTION */}
           {project.faqs && project.faqs.length > 0 && (
-            <div className="bg-white border border-[#eae7e3] p-8 md:p-12 rounded-xl shadow-sm">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-2">
-                Information Guide
-              </span>
-              <h2 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight mb-8 uppercase">
-                Frequently Asked Questions
-              </h2>
-              <FAQAccordion faqs={project.faqs} />
+            <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-black-luxury/10 pt-16">
+              <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center gap-3">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block">
+                  Information Guide
+                </span>
+                <h2 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight uppercase">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-xs md:text-sm text-text-onyx/65 max-w-xl">
+                  Explore answers to common questions about {project.name}, specifications, utilities, and location advantages.
+                </p>
+              </div>
+              <div className="w-full">
+                <FAQAccordion faqs={project.faqs} />
+              </div>
             </div>
           )}
 
