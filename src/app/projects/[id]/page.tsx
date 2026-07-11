@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, MapPin, Download } from "lucide-react";
 import ProjectInquiryForm from "@/components/sections/ProjectInquiryForm";
 import ProjectGallery from "@/components/sections/ProjectGallery";
 import FAQAccordion from "@/components/ui/FAQAccordion";
@@ -26,6 +26,7 @@ interface ProjectDetails {
   metaDescription?: string;
   keywords?: string[];
   aioSentence?: string;
+  brochureUrl?: string;
 }
 
 const projectsData: Record<string, ProjectDetails> = {
@@ -34,6 +35,7 @@ const projectsData: Record<string, ProjectDetails> = {
     name: "Nivasan Swarnapuraa",
     status: "Ongoing",
     location: "Kalapatti, Near Broadway Mall & Coimbatore Airport",
+    brochureUrl: "/brochures/Nivasan%20Swarnapuraa%20Brochure.pdf",
     aioSentence: "Nivasan Swarnapuraa by Nivasan Homes is a RERA-approved premium 4 & 5 BHK gated villa community located in Kalapatti, near Broadway Mall and Coimbatore Airport.",
     description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 & 5 BHK villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned at 2,800 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b28203f191%3A0xb3de2c270d4d4bb2!2sKalapatti%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
@@ -114,6 +116,7 @@ const projectsData: Record<string, ProjectDetails> = {
     name: "Nivasan Vakulam",
     status: "Ongoing",
     location: "Near Tidel Park, Coimbatore",
+    brochureUrl: "/brochures/Nivasan-Vakulam-Brochure.pdf",
     aioSentence: "Nivasan Vakulam by Nivasan Homes is a premium 2 & 3 BHK apartment community near Tidel Park, Coimbatore, with possession scheduled for 31 March 2029.",
     description: "Nivasan Vakulam is a thoughtfully designed residential apartment community near Tidel Park, Coimbatore — crafted for families and professionals who want calm living paired with city convenience. Spacious, well-ventilated 2 & 3 BHK homes are set within a fully-amenitized community, at an address positioned in one of Coimbatore's strongest IT-corridor micro-markets, making it equally attractive to end-users and long-term investors.\n\nWith possession scheduled for 31 March 2029 and full RERA registration (TN/11/BLG/0114/2026), Nivasan Vakulam offers buyers the transparency and track record of Nivasan Homes' 15-year legacy in Coimbatore real estate.\n\nIdeal for: Working professionals near Tidel Park, first-time home buyers, investors seeking rental yield in the IT corridor, and NRIs looking for a long-term appreciation asset.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.208151475735!2d77.0223594!3d11.0134062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sTIDEL%20Park%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
@@ -670,6 +673,7 @@ export default async function ProjectDetailsPage({
                   </div>
                 ))}
               </div>
+
             </div>
 
             {/* Right Hero Showcase Image */}
@@ -682,6 +686,20 @@ export default async function ProjectDetailsPage({
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
+
+              {/* Overlay Download Brochure Button on the top right */}
+              {project.brochureUrl && (
+                <div className="absolute top-4 right-4 z-20">
+                  <a
+                    href={project.brochureUrl}
+                    download
+                    className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-extrabold text-[10px] uppercase tracking-widest py-3 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-accent/20 cursor-pointer select-none"
+                  >
+                    <Download size={12} />
+                    Download Brochure
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 
