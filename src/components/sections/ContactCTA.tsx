@@ -12,18 +12,45 @@ export default function ContactCTA() {
     phone: "",
     project: "",
     message: "",
+    website: "", // Honeypot field
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate luxury API call delay
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    try {
+      const response = await fetch("/api/inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          project: formData.project,
+          message: formData.message,
+          website: formData.website, // Submit honeypot
+        }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.status === "success") {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(result.message || "Failed to submit inquiry. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("A network error occurred. Please check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1000);
+    }
   };
 
   const projectsOptions = [
@@ -200,6 +227,20 @@ export default function ContactCTA() {
                   onSubmit={handleSubmit}
                   className="bg-white border border-[#eae7e3] p-7 md:p-8 rounded-xl shadow-lg relative flex flex-col gap-4"
                 >
+                  {/* Honeypot field to prevent spam bots */}
+                  <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
+                    <label htmlFor="website-contact">Leave this field blank if you are human</label>
+                    <input
+                      id="website-contact"
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                    />
+                  </div>
+
                   <div>
                     <h3 className="font-sans text-lg font-extrabold text-black-luxury">
                       Request Callback & Brochure
@@ -294,6 +335,12 @@ export default function ContactCTA() {
                     />
                   </div>
 
+                  {errorMessage && (
+                    <p className="text-rose-600 text-xs font-bold text-center mt-1">
+                      {errorMessage}
+                    </p>
+                  )}
+
                   {/* Submit Button */}
                   <button
                     type="submit"
@@ -323,8 +370,9 @@ export default function ContactCTA() {
                   </p>
                   <button
                     onClick={() => {
-                      setFormData({ name: "", email: "", phone: "", project: "", message: "" });
+                      setFormData({ name: "", email: "", phone: "", project: "", message: "", website: "" });
                       setIsSubmitted(false);
+                      setErrorMessage(null);
                     }}
                     className="text-[10px] uppercase font-extrabold tracking-widest text-accent hover:text-primary transition-colors cursor-pointer mt-4 border border-[#eae7e3] px-5 py-2 rounded-full hover:border-accent"
                   >
