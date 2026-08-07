@@ -36,8 +36,8 @@ const projectsData: Record<string, ProjectDetails> = {
     status: "Ongoing",
     location: "Kalapatti, Near Broadway Mall & Coimbatore Airport",
     brochureUrl: "/brochures/Nivasan%20Swarnapuraa%20Brochure.pdf",
-    aioSentence: "Nivasan Swarnapuraa by Nivasan Homes is a RERA-approved premium 4 & 5 BHK gated villa community located in Kalapatti, near Broadway Mall and Coimbatore Airport.",
-    description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 & 5 BHK villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned at 2,800 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
+    aioSentence: "Nivasan Swarnapuraa by Nivasan Homes is a RERA-approved premium 4 BHK gated villa community located in Kalapatti, near Broadway Mall and Coimbatore Airport.",
+    description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 BHK Premium Villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned at 2,800 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b28203f191%3A0xb3de2c270d4d4bb2!2sKalapatti%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
       "/ongoing/p1/image.png",
@@ -51,7 +51,7 @@ const projectsData: Record<string, ProjectDetails> = {
       "/ongoing/p1/image8.png"
     ],
     specs: [
-      { label: "Configuration", value: "4 & 5 BHK Premium Villa" },
+      { label: "Configuration", value: "4 BHK Premium Villa" },
       { label: "Total Units", value: "19 Exclusive Villas" },
       { label: "Land Area", value: "2.01 Acres" },
       { label: "Villa Size", value: "2,800 sq.ft each" },
@@ -88,7 +88,7 @@ const projectsData: Record<string, ProjectDetails> = {
       },
       {
         question: "What configurations are available?",
-        answer: "4 & 5 BHK premium villas, each approximately 2,800 sq.ft, within a 19-villa gated community."
+        answer: "4 BHK premium villas, each approximately 2,800 sq.ft, within a 19-villa gated community."
       },
       {
         question: "Is this project ready to move in or under construction?",
@@ -108,7 +108,7 @@ const projectsData: Record<string, ProjectDetails> = {
       }
     ],
     metaTitle: "Nivasan Swarnapuraa",
-    metaDescription: "Premium 4 & 5 BHK gated villas in Kalapatti, Coimbatore, near Broadway Mall & Coimbatore Airport. RERA TN/11/BUILDING/0467/2024. Final units available.",
+    metaDescription: "Premium 4 BHK gated villas in Kalapatti, Coimbatore, near Broadway Mall & Coimbatore Airport. RERA TN/11/BUILDING/0467/2024. Final units available.",
     keywords: ["Nivasan Swarnapuraa", "villas in Kalapatti Coimbatore", "4 BHK villas Coimbatore", "gated villa community Coimbatore"]
   },
   "nivasan-vakulam": {
@@ -545,7 +545,7 @@ export default async function ProjectDetailsPage({
     "description": "Nivasan Homes is one of Coimbatore's most trusted real estate developers, delivering premium villas and apartments since 2010.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Avinashi Rd, next to PSG Tech, Peelamedu",
+      "streetAddress": "No. 252, Avinashi Road (Opp: Varadharaja Mills), Peelamedu",
       "addressLocality": "Coimbatore",
       "addressRegion": "Tamil Nadu",
       "postalCode": "641004",
@@ -673,14 +673,23 @@ export default async function ProjectDetailsPage({
 
             {/* Right Hero Showcase Image */}
             <div className="lg:col-span-6 h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
-              <div className="absolute -inset-[3px] z-0 overflow-hidden">
-                <img
-                  src={project.images[0]}
-                  alt={`${project.name} Hero Elevation`}
-                  className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
+              <a href="#project-gallery" className="absolute inset-0 z-10 cursor-pointer">
+                <div className="absolute -inset-[3px] overflow-hidden">
+                  <img
+                    src={project.images[0]}
+                    alt={`${project.name} Hero Elevation`}
+                    className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
+                  />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
+                
+                {/* Visual hover indicator */}
+                <div className="absolute inset-0 bg-black-luxury/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                  <span className="bg-white/95 text-text-onyx font-black text-[10px] uppercase tracking-widest px-5 py-2.5 rounded-lg shadow-xl border border-[#eae7e3] transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                    View Project Gallery
+                  </span>
+                </div>
+              </a>
 
               {/* Overlay Download Brochure Button on the top right */}
               {project.brochureUrl && (

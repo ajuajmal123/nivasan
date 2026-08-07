@@ -171,7 +171,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
   };
 
   return (
-    <div className="border-t border-black-luxury/10 pt-12">
+    <div id="project-gallery" className="border-t border-black-luxury/10 pt-12">
       <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-2">
         Visual Showcase
       </span>

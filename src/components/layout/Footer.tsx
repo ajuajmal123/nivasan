@@ -192,9 +192,8 @@ export default function Footer() {
               Head Office
             </h4>
             <p className="text-xs text-white/70 leading-relaxed mb-3 font-sans">
-              Avinashi Rd, next to PSG Tech,<br />
-              Peelamedu, Coimbatore,<br />
-              Tamil Nadu 641004
+              No. 252, Avinashi Road (Opp: Varadharaja Mills),<br />
+              Peelamedu, Coimbatore - 641 004
             </p>
             <div className="space-y-3.5 text-xs text-white/70">
               <div>

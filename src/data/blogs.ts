@@ -253,22 +253,22 @@ export const blogs: BlogPost[] = [
   {
     slug: "swarnapuraa-villa-configurations-kalapatti-coimbatore",
     title: "What Villa Configurations Are Available at Nivasan Swarnapuraa?",
-    metaTitle: "Villa Configurations at Nivasan Swarnapuraa — 4 & 5 BHK, Kalapatti, Coimbatore",
-    metaDescription: "Nivasan Swarnapuraa offers 4 & 5 BHK villas in Kalapatti, Coimbatore, right next to Broadway Cinemas. Gated community, 19 exclusive villas, RERA registered. Only a couple of units left.",
+    metaTitle: "Villa Configurations at Nivasan Swarnapuraa — 4 BHK Premium Villa, Kalapatti, Coimbatore",
+    metaDescription: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore, right next to Broadway Cinemas. Gated community, 19 exclusive villas, RERA registered. Only a couple of units left.",
     author: "Avinash Asokan",
     category: "Villas",
     date: "12 July 2026",
     readTime: "4 min read",
     coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
-    brief: "Nivasan Swarnapuraa offers 4 and 5 BHK villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft.",
+    brief: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft.",
     sections: [
       {
         type: "paragraph",
-        text: "Nivasan Swarnapuraa offers 4 and 5 BHK villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft. If you've ever driven past Broadway Cinemas, you've probably already seen it without realizing — the project sits right there, adjacent to the parking area. Right now, only a couple of villas are left."
+        text: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft. If you've ever driven past Broadway Cinemas, you've probably already seen it without realizing — the project sits right there, adjacent to the parking area. Right now, only a couple of villas are left."
       },
       {
         type: "heading",
-        text: "Why 4 & 5 BHK, and why only 19 villas?",
+        text: "Why 4 BHK Premium Villa, and why only 19 villas?",
         level: 2
       },
       {
@@ -306,7 +306,7 @@ export const blogs: BlogPost[] = [
     faqs: [
       {
         question: "What configurations are available at Nivasan Swarnapuraa?",
-        answer: "4 and 5 BHK villas, each around 2,800 sq.ft."
+        answer: "4 BHK Premium Villas, each around 2,800 sq.ft."
       },
       {
         question: "How many villas are there in total?",

@@ -198,10 +198,10 @@ export default function ContactCTA() {
                   Experience Center
                 </h3>
                 <address className="text-[12px] text-black-luxury font-extrabold not-italic leading-relaxed">
-                  Avinashi Rd, next to PSG Tech, Peelamedu, Coimbatore, TN 641004
+                  No. 252, Avinashi Road (Opp: Varadharaja Mills), Peelamedu, Coimbatore - 641 004
                 </address>
                 <a
-                  href="https://maps.google.com/?q=Avinashi+Rd+next+to+PSG+Tech+Peelamedu+Coimbatore+Tamil+Nadu+641004"
+                  href="https://maps.google.com/?q=No.+252,+Avinashi+Road+(Opp:+Varadharaja+Mills),+Peelamedu,+Coimbatore+-+641+004"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider font-extrabold text-accent hover:text-primary transition-colors mt-2"
