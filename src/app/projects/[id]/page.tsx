@@ -37,7 +37,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Kalapatti, Near Broadway Mall & Coimbatore Airport",
     brochureUrl: "/brochures/Nivasan%20Swarnapuraa%20Brochure.pdf",
     aioSentence: "Nivasan Swarnapuraa by Nivasan Homes is a RERA-approved premium 4 BHK gated villa community located in Kalapatti, near Broadway Mall and Coimbatore Airport.",
-    description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 BHK Premium Villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned at 2,800 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
+    description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 BHK Premium Villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned between ~4,179 and 6,635 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b28203f191%3A0xb3de2c270d4d4bb2!2sKalapatti%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
       "/ongoing/p1/image.png",
@@ -54,13 +54,15 @@ const projectsData: Record<string, ProjectDetails> = {
       { label: "Configuration", value: "4 BHK Premium Villa" },
       { label: "Total Units", value: "19 Exclusive Villas" },
       { label: "Land Area", value: "2.01 Acres" },
-      { label: "Villa Size", value: "2,800 sq.ft each" },
+      { label: "Structure", value: "Ground + 2 Floors with Home Lift" },
+      { label: "Villa Size", value: "~4,179 - 6,635 sq.ft" },
       { label: "Type", value: "Gated Community" },
       { label: "Status", value: "Final Units Available" },
       { label: "Launched", value: "Sep 2024" },
       { label: "RERA", value: "TN/11/BUILDING/0467/2024" }
     ],
     amenities: [
+      "Ground + 2 Floors with Home Lift",
       "24-hour Water Supply",
       "CCTV Surveillance (compound-wide)",
       "Fire Safety Systems",
@@ -88,7 +90,7 @@ const projectsData: Record<string, ProjectDetails> = {
       },
       {
         question: "What configurations are available?",
-        answer: "4 BHK premium villas, each approximately 2,800 sq.ft, within a 19-villa gated community."
+        answer: "4 BHK premium villas, ranging from ~4,179 to 6,635 sq.ft, within a 19-villa gated community."
       },
       {
         question: "Is this project ready to move in or under construction?",
@@ -130,8 +132,8 @@ const projectsData: Record<string, ProjectDetails> = {
     ],
     specs: [
       { label: "Configuration", value: "2 & 3 BHK Apartments" },
-      { label: "2 BHK Size", value: "1,090 sq.ft." },
-      { label: "3 BHK Size", value: "Up to 1,989 sq.ft." },
+      { label: "2 BHK Size", value: "1,090.83 - 1,758.81 sq.ft." },
+      { label: "3 BHK Size", value: "1,835.41 - 1,989.55 sq.ft." },
       { label: "Parking", value: "Covered Parking Included" },
       { label: "Status", value: "Ongoing Bookings Open" },
       { label: "RERA", value: "TN/11/BLG/0114/2025" }
@@ -167,7 +169,7 @@ const projectsData: Record<string, ProjectDetails> = {
       },
       {
         question: "What configurations are available?",
-        answer: "2 BHK (1,090 sq.ft) and 3 BHK (up to 1,989 sq.ft) apartments."
+        answer: "2 BHK (1,090.83 - 1,758.81 sq.ft) and 3 BHK (1,835.41 - 1,989.55 sq.ft) apartments."
       },
       {
         question: "Is home loan assistance available?",

@@ -260,11 +260,11 @@ export const blogs: BlogPost[] = [
     date: "12 July 2026",
     readTime: "4 min read",
     coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
-    brief: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft.",
+    brief: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with villa sizes ranging from ~4,179 to 6,635 sq.ft.",
     sections: [
       {
         type: "paragraph",
-        text: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with each villa built to around 2,800 sq.ft. If you've ever driven past Broadway Cinemas, you've probably already seen it without realizing — the project sits right there, adjacent to the parking area. Right now, only a couple of villas are left."
+        text: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with villa sizes ranging from ~4,179 to 6,635 sq.ft. If you've ever driven past Broadway Cinemas, you've probably already seen it without realizing — the project sits right there, adjacent to the parking area. Right now, only a couple of villas are left."
       },
       {
         type: "heading",
@@ -273,7 +273,7 @@ export const blogs: BlogPost[] = [
       },
       {
         type: "paragraph",
-        text: "Swarnapuraa isn't trying to be a big, crowded project. It's deliberately kept to 19 villas on 2.01 acres, so every home gets space and privacy instead of feeling like just another unit in a block. The villas themselves are around 2,800 sq.ft each — enough room for a proper family home, not a compressed floor plan. I've been shooting photos and videos of this project since it broke ground, and I can tell you it's been built to last, not rushed out."
+        text: "Swarnapuraa isn't trying to be a big, crowded project. It's deliberately kept to 19 villas on 2.01 acres, so every home gets space and privacy instead of feeling like just another unit in a block. The villas themselves range from ~4,179 to 6,635 sq.ft — enough room for a proper family home, not a compressed floor plan. I've been shooting photos and videos of this project since it broke ground, and I can tell you it's been built to last, not rushed out."
       },
       {
         type: "heading",
@@ -306,7 +306,7 @@ export const blogs: BlogPost[] = [
     faqs: [
       {
         question: "What configurations are available at Nivasan Swarnapuraa?",
-        answer: "4 BHK Premium Villas, each around 2,800 sq.ft."
+        answer: "4 BHK Premium Villas, ranging from ~4,179 to 6,635 sq.ft."
       },
       {
         question: "How many villas are there in total?",
