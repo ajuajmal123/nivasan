@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nivasan Homes — Premium Web Platform
 
-## Getting Started
+A state-of-the-art, luxury real estate web platform developed for **Nivasan Homes**, showcase-ready for premium gated community villas and high-end residential apartments in Coimbatore.
 
-First, run the development server:
+Built with a modern stack leveraging **Next.js**, **React 19**, **Tailwind CSS v4**, and smooth physics-based animation controllers, this website delivers a premium digital showcase reflecting the brand's 15-year legacy of trust, architectural excellence, and customer-first design.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## 🚀 Key Features
+
+* **Architectural Showcase**: Dynamic project detail pages (`/projects/[id]`) presenting specifications, location advantages, and detailed floor plans.
+* **Premium Physics-based Animations**: 
+  * Smooth-scrolling scroll physics managed by **Lenis**.
+  * Fluid entrance animations, text transformations, and staggered layouts using **Framer Motion** and **GSAP**.
+* **Interactive Content Sections**:
+  * Staggered Landmark Projects grid with theme-aligned ongoing (Gold) and completed (Green) status tags.
+  * Image galleries with interactive media lightboxes.
+  * Collapsible, SEO-friendly Accordion FAQs.
+  * Context-specific inquiry forms and sticky CTA options.
+* **Modern & Harmonious Design System**: Curated color palette featuring HSL tailored colors (Forest Green primary, Metallic Gold accent, Luxury Black backgrounds) with zero default browser styles.
+* **Full SEO Integration**: Programmatic head elements, meta descriptions, unique test-ready tags, and structured heading hierarchies on every page.
+
+---
+
+## 🛠️ Technology Stack
+
+* **Framework**: [Next.js 16.2.9 (App Router)](https://nextjs.org/)
+* **Library**: [React 19.2.4](https://react.dev/)
+* **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+* **Animations**: [Framer Motion](https://www.framer.com/motion/) & [GSAP (GreenSock)](https://greensock.com/)
+* **Scroll Physics**: [@studio-freight/lenis](https://github.com/studio-freight/lenis)
+* **Icons**: [Lucide React](https://lucide.dev/)
+
+---
+
+## 📁 Directory Structure
+
+```text
+nivasan/
+├── public/                 # Static assets (images, brochures, icons, videos)
+├── src/
+│   ├── app/                # Next.js App Router (Layouts, pages, route handlers)
+│   │   ├── about/          # About Us section
+│   │   ├── api/            # Route API endpoints (inquiry submissions)
+│   │   ├── blog/           # Blog section
+│   │   ├── contact/        # Contact Us page
+│   │   ├── gallery/        # Media gallery page
+│   │   ├── projects/       # Projects list and dynamic project routes ([id])
+│   │   ├── globals.css     # Theme setup, Tailwind import, custom utility classes
+│   │   ├── layout.tsx      # Global Root Layout
+│   │   └── page.tsx        # Homepage Component
+│   ├── components/
+│   │   ├── layout/         # Layout modules (Navbar, Footer, Smooth Scroll Provider)
+│   │   ├── sections/       # Section-specific components (Hero, FAQ, Timeline, gallery)
+│   │   └── ui/             # Reusable UI controls (Logo, Preloader, StickyCTA)
+│   └── data/               # Static dataset values (blogs list, timelines)
+├── scripts/                # Asset pipeline scripts
+├── package.json            # Dependencies and scripts definitions
+├── tsconfig.json           # TypeScript configuration
+└── next.config.ts          # Next.js bundler settings
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 💻 Local Development Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+* Ensure you have [Node.js (LTS version recommended)](https://nodejs.org/) installed on your machine.
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Navigate to the project root directory:
+   ```bash
+   cd nivasan
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install the node package dependencies:
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Spin up the local hot-reloading development server:
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Open [http://localhost:3000](http://localhost:3000) in your web browser to view the application.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Production Build & Deployment
+
+To build the application for hosting on production environments (e.g., Vercel, AWS, Netlify, or self-hosted servers):
+
+1. Generate the optimized production bundle:
+   ```bash
+   npm run build
+   ```
+
+2. Test the production build locally:
+   ```bash
+   npm run start
+   ```
+
+3. Deploying to Vercel:
+   ```bash
+   npx vercel
+   ```

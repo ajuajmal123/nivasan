@@ -18,6 +18,9 @@ export const metadata: Metadata = {
   description: "Redefining premium residential design. Discover architectural masterpieces, bespoke luxury villas, and minimalist modern living spaces crafted with timeless sophistication.",
   keywords: ["Luxury Real Estate", "Premium Homes", "Architectural Masterpieces", "Modern Villas", "Minimalist Design", "Nivasan Homes"],
   authors: [{ name: "Nivasan Homes" }],
+  icons: {
+    icon: "/N-H-PNG_5.png",
+  },
   openGraph: {
     title: "Nivasan Homes | Crafting Exceptional Living Spaces",
     description: "Discover modern luxury villa developments and premium architectural residences.",

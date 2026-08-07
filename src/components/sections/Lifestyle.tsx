@@ -37,7 +37,7 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
         <img
           src={image}
           alt={title}
-          className="w-full h-[115%] absolute -top-[7.5%] object-cover transform scale-100 group-hover:scale-105 transition-transform duration-[1.8s] ease-out"
+          className="w-full h-[115%] absolute -top-[7.5%] object-cover transform scale-100 group-hover:scale-105 transition-all duration-[1.8s] ease-out"
         />
 
         {/* Text Details overlay */}

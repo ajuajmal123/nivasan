@@ -117,8 +117,8 @@ const projectsData: Record<string, ProjectDetails> = {
     status: "Ongoing",
     location: "Near Tidel Park, Coimbatore",
     brochureUrl: "/brochures/Nivasan-Vakulam-Brochure.pdf",
-    aioSentence: "Nivasan Vakulam by Nivasan Homes is a premium 2 & 3 BHK apartment community near Tidel Park, Coimbatore, with possession scheduled for 31 March 2029.",
-    description: "Nivasan Vakulam is a thoughtfully designed residential apartment community near Tidel Park, Coimbatore — crafted for families and professionals who want calm living paired with city convenience. Spacious, well-ventilated 2 & 3 BHK homes are set within a fully-amenitized community, at an address positioned in one of Coimbatore's strongest IT-corridor micro-markets, making it equally attractive to end-users and long-term investors.\n\nWith possession scheduled for 31 March 2029 and full RERA registration (TN/11/BLG/0114/2026), Nivasan Vakulam offers buyers the transparency and track record of Nivasan Homes' 15-year legacy in Coimbatore real estate.\n\nIdeal for: Working professionals near Tidel Park, first-time home buyers, investors seeking rental yield in the IT corridor, and NRIs looking for a long-term appreciation asset.",
+    aioSentence: "Nivasan Vakulam by Nivasan Homes is a premium 2 & 3 BHK apartment community near Tidel Park, Coimbatore.",
+    description: "Nivasan Vakulam is a thoughtfully designed residential apartment community near Tidel Park, Coimbatore — crafted for families and professionals who want calm living paired with city convenience. Spacious, well-ventilated 2 & 3 BHK homes are set within a fully-amenitized community, at an address positioned in one of Coimbatore's strongest IT-corridor micro-markets, making it equally attractive to end-users and long-term investors.\n\nWith full RERA registration (TN/11/BLG/0114/2025), Nivasan Vakulam offers buyers the transparency and track record of Nivasan Homes' 15-year legacy in Coimbatore real estate.\n\nIdeal for: Working professionals near Tidel Park, first-time home buyers, investors seeking rental yield in the IT corridor, and NRIs looking for a long-term appreciation asset.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.208151475735!2d77.0223594!3d11.0134062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sTIDEL%20Park%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
       "/ongoing/p2/image1.png",
@@ -132,10 +132,9 @@ const projectsData: Record<string, ProjectDetails> = {
       { label: "Configuration", value: "2 & 3 BHK Apartments" },
       { label: "2 BHK Size", value: "1,090 sq.ft." },
       { label: "3 BHK Size", value: "Up to 1,989 sq.ft." },
-      { label: "Possession", value: "31 March 2029" },
       { label: "Parking", value: "Covered Parking Included" },
       { label: "Status", value: "Ongoing Bookings Open" },
-      { label: "RERA", value: "TN/11/BLG/0114/2026" }
+      { label: "RERA", value: "TN/11/BLG/0114/2025" }
     ],
     amenities: [
       "Clubhouse",
@@ -160,7 +159,7 @@ const projectsData: Record<string, ProjectDetails> = {
     faqs: [
       {
         question: "What is the RERA registration number for Nivasan Vakulam?",
-        answer: "TN/11/BLG/0114/2026."
+        answer: "TN/11/BLG/0114/2025."
       },
       {
         question: "Where exactly is Nivasan Vakulam located?",
@@ -169,10 +168,6 @@ const projectsData: Record<string, ProjectDetails> = {
       {
         question: "What configurations are available?",
         answer: "2 BHK (1,090 sq.ft) and 3 BHK (up to 1,989 sq.ft) apartments."
-      },
-      {
-        question: "When is possession?",
-        answer: "31 March 2029."
       },
       {
         question: "Is home loan assistance available?",
@@ -188,7 +183,7 @@ const projectsData: Record<string, ProjectDetails> = {
       }
     ],
     metaTitle: "Nivasan Vakulam | Premium 2 & 3 BHK Apartments near Tidel Park",
-    metaDescription: "Premium 2 & 3 BHK apartments near Tidel Park, Coimbatore. RERA TN/11/BLG/0114/2026. Possession March 2029. Bookings open.",
+    metaDescription: "Premium 2 & 3 BHK apartments near Tidel Park, Coimbatore. RERA TN/11/BLG/0114/2025. Bookings open.",
     keywords: ["Nivasan Vakulam", "apartments near Tidel Park Coimbatore", "2 BHK 3 BHK apartments Coimbatore", "apartments IT corridor Coimbatore"]
   },
   "nivasan-udhyana": {
@@ -678,11 +673,11 @@ export default async function ProjectDetailsPage({
 
             {/* Right Hero Showcase Image */}
             <div className="lg:col-span-6 h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
-              <div className="absolute -inset-[2px] overflow-hidden">
+              <div className="absolute -inset-[3px] z-0 overflow-hidden">
                 <img
                   src={project.images[0]}
                   alt={`${project.name} Hero Elevation`}
-                  className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-transform duration-750 ease-out"
+                  className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />

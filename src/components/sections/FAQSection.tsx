@@ -18,7 +18,7 @@ const homepageFAQs = [
   },
   {
     question: "Are your ongoing projects fully RERA approved?",
-    answer: "Yes, absolute transparency is core to our brand. All of our active and ongoing developments are fully registered and approved by the Tamil Nadu Real Estate Regulatory Authority (TNRERA). For example, Nivasan Swarnapuraa is registered under TN/11/BUILDING/0467/2024 and Nivasan Vakulam is registered under TN/11/BLG/0114/2026."
+    answer: "Yes, absolute transparency is core to our brand. All of our active and ongoing developments are fully registered and approved by the Tamil Nadu Real Estate Regulatory Authority (TNRERA). For example, Nivasan Swarnapuraa is registered under TN/11/BUILDING/0467/2024 and Nivasan Vakulam is registered under TN/11/BLG/0114/2025."
   },
   {
     question: "How do I schedule a site visit or contact the sales team?",

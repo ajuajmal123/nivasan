@@ -133,3 +133,8 @@ body {
   scrollbar-width: none;
 }
 
+/* Light logo color filter utility */
+.filter-logo-light {
+  filter: brightness(0) invert(1);
+}
+

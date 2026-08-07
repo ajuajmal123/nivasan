@@ -25,12 +25,6 @@ export default function Hero() {
         </video>
       </div>
 
-      {/* Dark Overlay for readability */}
-      <div className="absolute inset-0 bg-black/40 z-10 pointer-events-none" />
-
-      {/* Grid Pattern Overlay matching reference site */}
-      <div className="absolute inset-0 grid-pattern-dark z-10 pointer-events-none" />
-
       {/* Content wrapper - Centered */}
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-0">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-5 sm:gap-6">

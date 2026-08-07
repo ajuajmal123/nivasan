@@ -40,5 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# documentation and setup guides
+# AI Agent/Workspace files
+AGENTS.md
+CLAUDE.md
 SETUP_INQUIRY.md
+.agents/

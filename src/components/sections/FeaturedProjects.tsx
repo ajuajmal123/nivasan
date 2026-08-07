@@ -81,9 +81,9 @@ const projects: Project[] = [
 export default function FeaturedProjects() {
   const getStatusBadgeClass = (status: string) => {
     if (status === "Completed") {
-      return "bg-emerald-600 border-emerald-600/20 text-white";
+      return "bg-primary border-primary/20 text-white";
     }
-    return "bg-primary border-primary/20 text-white"; // Ongoing
+    return "bg-accent border-accent/20 text-white"; // Ongoing (Golden)
   };
 
   return (

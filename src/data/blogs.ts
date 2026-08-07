@@ -180,15 +180,6 @@ export const blogs: BlogPost[] = [
       {
         type: "paragraph",
         text: "Better connectivity means shorter commutes, easier access to restaurants, retail, and services that spring up around a growing employment hub, and generally an area that keeps improving rather than staying static."
-      },
-      {
-        type: "heading",
-        text: "Backed by possession timeline planning",
-        level: 2
-      },
-      {
-        type: "paragraph",
-        text: "With possession set for 31 March 2029, Vakulam gives buyers a realistic window to watch this corridor continue developing before they even move in."
       }
     ],
     faqs: [

@@ -68,17 +68,16 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out flex items-center ${
           shouldBeGlass
-            ? "glass-navbar py-3 shadow-sm"
-            : "bg-transparent py-6"
+            ? "glass-navbar h-[72px] md:h-[89px] shadow-sm"
+            : "bg-transparent h-[88px] md:h-[105px]"
         }`}
       >
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group z-50 flex items-center">
             <Logo
-              size={shouldBeGlass ? 52 : 64}
               textColor={shouldBeGlass ? "primary" : "white"}
               showText={true}
               className="flex-row items-center space-x-3 mt-0"

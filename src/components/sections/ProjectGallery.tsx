@@ -190,7 +190,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
             <img
               src={img}
               alt={getAltText(index)}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
+              className="w-full h-full object-cover scale-[1.05] transition-all duration-500 opacity-95 group-hover:opacity-100"
             />
           </div>
         ))}
@@ -223,7 +223,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               {/* Prev Button */}
               <button
                 onClick={handlePrev}
-                className="absolute left-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 cursor-pointer z-10"
+                className="absolute left-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -258,7 +258,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               {/* Next Button */}
               <button
                 onClick={handleNext}
-                className="absolute right-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 cursor-pointer z-10"
+                className="absolute right-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronRight size={24} />
               </button>
