@@ -75,6 +75,49 @@ const projectsList: Project[] = [
     tag: "Premium Residential Apartments",
     image: "/completed/p7/image.png",
   },
+
+  {
+    id: "meadows-vilankurichi",
+    name: "Meadows",
+    status: "Completed",
+    tag: "2 & 3 BHK Apartments",
+    image: "/completed/p8/med-4-1.png",
+  },
+  {
+    id: "blue-heaven-1",
+    name: "Blue Heaven 1",
+    status: "Completed",
+    tag: "Premium 2 BHK Apartments",
+    image: "/completed/p9/viveka-4-1.jpg",
+  },
+  {
+    id: "blue-heaven-2",
+    name: "Blue Heaven 2",
+    status: "Completed",
+    tag: "Premium 2 BHK Apartments",
+    image: "/completed/p10/bluehaven-2-2.jpg",
+  },
+  {
+    id: "nivasana",
+    name: "Nivasana",
+    status: "Completed",
+    tag: "Residential Apartments",
+    image: "/completed/p11/pls-1-1-143x83.png",
+  },
+  {
+    id: "viveka-enclave",
+    name: "Viveka Enclave",
+    status: "Completed",
+    tag: "Villas and Apartments",
+    image: "/completed/p12/slide-1-1-1-1110x500.jpg",
+  },
+  {
+    id: "meenakshi-vishranth",
+    name: "Meenakshi Vishranth",
+    status: "Completed",
+    tag: "Residential Apartments",
+    image: "/completed/p13/pari-1-1-143x83.png",
+  },
 ];
 
 export default function ProjectsList() {
