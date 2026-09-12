@@ -480,7 +480,8 @@ const projectsData: Record<string, ProjectDetails> = {
     description: "Luxurious residences offering a modern lifestyle with extreme proximity to Coimbatore International Airport and leading IT parks. Perfectly crafted for urban families desiring connectivity and comfort.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.273181829035!2d76.994234!3d11.002683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sAvinashi%20Rd%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
-      "/completed/p2/image.png"
+      "/completed/p2/1.png",
+      "/completed/p2/2.png"
     ],
     specs: [
       { label: "Type", value: "Luxury Apartments" },
@@ -518,7 +519,8 @@ const projectsData: Record<string, ProjectDetails> = {
     description: "A flagship development by Nivasan Homes where architectural brilliance meets human aspirations in a prestigious residential community. Combining robust structural engineering with timeless layout designs.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3262694119957!2d76.9849178!3d11.0092523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ab93a151b7%3A0x6b80cd9b9c1d6ffb!2sPeelamedu%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
-      "/completed/p3/image.png"
+      "/completed/p3/1.png",
+      "/completed/p3/2.png"
     ],
     specs: [
       { label: "Type", value: "Premium Apartments" },

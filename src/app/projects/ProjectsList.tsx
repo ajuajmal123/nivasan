@@ -38,14 +38,14 @@ const projectsList: Project[] = [
     name: "Nivasan Bliss",
     status: "Completed",
     tag: "Luxury Residential Apartments",
-    image: "/completed/p2/image.png",
+    image: "/completed/p2/1.png",
   },
   {
     id: "nivasan-ramaas",
     name: "Nivasan Ramaas",
     status: "Completed",
     tag: "Premium Residential Apartments",
-    image: "/completed/p3/image.png",
+    image: "/completed/p3/1.png",
   },
   {
     id: "echo-point-plaza",
