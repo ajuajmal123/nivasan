@@ -66,7 +66,7 @@ export default function ContactCTA() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-background-luxury text-primary relative overflow-hidden border-t border-[#eae7e3]">
+    <section id="contact" className="py-16 md:py-12 md:py-16 bg-background-luxury text-primary relative overflow-hidden border-t border-[#eae7e3]">
       {/* Interactive grayscale map backdrop for office location */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
         <iframe

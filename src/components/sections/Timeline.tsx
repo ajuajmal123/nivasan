@@ -56,7 +56,7 @@ export default function Timeline() {
   const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="py-16 md:py-24 bg-white relative overflow-hidden">
+    <section id="timeline" ref={containerRef} className="py-16 md:py-12 md:py-16 bg-white relative overflow-hidden">
       {/* Subtle background decoration grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 

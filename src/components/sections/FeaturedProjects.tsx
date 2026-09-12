@@ -32,7 +32,7 @@ const projects: Project[] = [
     name: "Nivasan Udhyana",
     status: "Completed",
     tag: "Ultra Luxury Gated Villas",
-    image: "/completed/p1/image.png",
+    image: "/completed/p1/1.png",
   },
   {
     id: "nivasan-bliss",
@@ -53,7 +53,7 @@ const projects: Project[] = [
     name: "Echo Point Plaza",
     status: "Completed",
     tag: "Premium Commercial Spaces",
-    image: "/completed/p4/image.png",
+    image: "/completed/p4/1.png",
   },
   {
     id: "echo-point-aavaas",
@@ -67,7 +67,7 @@ const projects: Project[] = [
     name: "Saradha Greens",
     status: "Completed",
     tag: "Ultra Luxury Independent Villas",
-    image: "/completed/p6/image.png",
+    image: "/completed/p6/1.png",
   },
   {
     id: "nivasan-springs",
@@ -87,7 +87,7 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="relative py-24 bg-white overflow-hidden border-b border-[#eae7e3]">
+    <section id="projects" className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-[#eae7e3]">
       {/* Linear backdrop grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 

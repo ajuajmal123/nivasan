@@ -36,7 +36,7 @@ function ValueCard({ iconSvg, title, description, badgeColorClass, lineColorClas
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-24 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-b border-[#eae7e3]">
+    <section className="relative py-12 md:py-16 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-b border-[#eae7e3]">
       {/* Backdrop linear grid matching reference */}
       <div className="absolute inset-0 opacity-[0.012] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
 

@@ -84,7 +84,7 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
 
 export default function Statistics() {
   return (
-    <section className="relative py-24 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-t border-[#eae7e3] border-b border-[#eae7e3]">
+    <section className="relative py-12 md:py-16 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-t border-[#eae7e3] border-b border-[#eae7e3]">
       {/* Linear Grid lines background matching reference */}
       <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:4rem_4rem] z-0 pointer-events-none" />
       

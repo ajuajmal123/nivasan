@@ -35,7 +35,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans text-primary relative">
+    <main className="bg-background-luxury min-h-screen pt-16 md:pt-20 pb-16 md:pt-28 md:pb-20 font-sans text-primary relative">
       {/* Subtle background pattern grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 

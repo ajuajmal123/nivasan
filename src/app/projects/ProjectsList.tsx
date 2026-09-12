@@ -31,7 +31,7 @@ const projectsList: Project[] = [
     name: "Nivasan Udhyana",
     status: "Completed",
     tag: "Ultra Luxury Gated Villas",
-    image: "/completed/p1/image.png",
+    image: "/completed/p1/1.png",
   },
   {
     id: "nivasan-bliss",
@@ -52,7 +52,7 @@ const projectsList: Project[] = [
     name: "Echo Point Plaza",
     status: "Completed",
     tag: "Premium Commercial Spaces",
-    image: "/completed/p4/image.png",
+    image: "/completed/p4/1.png",
   },
   {
     id: "echo-point-aavaas",
@@ -66,7 +66,7 @@ const projectsList: Project[] = [
     name: "Saradha Greens",
     status: "Completed",
     tag: "Ultra Luxury Independent Villas",
-    image: "/completed/p6/image.png",
+    image: "/completed/p6/1.png",
   },
   {
     id: "nivasan-springs",
@@ -81,7 +81,7 @@ const projectsList: Project[] = [
     name: "Meadows",
     status: "Completed",
     tag: "2 & 3 BHK Apartments",
-    image: "/completed/p8/med-4-1.png",
+    image: "/completed/p8/1.png",
   },
   {
     id: "blue-heaven-1",
@@ -95,21 +95,21 @@ const projectsList: Project[] = [
     name: "Blue Heaven 2",
     status: "Completed",
     tag: "Premium 2 BHK Apartments",
-    image: "/completed/p10/bluehaven-2-2.jpg",
+    image: "/completed/p10/1.png",
   },
   {
     id: "nivasana",
     name: "Nivasana",
     status: "Completed",
     tag: "Residential Apartments",
-    image: "/completed/p11/pls-1-1-143x83.png",
+    image: "/completed/p11/1.png",
   },
   {
     id: "viveka-enclave",
     name: "Viveka Enclave",
     status: "Completed",
     tag: "Villas and Apartments",
-    image: "/completed/p12/slide-1-1-1-1110x500.jpg",
+    image: "/completed/p12/1.png",
   },
   {
     id: "meenakshi-vishranth",
@@ -136,7 +136,7 @@ export default function ProjectsList() {
   };
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-32 pb-24 font-sans">
+    <main className="bg-background-luxury min-h-screen pt-16 md:pt-20 pb-16 md:pt-28 md:pb-20 font-sans">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Header Section - Centered, Heading "Our Creations" Only */}
         <div className="text-center max-w-3xl mx-auto mb-8">
@@ -153,8 +153,8 @@ export default function ProjectsList() {
                 key={tab}
                 onClick={() => setFilter(tab)}
                 className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
-                    ? "bg-primary text-white shadow-md shadow-primary/20"
-                    : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
+                  ? "bg-primary text-white shadow-md shadow-primary/20"
+                  : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
                   }`}
               >
                 {tab}
