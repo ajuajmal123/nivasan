@@ -246,10 +246,9 @@ const projectsData: Record<string, ProjectDetails> = {
     description: "Meenakshi Vishranth is a completed apartment community by Nivasan Homes in Pari Nagar, Coimbatore, forming part of the brand's earlier portfolio of residential apartment developments in the city.",
     mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
     images: [
-      "/completed/p13/pari-1-1-143x83.png",
-      "/completed/p13/pari-3-143x83.png",
-      "/completed/p13/pari-4-143x83.png",
-      "/completed/p13/pari-5-143x83.png"
+
+      "/completed/p13/meenakshi-vishranth-1.jpg",
+      "/completed/p13/meenakshi-vishranth-2.jpg"
     ],
     specs: [
       { label: "Type", value: "16 Apartments" },

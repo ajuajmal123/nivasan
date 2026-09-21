@@ -116,7 +116,7 @@ const projectsList: Project[] = [
     name: "Meenakshi Vishranth",
     status: "Completed",
     tag: "Residential Apartments",
-    image: "/completed/p13/pari-1-1-143x83.png",
+    image: "/completed/p13/meenakshi-vishranth-1.jpg",
   },
 ];
 
