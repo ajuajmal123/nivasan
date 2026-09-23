@@ -138,3 +138,19 @@ body {
   filter: brightness(0) invert(1);
 }
 
+
+@keyframes blinkColors {
+  0%   { color: #ffd431; }
+  20%  { color: #03ff75; }
+  40%  { color: #cd76ea; }
+  60%  { color: #ffb444; }
+  80%  { color: #ff5e5e; }
+  100% { color: #38dbff; }
+}
+
+.blinking-text {
+  font-weight: bold;
+  font-size: 15px;
+  animation: blinkColors 3s infinite;
+  text-decoration: none;
+}

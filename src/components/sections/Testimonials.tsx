@@ -63,7 +63,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-28 md:py-40 bg-background-luxury overflow-hidden relative">
+    <section className="py-16 md:py-10 bg-background-luxury overflow-hidden relative">
       {/* Decorative quotes background */}
       <div className="absolute top-10 left-12 font-serif text-[18rem] text-black-luxury/[0.02] leading-none select-none pointer-events-none">
         “
@@ -72,7 +72,7 @@ export default function Testimonials() {
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header */}
-        <div className="text-center mb-16 md:mb-20">
+        <div className="text-center mb-16 md:mb-10">
           <Reveal delay={0.1}>
             <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6 block">
               Client Chronicles

@@ -39,7 +39,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Vilankurichi Road, Coimbatore",
     aioSentence: "Meadows by Nivasan Homes is a completed residential apartment project located on Vilankurichi Road, Coimbatore.",
     description: "Meadows is a completed apartment community by Nivasan Homes on Vilankurichi Road, offering 2 and 3 BHK apartments across 8 apartment wings arranged around a large, lush central courtyard and landscaped green area. Units ranged from 1,435 to 1,800 sq.ft., with possession from October 2012.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.9351644541525!2d77.00690068456535!3d11.043487961073808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85700734108a9%3A0xbb6b2271ac4d566a!2sMeadows%20Apartment!5e0!3m2!1sen!2sus!4v1790144321354!5m2!1sen!2sus",
     images: [
       "/completed/p8/1.png",
       "/completed/p8/2.png",
@@ -80,7 +80,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Vilankurichi / Kalapatti, Coimbatore",
     aioSentence: "Blue Heaven 1 by Nivasan Homes is a completed residential apartment project in Vilankurichi, Coimbatore.",
     description: "Blue Heaven 1 is the first phase of the Blue Heaven apartment community by Nivasan Homes in Vilankurichi, Coimbatore, and was followed by the larger Blue Heaven 2 development in the same locality.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15662.068608096079!2d76.9932430871582!3d11.074781900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f81dbb0c21a3%3A0x6038281d1b538666!2sBlue%20Heaven%202!5e0!3m2!1sen!2sus!4v1790144573478!5m2!1sen!2sus",
     images: [
       "/completed/p9/viveka-4-1.jpg"
     ],
@@ -124,7 +124,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Vilankurichi / Kalapatti, Coimbatore",
     aioSentence: "Nivasan Blue Heaven 2 is an ultimate reflection of the urban chic lifestyle located in Kalapatti, Coimbatore.",
     description: "Nivasan Blue Heaven 2 is a completed 2 BHK apartment community by Nivasan Homes, spanning the Vilankurichi/Kalapatti belt of Coimbatore. Units range from 802 to 1,145 sq.ft. with possession from July 2014.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15662.068608096079!2d76.9932430871582!3d11.074781900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f81dbb0c21a3%3A0x6038281d1b538666!2sBlue%20Heaven%202!5e0!3m2!1sen!2sus!4v1790144573478!5m2!1sen!2sus",
     images: [
       "/completed/p10/1.png",
       "/completed/p10/2.png"
@@ -170,7 +170,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "PLS Nagar, Coimbatore",
     aioSentence: "Nivasana by Nivasan Homes is a completed residential apartment project located at PLS Nagar, Coimbatore.",
     description: "Nivasana is a completed apartment development by Nivasan Homes situated in PLS Nagar, Coimbatore, part of the brand's portfolio of family-focused residential communities in the city.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.819763254444!2d77.05050168456606!3d11.052136061044855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857d2b9116453%3A0x3beca0656f791fae!2sNivasa%20apartment!5e0!3m2!1sen!2sus!4v1790144262531!5m2!1sen!2sus",
     images: [
       "/completed/p11/1.png"
     ],
@@ -200,7 +200,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Vilankurichi, Coimbatore",
     aioSentence: "Viveka Enclave — distinguished by spaciousness. The villas at Viveka Enclave are set on 3.30 acres of land.",
     description: "Viveka Enclave is a completed villa community by Nivasan Homes on 3.30 acres in Vilankurichi, comprising only 41 exclusive 3 BHK villas ranging from roughly 2,418 to 2,596 sq.ft. Each villa offers a private garden and terrace, sufficient car space at the entrance, and a linear, free-flowing layout that allows residents to customise interior furniture and preserve privacy within the home. The project is just a few minutes' drive from Avinashi Road and the city's IT corridor at Saravanampatti.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.6200009197687!2d77.0069268845673!3d11.067090360994797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f8026cbef089%3A0x70fcb4e69ff08114!2sViveka%20Enclave!5e0!3m2!1sen!2sus!4v1790144209689!5m2!1sen!2sus",
     images: [
       "/completed/p12/1.png",
       "/completed/p12/2.png",
@@ -244,7 +244,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Pari Nagar, Coimbatore",
     aioSentence: "Meenakshi Vishranth by Nivasan Homes is a completed residential apartment project located at Pari Nagar, Coimbatore.",
     description: "Meenakshi Vishranth is a completed apartment community by Nivasan Homes in Pari Nagar, Coimbatore, forming part of the brand's earlier portfolio of residential apartment developments in the city.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.5905455550487!2d76.9787642845614!3d10.994246661238714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859661bbacc17%3A0xcfd1785ac07fb778!2sNivasan%20Meenakshi%20Vis!5e0!3m2!1sen!2sus!4v1790144144737!5m2!1sen!2sus",
     images: [
 
       "/completed/p13/meenakshi-vishranth-1.jpg",
@@ -278,7 +278,7 @@ const projectsData: Record<string, ProjectDetails> = {
     brochureUrl: "/brochures/Nivasan%20Swarnapuraa%20Brochure.pdf",
     aioSentence: "Nivasan Swarnapuraa by Nivasan Homes is a RERA-approved premium 4 BHK gated villa community located in Kalapatti, near Broadway Mall and Coimbatore Airport.",
     description: "Nivasan Swarnapuraa is a sanctuary of tranquility and a beacon of sophisticated living in Kalapatti, Coimbatore — moments from Broadway Mall and Coimbatore Airport. Spread across 2.01 acres, this gated community of 19 exclusive 4 BHK Premium Villas combines the finest of modern architectural design with the warmth of a family home. Large windows invite golden sunlight into every room, bathing interiors in warmth while framing views of verdant, landscaped surroundings.\n\nEach villa is thoughtfully planned between ~4,179 and 6,635 sq.ft, built for families who want space, privacy, and premium construction quality without compromise — backed by full RERA transparency (TN/11/BUILDING/0467/2024) and Nivasan Homes' 15-year track record in Coimbatore real estate.\n\nIdeal for: Families upgrading to a villa lifestyle, NRIs seeking a secure long-term investment, and buyers who want a gated community close to the airport and key commercial hubs.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b28203f191%3A0xb3de2c270d4d4bb2!2sKalapatti%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.8913742511468!2d77.03792908456569!3d11.04677036106277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857003828d2eb%3A0x3e326297b0e936b7!2sNivasan%20Swarnapuraa!5e0!3m2!1sen!2sus!4v1790144095043!5m2!1sen!2sus",
     images: [
       "/ongoing/p1/image.png",
       "/ongoing/p1/image1.png",
@@ -361,7 +361,7 @@ const projectsData: Record<string, ProjectDetails> = {
     brochureUrl: "/brochures/Nivasan-Vakulam-Brochure.pdf",
     aioSentence: "Nivasan Vakulam by Nivasan Homes is a premium 2 & 3 BHK apartment community near Tidel Park, Coimbatore.",
     description: "Nivasan Vakulam is a thoughtfully designed residential apartment community near Tidel Park, Coimbatore — crafted for families and professionals who want calm living paired with city convenience. Spacious, well-ventilated 2 & 3 BHK homes are set within a fully-amenitized community, at an address positioned in one of Coimbatore's strongest IT-corridor micro-markets, making it equally attractive to end-users and long-term investors.\n\nWith full RERA registration (TN/11/BLG/0114/2025), Nivasan Vakulam offers buyers the transparency and track record of Nivasan Homes' 15-year legacy in Coimbatore real estate.\n\nIdeal for: Working professionals near Tidel Park, first-time home buyers, investors seeking rental yield in the IT corridor, and NRIs looking for a long-term appreciation asset.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.208151475735!2d77.0223594!3d11.0134062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sTIDEL%20Park%20Coimbatore!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31328.98862029553!2d77.015031!3d11.029354000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857001f390b0b%3A0x2ef7ad379813d554!2sNIVASAN%20VAKULAM!5e0!3m2!1sen!2sus!4v1790143838228!5m2!1sen!2sus",
     images: [
       "/ongoing/p2/image1.png",
       "/ongoing/p2/image2.png",
@@ -435,7 +435,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Near CODISSIA, Coimbatore",
     aioSentence: "Nivasan Udhyana by Nivasan Homes is a completed flagship luxury independent villa community located near CODISSIA, Coimbatore.",
     description: "Nivasan Udhyana is a flagship residential development offering ultra-luxury independent villas and apartments with private gardens. Architecturally brilliant and set against lush landscaped greenery near CODISSIA, Udhyana is situated just minutes from the Coimbatore International Airport, perfectly meeting modern human aspirations.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.096338575024!2d77.0189151!3d11.0216262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85775c0000001%3A0x6b80cd9b9c1d6ffb!2sCODISSIA%20Trade%20Fair%20Complex!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31328.98862029553!2d77.015031!3d11.029354000000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857ff6129c0d3%3A0xd2ac70786a136f29!2sNivasan%20Udhyana!5e0!3m2!1sen!2sus!4v1790143863045!5m2!1sen!2sus",
     images: [
       "/completed/p1/1.png",
       "/completed/p1/image.png"
@@ -477,7 +477,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Avinashi Road Corridor, Coimbatore",
     aioSentence: "Nivasan Bliss by Nivasan Homes is a completed luxury residential apartment development situated along the Avinashi Road Corridor, Coimbatore.",
     description: "Luxurious residences offering a modern lifestyle with extreme proximity to Coimbatore International Airport and leading IT parks. Perfectly crafted for urban families desiring connectivity and comfort.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.273181829035!2d76.994234!3d11.002683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sAvinashi%20Rd%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0783600018485!2d77.0094672845645!3d11.032747661109786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857001820a11b%3A0x65c83ffde4fbf3aa!2sNivasan%20Bliss!5e0!3m2!1sen!2sus!4v1790144376846!5m2!1sen!2sus",
     images: [
       "/completed/p2/1.png",
       "/completed/p2/2.png"
@@ -516,7 +516,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Peelamedu, Coimbatore",
     aioSentence: "Nivasan Ramaas by Nivasan Homes is a completed premium flagship residential apartment community located in Peelamedu, Coimbatore.",
     description: "A flagship development by Nivasan Homes where architectural brilliance meets human aspirations in a prestigious residential community. Combining robust structural engineering with timeless layout designs.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3262694119957!2d76.9849178!3d11.0092523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ab93a151b7%3A0x6b80cd9b9c1d6ffb!2sPeelamedu%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.2373810969702!2d77.01762288456351!3d11.020808261149801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857007b08b6b9%3A0x4df98a69ca7c36cf!2sNIVASAN%20RAMAAS!5e0!3m2!1sen!2sus!4v1790144062198!5m2!1sen!2sus",
     images: [
       "/completed/p3/1.png",
       "/completed/p3/2.png"
@@ -555,7 +555,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Opp. KMCH, Avinashi Rd, Coimbatore",
     aioSentence: "Echo Point Plaza by Nivasan Homes is a completed premium commercial retail and office development located directly opposite KMCH on Avinashi Road, Coimbatore.",
     description: "Premium commercial space situated directly opposite Kovai Medical Center and Hospital (KMCH) on Avinashi Road. Offers highly flexible layouts optimized for premium retail and executive office configurations.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.12351829035!2d77.034234!3d11.022683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sKovai%20Medical%20Center%20and%20Hospital!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.9848517762443!2d77.03520498456508!3d11.039762361086286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85768904b0647%3A0xda573bb0dc0355cf!2sTHE%20ECHO%20POINT%20-%20AAWAAZ!5e0!3m2!1sen!2sus!4v1790143935350!5m2!1sen!2sus",
     images: [
       "/completed/p4/1.png",
       "/completed/p4/2.png",
@@ -597,7 +597,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Avinashi Road, Coimbatore",
     aioSentence: "Echo Point Aavaas by Nivasan Homes is a completed designer premium residential apartment development situated along the prime Avinashi Road corridor, Coimbatore.",
     description: "Designer and premium apartments situated along the prime Avinashi Road corridor. Offers upscale layouts, natural ventilation, and immediate accessibility to all key city center points.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.273181829035!2d76.994234!3d11.002683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859d3df061803%3A0x1c8b36873f272a2e!2sAvinashi%20Rd%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.9848517762443!2d77.03520498456508!3d11.039762361086286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85768904b0647%3A0xda573bb0dc0355cf!2sTHE%20ECHO%20POINT%20-%20AAWAAZ!5e0!3m2!1sen!2sus!4v1790143935350!5m2!1sen!2sus",
     images: [
       "/completed/p5/image.png"
     ],
@@ -635,7 +635,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Peelamedu, Coimbatore",
     aioSentence: "Saradha Greens by Nivasan Homes is a completed ultra-luxury gated villa community located in Peelamedu, Coimbatore.",
     description: "Ultra-luxury villas in Peelamedu, handcrafting a tranquil habitat. Offering refined living, unmatched privacy, and green surroundings in one of Coimbatore's most sought-after residential neighborhoods.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3262694119957!2d76.9849178!3d11.0092523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ab93a151b7%3A0x6b80cd9b9c1d6ffb!2sPeelamedu%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1513560195785!2d76.987057784564!3d11.027268661128137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba85915308cb0b3%3A0xb9bbfa75d2ed01c9!2sNivasan%20Saradha%20Greens!5e0!3m2!1sen!2sus!4v1790144013791!5m2!1sen!2sus",
     images: [
       "/completed/p6/1.png",
       "/completed/p6/2.png",
@@ -675,7 +675,7 @@ const projectsData: Record<string, ProjectDetails> = {
     location: "Gandhi Nagar, Vilankurichi, Coimbatore",
     aioSentence: "Nivasan Springs is a premium apartment development located in the prime residential area of Gandhi Nagar, Vilankurichi, Coimbatore.",
     description: "Nivasan Springs is a completed premium 2 BHK apartment community located in Gandhi Nagar, Vilankurichi, Coimbatore, close to schools, hospitals and shopping centres. It was designed for the lifestyle of emerging millennials, with exciting configurations that balance functional needs and lifestyle aspirations.\n\nThe project follows a futuristic design approach intended to promote a healthy neighbourhood while delivering high quality, comfort and safety. Premium specifications, finishes and fixtures are engineered throughout, culminating in an authentic contemporary structure — close to every convenience, yet private in every way.",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1417086820515!2d77.0185984!3d11.0183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzA1LjkiTiA3N8KwMDEnMDcuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin",
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.961994677092!2d77.0038956845653!3d11.041476361080528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859002df768a5%3A0xebb7a0e1c3f041de!2sNivasan%20springs!5e0!3m2!1sen!2sus!4v1790143976081!5m2!1sen!2sus",
     images: [
       "/completed/p7/1.jpg",
       "/completed/p7/2.jpg",
@@ -762,7 +762,7 @@ export default async function ProjectDetailsPage({
 
   if (!project) {
     return (
-      <main className="bg-background-luxury min-h-screen pt-16 md:pt-20 pb-16 md:pt-28 md:pb-20 font-sans flex items-center justify-center">
+      <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans flex items-center justify-center">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-primary mb-4">Project Not Found</h2>
           <Link
@@ -888,7 +888,7 @@ export default async function ProjectDetailsPage({
         />
       )}
 
-      <main className="bg-background-luxury min-h-screen pt-16 md:pt-20 pb-16 md:pt-28 md:pb-20 font-sans text-text-onyx">
+      <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans text-text-onyx">
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-16">
 
           {/* HEADER HERO SECTION */}
@@ -1071,12 +1071,11 @@ export default async function ProjectDetailsPage({
                 <h3 className="text-xs uppercase tracking-widest font-extrabold text-text-onyx px-3 pt-2 pb-3 flex items-center gap-2">
                   <MapPin size={14} className="text-accent" /> Location Map
                 </h3>
-                <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3]">
+                <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3] relative">
                   <iframe
                     src={project.mapEmbedUrl}
                     width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
+                    style={{ border: 0, height: "calc(100% + 65px)", marginTop: "-65px" }}
                     allowFullScreen={true}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"

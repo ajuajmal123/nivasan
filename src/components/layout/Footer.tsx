@@ -74,9 +74,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black-luxury text-white pt-16 pb-8 overflow-hidden border-t border-white/5">
+    <footer className="bg-black-luxury text-white pt-10 pb-6 overflow-hidden border-t border-white/5">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-6 border-b border-white/10">
           {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
@@ -88,7 +88,7 @@ export default function Footer() {
               </p>
             </div>
             {/* Social Links */}
-            <div className="flex items-center space-x-6 mt-6">
+            <div className="flex items-center space-x-6 mt-4">
               <a
                 href="https://www.instagram.com/nivasanhomes/"
                 target="_blank"
@@ -130,10 +130,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3">
               Navigation
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
@@ -188,14 +188,14 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-4">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3">
               Head Office
             </h4>
             <p className="text-xs text-white/70 leading-relaxed mb-3 font-sans">
               No. 252, Avinashi Road (Opp: Varadharaja Mills),<br />
               Peelamedu, Coimbatore - 641 004
             </p>
-            <div className="space-y-3.5 text-xs text-white/70">
+            <div className="space-y-2.5 text-xs text-white/70">
               <div>
                 <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
                   Customer Advisory
@@ -225,14 +225,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-6 mt-6 text-[10px] text-white/40 tracking-wider">
-          <p>&copy; {currentYear} Nivasan Homes Private Limited. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors duration-300">
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center pt-4 mt-4 text-[10px] text-white/40 tracking-wider gap-4 md:gap-8 text-center">
+          <div className="flex items-center space-x-4 md:space-x-6">
+            <a href="/Nivasan_Homes_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 whitespace-nowrap">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-white transition-colors duration-300">
+            <a href="/Nivasan_Homes_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 whitespace-nowrap">
               Terms & Conditions
+            </a>
+          </div>
+
+          <p className="whitespace-nowrap">&copy; {currentYear} Nivasan Homes Private Limited. All rights reserved.</p>
+
+          <div className="flex items-center gap-1.5 whitespace-nowrap">
+            <span className="font-normal">Designed by</span>
+            <a href="https://www.instagram.com/nashcreations.in" className="blinking-text" target="_blank" rel="noopener noreferrer">
+              Creations
             </a>
           </div>
         </div>

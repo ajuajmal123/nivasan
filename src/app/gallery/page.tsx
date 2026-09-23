@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function GalleryPage() {
   return (
-    <main className="flex-1 pt-20">
+    <main className="flex-1 pt-10">
       <Lifestyle />
     </main>
   );

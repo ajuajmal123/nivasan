@@ -136,7 +136,7 @@ export default function ProjectsList() {
   };
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-16 md:pt-20 pb-16 md:pt-28 md:pb-20 font-sans">
+    <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         {/* Header Section - Centered, Heading "Our Creations" Only */}
         <div className="text-center max-w-3xl mx-auto mb-8">

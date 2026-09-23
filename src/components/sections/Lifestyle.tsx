@@ -57,11 +57,11 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
 
 export default function Lifestyle() {
   return (
-    <section id="gallery" className="py-28 md:py-40 bg-background-luxury overflow-hidden">
+    <section id="gallery" className="py-16 md:py-10 bg-background-luxury overflow-hidden">
       <div className="max-w-[1600px] mx-auto px-6 md:px-12">
         
         {/* Header */}
-        <div className="mb-20 md:mb-28 text-center max-w-xl mx-auto">
+        <div className="mb-10 md:mb-16 text-center max-w-xl mx-auto">
           <Reveal delay={0.1}>
             <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6 block">
               The Nivasan Life

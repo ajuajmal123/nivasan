@@ -130,7 +130,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 bg-primary z-45 flex flex-col justify-between p-8 pt-16 md:pt-20 md:pt-28 md:hidden"
+            className="fixed inset-0 bg-primary z-45 flex flex-col justify-between p-8 pt-16 md:pt-10 md:pt-16 md:hidden"
           >
             {/* Background elements */}
             <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">

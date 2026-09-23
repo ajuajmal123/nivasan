@@ -72,8 +72,7 @@ export default function ContactCTA() {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3262694119957!2d76.9849178!3d11.0092523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859ab93a151b7%3A0x6b80cd9b9c1d6ffb!2sPeelamedu%2C%20Coimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
           width="100%"
-          height="100%"
-          style={{ border: 0, filter: "grayscale(100%) opacity(35%) contrast(100%)" }}
+          style={{ border: 0, filter: "grayscale(100%) opacity(35%) contrast(100%)", height: "calc(100% + 65px)", marginTop: "-65px" }}
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
@@ -88,7 +87,7 @@ export default function ContactCTA() {
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
-        
+
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
           <Reveal delay={0.1} width="full">
@@ -106,10 +105,10 @@ export default function ContactCTA() {
 
         {/* 2-Column Responsive Layout: Contact Info & Inquiry Form */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-[1500px] mx-auto mb-16">
-          
+
           {/* Left Column: Essential Contacts */}
           <div className="lg:col-span-5 flex flex-col gap-5 justify-between">
-            
+
             {/* Card 1: Call Support */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -305,9 +304,8 @@ export default function ContactCTA() {
                         required
                         value={formData.project}
                         onChange={(e) => setFormData({ ...formData, project: e.target.value })}
-                        className={`w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 pr-10 text-sm font-bold transition-colors appearance-none cursor-pointer ${
-                          formData.project === "" ? "text-primary/40" : "text-black-luxury"
-                        }`}
+                        className={`w-full bg-white border border-[#eae7e3] focus:border-primary focus:outline-none rounded-lg px-4 py-2.5 pr-10 text-sm font-bold transition-colors appearance-none cursor-pointer ${formData.project === "" ? "text-primary/40" : "text-black-luxury"
+                          }`}
                       >
                         <option value="" disabled className="text-primary/40">Select a project layout...</option>
                         {projectsOptions.map((proj) => (
@@ -340,6 +338,18 @@ export default function ContactCTA() {
                       {errorMessage}
                     </p>
                   )}
+
+                  <div className="flex items-start gap-2.5 mt-2">
+                    <input
+                      type="checkbox"
+                      id="terms-contact"
+                      required
+                      className="mt-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary bg-white border-[#eae7e3] rounded focus:ring-primary focus:ring-1 cursor-pointer shrink-0"
+                    />
+                    <label htmlFor="terms-contact" className="text-[10px] sm:text-xs text-black-luxury/70 font-medium leading-relaxed">
+                      I agree to the <a href="/Nivasan_Homes_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Terms & Conditions</a> and <a href="/Nivasan_Homes_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Privacy Policy</a> (Compliant with DPDP Act).
+                    </label>
+                  </div>
 
                   {/* Submit Button */}
                   <button

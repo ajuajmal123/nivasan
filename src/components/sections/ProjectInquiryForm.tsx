@@ -170,6 +170,18 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
               </p>
             )}
 
+            <div className="flex items-start gap-2.5 mt-2">
+              <input
+                type="checkbox"
+                id="terms-project"
+                required
+                className="mt-0.5 w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary bg-white border-[#eae7e3] rounded focus:ring-primary focus:ring-1 cursor-pointer shrink-0"
+              />
+              <label htmlFor="terms-project" className="text-[10px] sm:text-xs text-black-luxury/70 font-medium leading-relaxed">
+                I agree to the <a href="/Nivasan_Homes_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Terms & Conditions</a> and <a href="/Nivasan_Homes_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="text-accent font-bold hover:underline">Privacy Policy</a> (Compliant with DPDP Act).
+              </label>
+            </div>
+
             {/* Submit Button */}
             <button
               type="submit"
