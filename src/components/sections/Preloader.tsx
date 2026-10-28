@@ -70,7 +70,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
           {/* Progress Indicator */}
           <div className="w-full max-w-xs md:max-w-md flex flex-col items-center space-y-4">
-            <div className="relative w-full h-[1px] bg-white/10 overflow-hidden">
+            <div className="relative w-full h-px bg-white/10 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}

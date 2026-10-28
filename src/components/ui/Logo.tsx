@@ -13,8 +13,6 @@ interface LogoProps {
 export default function Logo({
   className = "",
   light = false,
-  showText = true,
-  textColor = "primary",
   size,
 }: LogoProps) {
   const isLight = light;
@@ -32,7 +30,7 @@ export default function Logo({
           }`}
         />
       ) : (
-        <div className="relative w-[180px] md:w-[220px] transition-all duration-500">
+        <div className="relative w-45 md:w-55 transition-all duration-500">
           <Image
             src={logoImg}
             alt="Nivasan Homes Logo"

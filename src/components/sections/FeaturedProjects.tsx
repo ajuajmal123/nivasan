@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface Project {
@@ -89,9 +90,9 @@ export default function FeaturedProjects() {
   return (
     <section id="projects" className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-[#eae7e3]">
       {/* Linear backdrop grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-black-luxury">
@@ -100,7 +101,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* 3-Column Projects Grid - Staggered Animated */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-400 mx-auto">
           {projects.slice(0, 3).map((project, idx) => (
             <motion.div
               key={project.id}
@@ -111,16 +112,18 @@ export default function FeaturedProjects() {
             >
               <Link
                 href={`/projects/${project.id}`}
-                className="group relative overflow-hidden bg-[#1c1a17] border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-[3/4] w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
+                className="group relative overflow-hidden bg-[#1c1a17] border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
               >
                 {/* Background image & gradient overlay */}
-                <div className="absolute -inset-[3px] z-0 overflow-hidden">
-                  <img
+                <div className="absolute -inset-0.75 z-0 overflow-hidden">
+                  <Image
                     src={project.image}
                     alt={project.name}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover scale-[1.03] transition-transform duration-750 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
                 </div>
 
                 {/* Top Left Status Badge */}

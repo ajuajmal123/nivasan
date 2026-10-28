@@ -1,7 +1,7 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Calendar, Clock, User } from "lucide-react";
+import { ArrowRight, BookOpen, Calendar, Clock } from "lucide-react";
 import { blogs } from "@/data/blogs";
 
 export const metadata: Metadata = {
@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans text-primary relative">
+    <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-primary relative">
       {/* Subtle background pattern grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12">
+      <div className="max-w-400 mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12">
         
         {/* Header Section */}
         <div className="max-w-3xl mx-auto border-b border-black-luxury/10 pb-8 text-center w-full">
@@ -27,7 +27,7 @@ export default function BlogPage() {
 
         {/* Blog Posts Grid */}
         {blogs.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1500px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-375">
             {blogs.map((blog) => (
               <article 
                 key={blog.slug} 
@@ -39,7 +39,7 @@ export default function BlogPage() {
                   className="w-full h-48 relative overflow-hidden flex items-end p-6 border-b border-[#eae7e3]"
                 >
                   {/* Overlay shadow */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-90 pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-90 pointer-events-none" />
                   
                   <span className="relative z-10 bg-accent text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1.5 rounded">
                     {blog.category}
@@ -47,7 +47,7 @@ export default function BlogPage() {
                 </div>
 
                 {/* Card Body */}
-                <div className="p-6 md:p-8 flex flex-col flex-grow justify-between gap-6">
+                <div className="p-6 md:p-8 flex flex-col grow justify-between gap-6">
                   <div className="flex flex-col gap-3">
                     {/* Date / Read time */}
                     <div className="flex items-center gap-4 text-[10px] text-primary/50 font-bold uppercase tracking-wider">

@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface Project {
   id: string;
@@ -136,8 +137,8 @@ export default function ProjectsList() {
   };
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+    <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans">
+      <div className="max-w-400 mx-auto px-6 md:px-12">
         {/* Header Section - Centered, Heading "Our Creations" Only */}
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none select-none">
@@ -164,21 +165,24 @@ export default function ProjectsList() {
         </div>
 
         {/* Projects Grid - Fully Responsive */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-[1600px] mx-auto">
-          {filteredProjects.map((project) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-400 mx-auto">
+          {filteredProjects.map((project, index) => (
             <Link
               key={project.id}
               href={`/projects/${project.id}`}
-              className="group relative overflow-hidden bg-black-luxury border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-[3/4] w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden bg-black-luxury border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
             >
               {/* Background image & gradient overlay */}
-              <div className="absolute -inset-[3px] z-0 overflow-hidden">
-                <img
+              <div className="absolute -inset-0.75 z-0 overflow-hidden">
+                <Image
                   src={project.image}
                   alt={project.name}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  loading={index < 3 ? "eager" : "lazy"}
                   className="w-full h-full object-cover scale-[1.03] transition-transform duration-750 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
               </div>
 
               {/* Status Badge */}

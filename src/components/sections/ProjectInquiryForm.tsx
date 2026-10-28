@@ -49,7 +49,7 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
       } else {
         setErrorMessage(result.message || "Failed to submit inquiry. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setErrorMessage("A network error occurred. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
@@ -69,13 +69,14 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
             onSubmit={handleSubmit}
             className="bg-white border border-[#eae7e3] p-6 md:p-8 rounded-xl shadow-lg relative flex flex-col gap-4"
           >
-            {/* Honeypot field to prevent spam bots */}
+            {/* Honeypot field to prevent spam bots. Its id/name deliberately avoid words like
+                "website"/"url" so browser and password-manager autofill don't fill it for real users. */}
             <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
-              <label htmlFor="website">Leave this field blank if you are human</label>
+              <label htmlFor="nv-hp-project">Leave this field blank if you are human</label>
               <input
-                id="website"
+                id="nv-hp-project"
                 type="text"
-                name="website"
+                name="nv_hp"
                 tabIndex={-1}
                 autoComplete="off"
                 value={formData.website}
@@ -203,7 +204,7 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            className="bg-white border border-emerald-600/30 p-8 rounded-xl shadow-lg relative flex flex-col items-center justify-center text-center gap-4 min-h-[440px]"
+            className="bg-white border border-emerald-600/30 p-8 rounded-xl shadow-lg relative flex flex-col items-center justify-center text-center gap-4 min-h-110"
           >
             <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-inner">
               <CheckCircle size={30} />

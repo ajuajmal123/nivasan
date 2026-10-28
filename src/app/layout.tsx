@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col bg-background-luxury text-text-onyx font-sans">
         <LenisProvider>
           <Navbar />
-          <div className="flex-1 flex flex-col pt-0">
+          <div className="site-content flex-1 flex flex-col">
             {children}
           </div>
           <Footer />

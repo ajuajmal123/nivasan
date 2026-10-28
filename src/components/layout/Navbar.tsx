@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
-import Button from "../ui/Button";
 import Logo from "../ui/Logo";
 
 const navLinks = [
@@ -34,7 +33,7 @@ export default function Navbar() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -63,18 +62,18 @@ export default function Navbar() {
         return () => clearTimeout(timer);
       }
     }
-  }, [pathname]);
+  }, [pathname, isHome]);
 
   return (
     <>
       <header
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-out flex items-center ${
           shouldBeGlass
-            ? "glass-navbar h-[72px] md:h-[89px] shadow-sm"
-            : "bg-transparent h-[88px] md:h-[105px]"
+            ? "glass-navbar h-(--navbar-height) shadow-sm"
+            : "bg-transparent h-(--navbar-height-tall)"
         }`}
       >
-        <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between">
+        <div className="w-full max-w-400 mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group z-50 flex items-center">
             <Logo
@@ -130,7 +129,9 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 bg-primary z-45 flex flex-col justify-between p-8 pt-16 md:pt-10 md:pt-16 md:hidden"
+            className={`fixed inset-0 bg-primary z-45 flex flex-col justify-between p-8 md:hidden ${
+              shouldBeGlass ? "pt-[calc(var(--navbar-height)+2rem)]" : "pt-[calc(var(--navbar-height-tall)+2rem)]"
+            }`}
           >
             {/* Background elements */}
             <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">
@@ -155,7 +156,7 @@ export default function Navbar() {
                       }}
                       className="flex items-baseline group"
                     >
-                      <span className="font-sans text-accent text-sm tracking-[0.1em] mr-4 font-bold">
+                      <span className="font-sans text-accent text-sm tracking-widest mr-4 font-bold">
                         {link.num}
                       </span>
                       <span className={`font-sans text-3xl font-extrabold transition-colors duration-300 ${

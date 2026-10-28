@@ -11,7 +11,7 @@ Built with a modern stack leveraging **Next.js**, **React 19**, **Tailwind CSS v
 * **Architectural Showcase**: Dynamic project detail pages (`/projects/[id]`) presenting specifications, location advantages, and detailed floor plans.
 * **Premium Physics-based Animations**: 
   * Smooth-scrolling scroll physics managed by **Lenis**.
-  * Fluid entrance animations, text transformations, and staggered layouts using **Framer Motion** and **GSAP**.
+  * Fluid entrance animations, text transformations, and staggered layouts using **Framer Motion**.
 * **Interactive Content Sections**:
   * Staggered Landmark Projects grid with theme-aligned ongoing (Gold) and completed (Green) status tags.
   * Image galleries with interactive media lightboxes.
@@ -27,7 +27,7 @@ Built with a modern stack leveraging **Next.js**, **React 19**, **Tailwind CSS v
 * **Framework**: [Next.js 16.2.9 (App Router)](https://nextjs.org/)
 * **Library**: [React 19.2.4](https://react.dev/)
 * **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-* **Animations**: [Framer Motion](https://www.framer.com/motion/) & [GSAP (GreenSock)](https://greensock.com/)
+* **Animations**: [Framer Motion](https://www.framer.com/motion/)
 * **Scroll Physics**: [@studio-freight/lenis](https://github.com/studio-freight/lenis)
 * **Icons**: [Lucide React](https://lucide.dev/)
 
@@ -54,7 +54,6 @@ nivasan/
 │   │   ├── sections/       # Section-specific components (Hero, FAQ, Timeline, gallery)
 │   │   └── ui/             # Reusable UI controls (Logo, Preloader, StickyCTA)
 │   └── data/               # Static dataset values (blogs list, timelines)
-├── scripts/                # Asset pipeline scripts
 ├── package.json            # Dependencies and scripts definitions
 ├── tsconfig.json           # TypeScript configuration
 └── next.config.ts          # Next.js bundler settings

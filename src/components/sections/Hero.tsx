@@ -26,7 +26,7 @@ export default function Hero() {
       </div>
 
       {/* Content wrapper - Centered */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-0">
+      <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full pt-0">
         <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-5 sm:gap-6">
           
           {/* Animated Heading - Centered and responsive */}
@@ -52,8 +52,8 @@ export default function Hero() {
       </div>
 
       {/* Side Vertical Lines matching reference layout */}
-      <div className="absolute inset-y-0 left-[8%] w-[1px] bg-white/[0.02] hidden lg:block pointer-events-none z-10" />
-      <div className="absolute inset-y-0 right-[8%] w-[1px] bg-white/[0.02] hidden lg:block pointer-events-none z-10" />
+      <div className="absolute inset-y-0 left-[8%] w-px bg-white/2 hidden lg:block pointer-events-none z-10" />
+      <div className="absolute inset-y-0 right-[8%] w-px bg-white/2 hidden lg:block pointer-events-none z-10" />
     </section>
   );
 }

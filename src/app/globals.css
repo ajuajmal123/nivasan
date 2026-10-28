@@ -15,6 +15,34 @@
 :root {
   --background: #F8F7F2;
   --foreground: #050505;
+
+  /* Fixed navbar heights (single source of truth, used by Navbar.tsx and the page offset below).
+     --navbar-height: compact/glass bar (all inner pages, and Home once scrolled)
+     --navbar-height-tall: transparent bar over the Home hero before scrolling */
+  --navbar-height: 72px;
+  --navbar-height-tall: 88px;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --navbar-height: 89px;
+    --navbar-height-tall: 105px;
+  }
+}
+
+/* Keeps page content clear of the fixed navbar (applied once, in the root layout) */
+.site-content {
+  padding-top: var(--navbar-height);
+}
+
+/* Opt-out for full-screen heroes that are meant to sit behind the transparent navbar (Home) */
+.under-navbar {
+  margin-top: calc(-1 * var(--navbar-height));
+}
+
+/* Anchor targets (e.g. /#contact) stop below the fixed navbar instead of under it */
+[id] {
+  scroll-margin-top: var(--navbar-height);
 }
 
 html {

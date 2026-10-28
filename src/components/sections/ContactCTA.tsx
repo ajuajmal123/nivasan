@@ -46,7 +46,7 @@ export default function ContactCTA() {
       } else {
         setErrorMessage(result.message || "Failed to submit inquiry. Please try again.");
       }
-    } catch (error) {
+    } catch {
       setErrorMessage("A network error occurred. Please check your connection and try again.");
     } finally {
       setIsSubmitting(false);
@@ -66,7 +66,7 @@ export default function ContactCTA() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-12 md:py-16 bg-background-luxury text-primary relative overflow-hidden border-t border-[#eae7e3]">
+    <section id="contact" className="py-16 bg-background-luxury text-primary relative overflow-hidden border-t border-[#eae7e3]">
       {/* Interactive grayscale map backdrop for office location */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden pointer-events-none select-none">
         <iframe
@@ -80,13 +80,13 @@ export default function ContactCTA() {
           className="w-full h-full object-cover scale-105 pointer-events-none"
         />
         {/* Blending overlay to ensure text readability while keeping map details visible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background-luxury/80 via-background-luxury/60 to-background-luxury/80 pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-b from-background-luxury/80 via-background-luxury/60 to-background-luxury/80 pointer-events-none" />
       </div>
 
       {/* Subtle grid pattern backdrop design */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-400 mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
@@ -104,7 +104,7 @@ export default function ContactCTA() {
         </div>
 
         {/* 2-Column Responsive Layout: Contact Info & Inquiry Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-[1500px] mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 max-w-375 mx-auto mb-16">
 
           {/* Left Column: Essential Contacts */}
           <div className="lg:col-span-5 flex flex-col gap-5 justify-between">
@@ -226,13 +226,14 @@ export default function ContactCTA() {
                   onSubmit={handleSubmit}
                   className="bg-white border border-[#eae7e3] p-7 md:p-8 rounded-xl shadow-lg relative flex flex-col gap-4"
                 >
-                  {/* Honeypot field to prevent spam bots */}
+                  {/* Honeypot field to prevent spam bots. Its id/name deliberately avoid words like
+                      "website"/"url" so browser and password-manager autofill don't fill it for real users. */}
                   <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
-                    <label htmlFor="website-contact">Leave this field blank if you are human</label>
+                    <label htmlFor="nv-hp-contact">Leave this field blank if you are human</label>
                     <input
-                      id="website-contact"
+                      id="nv-hp-contact"
                       type="text"
-                      name="website"
+                      name="nv_hp"
                       tabIndex={-1}
                       autoComplete="off"
                       value={formData.website}
@@ -367,7 +368,7 @@ export default function ContactCTA() {
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0 }}
-                  className="bg-white border border-emerald-600/30 p-8 rounded-xl shadow-lg relative flex flex-col items-center justify-center text-center gap-4 min-h-[440px]"
+                  className="bg-white border border-emerald-600/30 p-8 rounded-xl shadow-lg relative flex flex-col items-center justify-center text-center gap-4 min-h-110"
                 >
                   <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center shadow-inner">
                     <CheckCircle size={30} />

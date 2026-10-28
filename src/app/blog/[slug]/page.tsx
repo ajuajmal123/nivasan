@@ -35,11 +35,11 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans text-primary relative">
+    <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-primary relative">
       {/* Subtle background pattern grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10">
+      <div className="max-w-300 mx-auto px-6 md:px-12 relative z-10">
         
         {/* Navigation Breadcrumb & Back button */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -62,10 +62,10 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Blog Header Card */}
         <div 
           style={{ background: blog.coverImage }}
-          className="w-full rounded-2xl p-8 md:p-16 text-white flex flex-col justify-end gap-6 shadow-xl border border-white/5 relative overflow-hidden min-h-[300px] md:min-h-[400px]"
+          className="w-full rounded-2xl p-8 md:p-16 text-white flex flex-col justify-end gap-6 shadow-xl border border-white/5 relative overflow-hidden min-h-75 md:min-h-100"
         >
           {/* Subtle overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
 
           <div className="relative z-10 flex flex-col gap-4 max-w-4xl">
             <span className="inline-block bg-accent/20 border border-accent/40 text-accent text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full w-max">
@@ -125,6 +125,28 @@ export default async function BlogPostPage({ params }: PageProps) {
                     </Tag>
                   );
                 }
+                if (section.type === "quote") {
+                  return (
+                    <blockquote
+                      key={idx}
+                      className="border-l-4 border-accent pl-4 my-6 text-[#3a3a3a] text-sm md:text-base leading-relaxed font-sans font-semibold italic"
+                    >
+                      {section.text}
+                    </blockquote>
+                  );
+                }
+                if (section.type === "list") {
+                  return (
+                    <ul
+                      key={idx}
+                      className="list-disc pl-6 mb-6 space-y-2 text-[#3a3a3a] text-sm md:text-base leading-relaxed font-sans font-medium"
+                    >
+                      {(section.items || []).map((item, itemIdx) => (
+                        <li key={itemIdx}>{item}</li>
+                      ))}
+                    </ul>
+                  );
+                }
                 return null;
               })}
             </div>
@@ -161,7 +183,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Direct Project Inquiry CTA card */}
             <div className="bg-primary text-white border border-primary-dark p-6 md:p-8 rounded-2xl shadow-lg relative overflow-hidden flex flex-col gap-5">
               {/* Graphic accents */}
-              <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:2rem_2rem] pointer-events-none" />
+              <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-size-[2rem_2rem] pointer-events-none" />
               <div className="absolute -right-16 -top-16 w-36 h-36 rounded-full bg-accent/10 pointer-events-none blur-xl" />
 
               <span className="text-[9px] font-black uppercase tracking-[0.25em] text-accent block">
@@ -171,7 +193,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 Interested in Vakulam Apartments?
               </h3>
               <p className="text-xs text-white/70 leading-relaxed font-medium">
-                Experience premium living close to Coimbatore's IT corridor near Tidel Park. Lock in site visits or request brochure details today.
+                Experience premium living close to Coimbatore&apos;s IT corridor near Tidel Park. Lock in site visits or request brochure details today.
               </p>
               <div className="pt-2">
                 <Link

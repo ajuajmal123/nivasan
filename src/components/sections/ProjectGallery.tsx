@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { ZoomIn, ZoomOut, RotateCcw, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface ProjectGalleryProps {
   projectId: string;
@@ -15,31 +16,15 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
   const [activeIndex, setActiveIndex] = useState(0);
   const [zoom, setZoom] = useState(1);
 
-  // Keyboard navigation support
-  useEffect(() => {
-    if (!isOpen) return;
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowRight") handleNext();
-      else if (e.key === "ArrowLeft") handlePrev();
-      else if (e.key === "Escape") handleClose();
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, activeIndex]);
-
   const handleOpen = (index: number) => {
     setActiveIndex(index);
     setZoom(1);
     setIsOpen(true);
-    document.body.style.overflow = "hidden"; // Prevent scrolling behind modal
   };
 
   const handleClose = () => {
     setIsOpen(false);
     setZoom(1);
-    document.body.style.overflow = "auto";
   };
 
   const handleNext = () => {
@@ -51,6 +36,38 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
     setZoom(1);
     setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
   };
+
+  // Lock background scroll while the lightbox is open; always restored on close or unmount
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [isOpen]);
+
+  // Keyboard navigation support
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") {
+        setZoom(1);
+        setActiveIndex((prev) => (prev + 1) % images.length);
+      } else if (e.key === "ArrowLeft") {
+        setZoom(1);
+        setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+      } else if (e.key === "Escape") {
+        setIsOpen(false);
+        setZoom(1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, images.length]);
 
   const handleZoomIn = () => {
     setZoom((z) => Math.min(z + 0.5, 3));
@@ -165,10 +182,13 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
       return `Saradha Greens ${getGreensFeature(idx)} — Ultra Luxury Villa in Peelamedu, Coimbatore`;
     }
     if (projectId === "nivasan-springs") {
-      return `Nivasan Springs ${getSpringsFeature(idx)} — Premium Apartment in Peelamedu, Coimbatore`;
+      return `Nivasan Springs ${getSpringsFeature(idx)} — Premium Apartment in Gandhi Nagar, Vilankurichi, Coimbatore`;
     }
     return `${projectName} Gallery ${idx + 1}`;
   };
+
+  // Don't render an empty "Project Gallery" heading when a project has no images
+  if (images.length === 0) return null;
 
   return (
     <div id="project-gallery" className="border-t border-black-luxury/10 pt-12">
@@ -187,9 +207,11 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
             onClick={() => handleOpen(index)}
             className="h-64 rounded-xl overflow-hidden border border-[#eae7e3] group cursor-pointer bg-black-luxury relative shadow-sm hover:shadow-md transition-all duration-300"
           >
-            <img
+            <Image
               src={img}
               alt={getAltText(index)}
+              fill
+              sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
               className="w-full h-full object-cover scale-[1.05] transition-all duration-500 opacity-95 group-hover:opacity-100"
             />
           </div>
@@ -203,15 +225,19 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex flex-col items-center justify-between p-4 select-none"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${projectName} image gallery`}
+            className="fixed inset-0 z-100 bg-black/95 backdrop-blur-md flex flex-col items-center justify-between p-4 select-none"
           >
             {/* Top Toolbar */}
-            <div className="w-full max-w-[1600px] flex items-center justify-between text-white/70 py-2.5 px-4 z-10">
+            <div className="w-full max-w-400 flex items-center justify-between text-white/70 py-2.5 px-4 z-10">
               <span className="text-xs uppercase tracking-widest font-extrabold text-white">
                 {projectName} — {getFeature(activeIndex)}
               </span>
               <button
                 onClick={handleClose}
+                aria-label="Close gallery"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <X size={20} />
@@ -223,6 +249,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               {/* Prev Button */}
               <button
                 onClick={handlePrev}
+                aria-label="Previous image"
                 className="absolute left-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronLeft size={24} />
@@ -258,6 +285,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               {/* Next Button */}
               <button
                 onClick={handleNext}
+                aria-label="Next image"
                 className="absolute right-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronRight size={24} />
@@ -265,7 +293,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
             </div>
 
             {/* Bottom Toolbar Controls (Zoom & Numbers) */}
-            <div className="w-full max-w-[1600px] flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-6 border-t border-white/10 z-10">
+            <div className="w-full max-w-400 flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-6 border-t border-white/10 z-10">
               <span className="text-xs uppercase tracking-widest font-extrabold text-white/50">
                 Image {activeIndex + 1} of {images.length}
               </span>
@@ -282,7 +310,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
                 </button>
 
                 {/* Vertical Divider */}
-                <div className="w-[1px] h-4 bg-white/10" />
+                <div className="w-px h-4 bg-white/10" />
 
                 <button
                   onClick={handleZoomReset}
@@ -292,7 +320,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
                   <RotateCcw size={14} className="inline mr-1" /> {zoom.toFixed(1)}x
                 </button>
 
-                <div className="w-[1px] h-4 bg-white/10" />
+                <div className="w-px h-4 bg-white/10" />
 
                 <button
                   onClick={handleZoomIn}

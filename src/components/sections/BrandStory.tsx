@@ -19,9 +19,9 @@ export default function BrandStory() {
   return (
     <section
       id="about"
-      className="py-16 md:py-12 md:py-16 bg-background-luxury overflow-hidden border-b border-[#eae7e3]"
+      className="py-16 bg-background-luxury overflow-hidden border-b border-[#eae7e3]"
     >
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Intro Section - Expanded & Centered */}
         <div className="text-center max-w-4xl mx-auto mb-12 flex flex-col items-center gap-3">
@@ -44,7 +44,7 @@ export default function BrandStory() {
 
         {/* Horizontal Stats highlight bar - Full width ribbon */}
         <div className="border-y border-accent/20 py-8 my-12 w-full">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-[1500px] mx-auto text-center items-start justify-items-center">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-375 mx-auto text-center items-start justify-items-center">
             
             {/* Stat 1 */}
             <Reveal delay={0.1}>
@@ -132,7 +132,7 @@ export default function BrandStory() {
           </div>
 
           {/* 3-Column Grid - 2 columns on mobile, 3 columns on large screens */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-[1500px] mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 max-w-375 mx-auto">
             
             {/* Value 1 */}
             <Reveal delay={0.15} width="full">
@@ -144,7 +144,7 @@ export default function BrandStory() {
                   Customer First
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-black-luxury/80 leading-relaxed font-normal">
-                  Every decision is made with the homeowner's wellbeing, budget, and lifestyle at the centre.
+                  Every decision is made with the homeowner&apos;s wellbeing, budget, and lifestyle at the centre.
                 </p>
               </div>
             </Reveal>

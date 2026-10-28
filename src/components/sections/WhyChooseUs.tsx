@@ -24,7 +24,7 @@ function ValueCard({ iconSvg, title, description, badgeColorClass, lineColorClas
       </h3>
 
       {/* Growing colored underline indicator */}
-      <div className={`w-8 h-[2px] opacity-60 my-1 transition-all duration-300 group-hover:w-16 rounded-full ${lineColorClass}`} />
+      <div className={`w-8 h-0.5 opacity-60 my-1 transition-all duration-300 group-hover:w-16 rounded-full ${lineColorClass}`} />
 
       {/* Description */}
       <p className="text-[#6D675E] text-xs leading-relaxed mt-3 group-hover:text-black-luxury transition-colors font-light">
@@ -38,7 +38,7 @@ export default function WhyChooseUs() {
   return (
     <section className="relative py-12 md:py-16 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-b border-[#eae7e3]">
       {/* Backdrop linear grid matching reference */}
-      <div className="absolute inset-0 opacity-[0.012] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.012] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[4rem_4rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

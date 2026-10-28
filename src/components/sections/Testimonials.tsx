@@ -65,7 +65,7 @@ export default function Testimonials() {
   return (
     <section className="py-16 md:py-10 bg-background-luxury overflow-hidden relative">
       {/* Decorative quotes background */}
-      <div className="absolute top-10 left-12 font-serif text-[18rem] text-black-luxury/[0.02] leading-none select-none pointer-events-none">
+      <div className="absolute top-10 left-12 font-serif text-[18rem] text-black-luxury/2 leading-none select-none pointer-events-none">
         “
       </div>
       
@@ -81,7 +81,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Core Slider */}
-        <div className="min-h-[300px] md:min-h-[260px] flex flex-col justify-between items-center text-center">
+        <div className="min-h-75 md:min-h-65 flex flex-col justify-between items-center text-center">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={activeIdx}

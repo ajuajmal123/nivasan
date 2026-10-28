@@ -29,9 +29,9 @@ const homepageFAQs = [
 export default function FAQSection() {
   return (
     <section className="relative py-12 md:py-16 bg-background-luxury overflow-hidden border-b border-[#eae7e3]">
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
+      <div className="max-w-300 mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">

@@ -2,7 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import Logo from "../ui/Logo";
 
 const FacebookIcon = ({ size = 18 }: { size?: number }) => (
@@ -68,14 +67,9 @@ const TwitterIcon = ({ size = 18 }: { size?: number }) => (
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <footer className="bg-black-luxury text-white pt-10 pb-6 overflow-hidden border-t border-white/5">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="max-w-400 mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-6 border-b border-white/10">
           {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col justify-between">

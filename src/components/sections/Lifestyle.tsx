@@ -37,7 +37,7 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
         <img
           src={image}
           alt={title}
-          className="w-full h-[115%] absolute -top-[7.5%] object-cover transform scale-100 group-hover:scale-105 transition-all duration-[1.8s] ease-out"
+          className="w-full h-[115%] absolute top-[-7.5%] object-cover transform scale-100 group-hover:scale-105 transition-all duration-[1.8s] ease-out"
         />
 
         {/* Text Details overlay */}
@@ -45,7 +45,7 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
           <span className="font-serif text-[10px] tracking-widest text-accent">
             {num}
           </span>
-          <span className="h-[1px] w-4 bg-accent/60" />
+          <span className="h-px w-4 bg-accent/60" />
           <h3 className="font-serif text-lg md:text-xl font-light tracking-wide">
             {title}
           </h3>
@@ -58,7 +58,7 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
 export default function Lifestyle() {
   return (
     <section id="gallery" className="py-16 md:py-10 bg-background-luxury overflow-hidden">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Header */}
         <div className="mb-10 md:mb-16 text-center max-w-xl mx-auto">

@@ -56,11 +56,11 @@ export default function Timeline() {
   const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="py-16 md:py-12 md:py-16 bg-white relative overflow-hidden">
+    <section id="timeline" ref={containerRef} className="py-16 bg-white relative overflow-hidden">
       {/* Subtle background decoration grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12">
+      <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Header - Centered via width="full" on Reveal */}
         <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">
@@ -81,12 +81,12 @@ export default function Timeline() {
         <div className="relative max-w-4xl mx-auto">
           
           {/* Vertical central tracking line (Desktop) / Left tracking line (Mobile) */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-black-luxury/5 -translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-black-luxury/5 -translate-x-1/2" />
           
           {/* Scroll-driven gold progression line */}
           <motion.div
             style={{ scaleY, originY: 0 }}
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-accent -translate-x-1/2"
+            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-accent -translate-x-1/2"
           />
 
           {/* Milestones list */}

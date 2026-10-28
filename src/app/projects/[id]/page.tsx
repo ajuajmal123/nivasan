@@ -1,6 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 import { ArrowLeft, MapPin, Download } from "lucide-react";
 import ProjectInquiryForm from "@/components/sections/ProjectInquiryForm";
 import ProjectGallery from "@/components/sections/ProjectGallery";
@@ -750,6 +752,14 @@ export async function generateStaticParams() {
   }));
 }
 
+// Unknown project IDs return a real 404 instead of being rendered on demand
+export const dynamicParams = false;
+
+// Escape "<" so JSON-LD content can never close the <script> tag early
+function toJsonLd(data: unknown): string {
+  return JSON.stringify(data).replace(/</g, "\\u003c");
+}
+
 export default async function ProjectDetailsPage({
   params,
 }: {
@@ -761,19 +771,7 @@ export default async function ProjectDetailsPage({
   const project = projectsData[id];
 
   if (!project) {
-    return (
-      <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans flex items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-primary mb-4">Project Not Found</h2>
-          <Link
-            href="/projects"
-            className="text-accent font-bold hover:underline cursor-pointer"
-          >
-            Back to Projects
-          </Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   // JSON-LD Structured Data
@@ -871,25 +869,25 @@ export default async function ProjectDetailsPage({
       {/* Schema Injection */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(organizationSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(listingSchema) }}
+        dangerouslySetInnerHTML={{ __html: toJsonLd(listingSchema) }}
       />
       {faqSchema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(faqSchema) }}
         />
       )}
 
-      <main className="bg-background-luxury min-h-screen pt-16 md:pt-10 pb-16 md:pt-16 md:pb-10 font-sans text-text-onyx">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex flex-col gap-16">
+      <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-text-onyx">
+        <div className="max-w-400 mx-auto px-6 md:px-12 flex flex-col gap-16">
 
           {/* HEADER HERO SECTION */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-black-luxury/10 pb-12">
@@ -938,16 +936,19 @@ export default async function ProjectDetailsPage({
             </div>
 
             {/* Right Hero Showcase Image */}
-            <div className="lg:col-span-6 h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
+            <div className="lg:col-span-6 h-75 sm:h-100 rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
               <a href="#project-gallery" className="absolute inset-0 z-10 cursor-pointer">
-                <div className="absolute -inset-[3px] overflow-hidden">
-                  <img
+                <div className="absolute -inset-0.75 overflow-hidden">
+                  <Image
                     src={project.images[0]}
                     alt={`${project.name} Hero Elevation`}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    loading="eager"
                     className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-linear-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Visual hover indicator */}
                 <div className="absolute inset-0 bg-black-luxury/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
@@ -987,7 +988,7 @@ export default async function ProjectDetailsPage({
                 {project.aioSentence && (
                   <div className="border-l-4 border-accent pl-4 my-2">
                     <p className="text-text-onyx font-extrabold text-base leading-relaxed italic">
-                      "{project.aioSentence}"
+                      &ldquo;{project.aioSentence}&rdquo;
                     </p>
                   </div>
                 )}
@@ -997,23 +998,25 @@ export default async function ProjectDetailsPage({
               </div>
 
               {/* Full Specs List */}
-              <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
-                <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
-                  Specifications & Details
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
-                  {project.specs.map((spec, index) => (
-                    <div key={index} className="flex flex-col border-b border-black-luxury/5 pb-2">
-                      <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
-                        {spec.label}
-                      </span>
-                      <span className="text-sm text-text-onyx font-extrabold mt-1">
-                        {spec.value}
-                      </span>
-                    </div>
-                  ))}
+              {project.specs.length > 0 && (
+                <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
+                  <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                    Specifications & Details
+                  </h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                    {project.specs.map((spec, index) => (
+                      <div key={index} className="flex flex-col border-b border-black-luxury/5 pb-2">
+                        <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
+                          {spec.label}
+                        </span>
+                        <span className="text-sm text-text-onyx font-extrabold mt-1">
+                          {spec.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Amenities Section */}
               {project.amenities && project.amenities.length > 0 && (
@@ -1031,13 +1034,9 @@ export default async function ProjectDetailsPage({
                   </div>
                 </div>
               )}
-            </div>
-
-            {/* RIGHT COLUMN: Sticky Sidebar Actions (Map, Advantages, Inquiry Form) */}
-            <div className="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-28">
 
               {/* Location advantages */}
-              {project.locationAdvantages && (
+              {project.locationAdvantages && project.locationAdvantages.length > 0 && (
                 <div className="bg-white border border-[#eae7e3] p-6 md:p-8 rounded-xl shadow-sm">
                   <h3 className="text-lg font-bold text-text-onyx mb-5 border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
                     Location Advantages
@@ -1067,24 +1066,28 @@ export default async function ProjectDetailsPage({
               )}
 
               {/* Map */}
-              <div className="bg-white border border-[#eae7e3] rounded-xl overflow-hidden p-3 flex flex-col h-[320px] shadow-sm">
-                <h3 className="text-xs uppercase tracking-widest font-extrabold text-text-onyx px-3 pt-2 pb-3 flex items-center gap-2">
-                  <MapPin size={14} className="text-accent" /> Location Map
-                </h3>
-                <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3] relative">
-                  <iframe
-                    src={project.mapEmbedUrl}
-                    width="100%"
-                    style={{ border: 0, height: "calc(100% + 65px)", marginTop: "-65px" }}
-                    allowFullScreen={true}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title={`${project.name} Location Map`}
-                  />
+              {project.mapEmbedUrl && (
+                <div className="bg-white border border-[#eae7e3] rounded-xl overflow-hidden p-3 flex flex-col h-80 shadow-sm">
+                  <h3 className="text-xs uppercase tracking-widest font-extrabold text-text-onyx px-3 pt-2 pb-3 flex items-center gap-2">
+                    <MapPin size={14} className="text-accent" /> Location Map
+                  </h3>
+                  <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3] relative">
+                    <iframe
+                      src={project.mapEmbedUrl}
+                      width="100%"
+                      style={{ border: 0, height: "calc(100% + 65px)", marginTop: "-65px" }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title={`${project.name} Location Map`}
+                    />
+                  </div>
                 </div>
-              </div>
+              )}
+            </div>
 
-              {/* Inquiry Form */}
+            {/* RIGHT COLUMN: Sticky inquiry sidebar (kept short so lg:sticky can take effect) */}
+            <div className="lg:col-span-5 flex flex-col gap-8 lg:sticky lg:top-[calc(var(--navbar-height)+1.5rem)]">
               <ProjectInquiryForm projectName={project.name} />
             </div>
           </div>
@@ -1130,7 +1133,7 @@ export default async function ProjectDetailsPage({
 
           {/* FAQ SECTION */}
           {project.faqs && project.faqs.length > 0 && (
-            <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-black-luxury/10 pt-16">
+            <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-black-luxury/10 pt-12">
               <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center gap-3">
                 <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block">
                   Information Guide
