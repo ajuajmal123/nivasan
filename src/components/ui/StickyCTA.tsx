@@ -29,7 +29,7 @@ export default function StickyCTA() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-500/20 px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+        className="bg-primary hover:bg-primary-hover text-white border border-primary/20 px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
       >
         <WhatsAppIcon />
         <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold">
@@ -43,7 +43,7 @@ export default function StickyCTA() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ delay: 0.6, type: "spring", stiffness: 260, damping: 20 }}
         href={callUrl}
-        className="bg-white hover:bg-[#fcfbfa] text-primary border border-black-luxury/10 px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+        className="bg-white hover:bg-bg-cream text-primary border border-border px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
       >
         <Phone size={13} className="text-accent" strokeWidth={2.5} />
         <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold">

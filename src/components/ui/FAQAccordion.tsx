@@ -31,7 +31,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
             className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${
               isOpen
                 ? "border-accent shadow-md shadow-accent/5"
-                : "border-[#eae7e3] hover:border-primary/30 shadow-sm"
+                : "border-border hover:border-primary/30 shadow-sm"
             }`}
           >
             {/* Header/Question Trigger */}
@@ -39,14 +39,14 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
               onClick={() => toggleFAQ(idx)}
               className="w-full p-5 md:p-6 flex items-center justify-between text-left cursor-pointer group select-none outline-none"
             >
-              <span className="text-base font-bold text-text-onyx group-hover:text-primary transition-colors duration-300 pr-4">
+              <span className="text-base font-bold text-heading group-hover:text-primary transition-colors duration-300 pr-4">
                 {faq.question}
               </span>
               <span
                 className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center border transition-all duration-300 ${
                   isOpen
                     ? "bg-accent border-accent text-white rotate-180"
-                    : "bg-background-luxury border-[#eae7e3] text-accent group-hover:border-accent/40"
+                    : "bg-bg-cream border-border text-accent group-hover:border-accent/40"
                 }`}
               >
                 <ChevronDown size={16} />
@@ -62,7 +62,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="px-5 pb-5 md:px-6 md:pb-6 text-sm text-text-onyx/75 leading-relaxed font-sans font-medium border-t border-black-luxury/5 pt-4">
+                  <div className="px-5 pb-5 md:px-6 md:pb-6 text-sm text-text leading-relaxed font-sans font-normal border-t border-border pt-4">
                     {faq.answer}
                   </div>
                 </motion.div>

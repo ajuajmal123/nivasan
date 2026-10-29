@@ -49,10 +49,10 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             y: "-100%", 
             transition: { duration: 1.0, ease: [0.76, 0, 0.24, 1] } 
           }}
-          className="fixed inset-0 z-50 bg-primary flex flex-col items-center justify-between p-12 text-white"
+          className="fixed inset-0 z-50 bg-bg-cream flex flex-col items-center justify-between p-12 text-heading"
         >
           {/* Logo / Brand Header */}
-          <div className="w-full flex justify-between items-center text-white/30 text-[9px] tracking-[0.25em] font-sans">
+          <div className="w-full flex justify-between items-center text-text-muted text-[9px] tracking-[0.25em] font-sans">
             <span>NIVASAN HOMES</span>
             <span>EST. 1996</span>
           </div>
@@ -70,7 +70,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
 
           {/* Progress Indicator */}
           <div className="w-full max-w-xs md:max-w-md flex flex-col items-center space-y-4">
-            <div className="relative w-full h-px bg-white/10 overflow-hidden">
+            <div className="relative w-full h-px bg-primary/10 overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
@@ -80,7 +80,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             </div>
             
             <div className="w-full flex justify-between items-baseline">
-              <span className="text-white/30 text-[8px] tracking-[0.2em] uppercase font-sans">
+              <span className="text-text-muted text-[8px] tracking-[0.2em] uppercase font-sans">
                 LOADING EXPERIENCE
               </span>
               <span className="text-accent text-3xl font-light font-serif">

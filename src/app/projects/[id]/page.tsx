@@ -886,18 +886,18 @@ export default async function ProjectDetailsPage({
         />
       )}
 
-      <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-text-onyx">
+      <main className="bg-bg-cream min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-heading">
         <div className="max-w-400 mx-auto px-6 md:px-12 flex flex-col gap-16">
 
           {/* HEADER HERO SECTION */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-black-luxury/10 pb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center border-b border-border pb-12">
             {/* Left Header Content */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               {/* Premium Breadcrumb */}
               <div>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-extrabold text-accent hover:text-primary transition-all duration-300 group"
+                  className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-extrabold text-accent-text hover:text-primary transition-all duration-300 group"
                 >
                   <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform duration-300" />
                   Back to Projects
@@ -907,26 +907,26 @@ export default async function ProjectDetailsPage({
               {/* Title & Badges */}
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-[9px] font-black tracking-widest uppercase px-3 py-1 bg-accent text-white rounded-full">
+                  <span className="text-[9px] font-black tracking-widest uppercase px-3 py-1 bg-accent-text text-white rounded-full">
                     {project.status}
                   </span>
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-onyx/50 flex items-center gap-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-muted flex items-center gap-1">
                     <MapPin size={11} className="text-accent" /> {project.location.split(',')[0]}
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-onyx tracking-tight leading-none uppercase">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-heading tracking-tight leading-none uppercase">
                   {project.name}
                 </h1>
               </div>
 
               {/* Quick Specs Highlight Matrix */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-black-luxury/5 mt-2">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-border mt-2">
                 {project.specs.slice(0, 3).map((spec, index) => (
                   <div key={index} className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
+                    <span className="text-[9px] uppercase tracking-widest text-text-muted font-bold">
                       {spec.label}
                     </span>
-                    <span className="text-sm text-text-onyx font-black mt-1">
+                    <span className="text-sm text-heading font-black mt-1">
                       {spec.value}
                     </span>
                   </div>
@@ -936,7 +936,7 @@ export default async function ProjectDetailsPage({
             </div>
 
             {/* Right Hero Showcase Image */}
-            <div className="lg:col-span-6 h-75 sm:h-100 rounded-xl overflow-hidden shadow-2xl relative group bg-black-luxury border border-[#eae7e3]">
+            <div className="lg:col-span-6 h-75 sm:h-100 rounded-xl overflow-hidden shadow-2xl relative group bg-bg-green-soft border border-border">
               <a href="#project-gallery" className="absolute inset-0 z-10 cursor-pointer">
                 <div className="absolute -inset-0.75 overflow-hidden">
                   <Image
@@ -948,11 +948,10 @@ export default async function ProjectDetailsPage({
                     className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
                   />
                 </div>
-                <div className="absolute inset-0 bg-linear-to-t from-black-luxury/40 via-transparent to-transparent pointer-events-none" />
 
                 {/* Visual hover indicator */}
-                <div className="absolute inset-0 bg-black-luxury/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                  <span className="bg-white/95 text-text-onyx font-black text-[10px] uppercase tracking-widest px-5 py-2.5 rounded-lg shadow-xl border border-[#eae7e3] transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                  <span className="bg-white/95 text-heading font-black text-[10px] uppercase tracking-widest px-5 py-2.5 rounded-lg shadow-xl border border-border transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     View Project Gallery
                   </span>
                 </div>
@@ -964,7 +963,7 @@ export default async function ProjectDetailsPage({
                   <a
                     href={project.brochureUrl}
                     download
-                    className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-extrabold text-[10px] uppercase tracking-widest py-3 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-accent/20 cursor-pointer select-none"
+                    className="inline-flex items-center gap-2 bg-accent-text hover:bg-accent-text-hover text-white font-extrabold text-[10px] uppercase tracking-widest py-3 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-accent/20 cursor-pointer select-none"
                   >
                     <Download size={12} />
                     Download Brochure
@@ -982,34 +981,34 @@ export default async function ProjectDetailsPage({
 
               {/* Project Overview */}
               <div className="flex flex-col gap-4">
-                <h2 className="text-xs uppercase tracking-[0.25em] text-accent font-extrabold border-b border-black-luxury/5 pb-2">
+                <h2 className="text-xs uppercase tracking-[0.25em] text-accent-text font-extrabold border-b border-border pb-2">
                   Project Overview
                 </h2>
                 {project.aioSentence && (
                   <div className="border-l-4 border-accent pl-4 my-2">
-                    <p className="text-text-onyx font-extrabold text-base leading-relaxed italic">
+                    <p className="text-heading font-extrabold text-base leading-relaxed italic">
                       &ldquo;{project.aioSentence}&rdquo;
                     </p>
                   </div>
                 )}
-                <p className="text-text-onyx/80 text-base leading-relaxed whitespace-pre-line font-sans">
+                <p className="text-text text-base leading-relaxed whitespace-pre-line font-sans">
                   {project.description}
                 </p>
               </div>
 
               {/* Full Specs List */}
               {project.specs.length > 0 && (
-                <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                <div className="flex flex-col gap-6 bg-white border border-border p-8 rounded-xl shadow-sm">
+                  <h3 className="text-lg font-bold text-heading border-b border-border pb-3 uppercase tracking-wider">
                     Specifications & Details
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                     {project.specs.map((spec, index) => (
-                      <div key={index} className="flex flex-col border-b border-black-luxury/5 pb-2">
-                        <span className="text-[9px] uppercase tracking-widest text-text-onyx/45 font-bold">
+                      <div key={index} className="flex flex-col border-b border-border pb-2">
+                        <span className="text-[9px] uppercase tracking-widest text-text-muted font-bold">
                           {spec.label}
                         </span>
-                        <span className="text-sm text-text-onyx font-extrabold mt-1">
+                        <span className="text-sm text-heading font-extrabold mt-1">
                           {spec.value}
                         </span>
                       </div>
@@ -1020,13 +1019,13 @@ export default async function ProjectDetailsPage({
 
               {/* Amenities Section */}
               {project.amenities && project.amenities.length > 0 && (
-                <div className="flex flex-col gap-6 bg-white border border-[#eae7e3] p-8 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-bold text-text-onyx border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                <div className="flex flex-col gap-6 bg-white border border-border p-8 rounded-xl shadow-sm">
+                  <h3 className="text-lg font-bold text-heading border-b border-border pb-3 uppercase tracking-wider">
                     Amenities Include
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {project.amenities.map((amenity, index) => (
-                      <div key={index} className="flex items-center gap-3 text-sm font-extrabold text-text-onyx">
+                      <div key={index} className="flex items-center gap-3 text-sm font-extrabold text-heading">
                         <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
                         {amenity}
                       </div>
@@ -1037,8 +1036,8 @@ export default async function ProjectDetailsPage({
 
               {/* Location advantages */}
               {project.locationAdvantages && project.locationAdvantages.length > 0 && (
-                <div className="bg-white border border-[#eae7e3] p-6 md:p-8 rounded-xl shadow-sm">
-                  <h3 className="text-lg font-bold text-text-onyx mb-5 border-b border-black-luxury/5 pb-3 uppercase tracking-wider">
+                <div className="bg-white border border-border p-6 md:p-8 rounded-xl shadow-sm">
+                  <h3 className="text-lg font-bold text-heading mb-5 border-b border-border pb-3 uppercase tracking-wider">
                     Location Advantages
                   </h3>
                   <ul className="space-y-4">
@@ -1046,16 +1045,16 @@ export default async function ProjectDetailsPage({
                       const parts = adv.split(" — ");
                       if (parts.length > 1) {
                         return (
-                          <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text-onyx/75">
+                          <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text">
                             <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                             <span>
-                              <strong className="text-text-onyx font-bold">{parts[0]}</strong> — {parts.slice(1).join(" — ")}
+                              <strong className="text-heading font-bold">{parts[0]}</strong> — {parts.slice(1).join(" — ")}
                             </span>
                           </li>
                         );
                       }
                       return (
-                        <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text-onyx/75">
+                        <li key={idx} className="flex items-start gap-3 text-sm leading-relaxed text-text">
                           <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 shrink-0" />
                           <span>{adv}</span>
                         </li>
@@ -1067,11 +1066,11 @@ export default async function ProjectDetailsPage({
 
               {/* Map */}
               {project.mapEmbedUrl && (
-                <div className="bg-white border border-[#eae7e3] rounded-xl overflow-hidden p-3 flex flex-col h-80 shadow-sm">
-                  <h3 className="text-xs uppercase tracking-widest font-extrabold text-text-onyx px-3 pt-2 pb-3 flex items-center gap-2">
+                <div className="bg-white border border-border rounded-xl overflow-hidden p-3 flex flex-col h-80 shadow-sm">
+                  <h3 className="text-xs uppercase tracking-widest font-extrabold text-heading px-3 pt-2 pb-3 flex items-center gap-2">
                     <MapPin size={14} className="text-accent" /> Location Map
                   </h3>
-                  <div className="flex-1 rounded-lg overflow-hidden border border-[#eae7e3] relative">
+                  <div className="flex-1 rounded-lg overflow-hidden border border-border relative">
                     <iframe
                       src={project.mapEmbedUrl}
                       width="100%"
@@ -1094,37 +1093,37 @@ export default async function ProjectDetailsPage({
 
           {/* DEVELOPER BANNER SECTION (Sophisticated Dark Block) */}
           {project.aboutDeveloper && (
-            <div className="bg-primary text-white p-8 md:p-12 rounded-2xl relative overflow-hidden group shadow-xl flex flex-col items-center justify-center text-center">
+            <div className="bg-bg-green-soft text-heading border border-border p-8 md:p-12 rounded-2xl relative overflow-hidden group shadow-xl flex flex-col items-center justify-center text-center">
               <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none translate-y-1/4 translate-x-1/4 select-none">
-                <span className="font-serif text-[18rem] text-white">N</span>
+                <span className="font-serif text-[18rem] text-primary">N</span>
               </div>
               <div className="max-w-4xl relative z-10 flex flex-col items-center">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-3">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block mb-3">
                   The Builder
                 </span>
                 <h2 className="text-3xl font-extrabold mb-6 uppercase tracking-tight">
                   {project.aboutDeveloper.title}
                 </h2>
-                <p className="text-white/85 text-sm md:text-base leading-relaxed mb-10 font-sans max-w-3xl">
+                <p className="text-text text-sm md:text-base leading-relaxed mb-10 font-sans max-w-3xl">
                   {project.aboutDeveloper.content}
                 </p>
                 {/* Stats grid - Forced 4 columns on single line with vertical alignment inside */}
-                <div className="grid grid-cols-4 gap-2 md:gap-8 pt-8 border-t border-white/10 w-full text-center">
+                <div className="grid grid-cols-4 gap-2 md:gap-8 pt-8 border-t border-border w-full text-center">
                   <div className="flex flex-col items-center">
-                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">15+ Years</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Coimbatore Legacy</span>
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">15+ Years</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Coimbatore Legacy</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">10+ Projects</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Delivered</span>
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">10+ Projects</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Delivered</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">500+ Housed</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">Happy Families</span>
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">500+ Housed</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Happy Families</span>
                   </div>
                   <div className="flex flex-col items-center">
-                    <span className="text-sm sm:text-lg md:text-xl font-black text-accent leading-none whitespace-nowrap">CREDAI Member</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-white/50 font-bold block mt-1.5 whitespace-nowrap">RERA Registered</span>
+                    <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">CREDAI Member</span>
+                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">RERA Registered</span>
                   </div>
                 </div>
               </div>
@@ -1133,15 +1132,15 @@ export default async function ProjectDetailsPage({
 
           {/* FAQ SECTION */}
           {project.faqs && project.faqs.length > 0 && (
-            <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-black-luxury/10 pt-12">
+            <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-border pt-12">
               <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center gap-3">
-                <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block">
+                <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block">
                   Information Guide
                 </span>
-                <h2 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight uppercase">
+                <h2 className="text-2xl md:text-3xl font-extrabold text-heading tracking-tight uppercase">
                   Frequently Asked Questions
                 </h2>
-                <p className="text-xs md:text-sm text-text-onyx/65 max-w-xl">
+                <p className="text-xs md:text-sm text-text max-w-xl">
                   Explore answers to common questions about {project.name}, specifications, utilities, and location advantages.
                 </p>
               </div>

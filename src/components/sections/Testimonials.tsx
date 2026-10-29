@@ -63,9 +63,9 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-10 bg-background-luxury overflow-hidden relative">
+    <section className="py-16 md:py-10 bg-bg-cream overflow-hidden relative">
       {/* Decorative quotes background */}
-      <div className="absolute top-10 left-12 font-serif text-[18rem] text-black-luxury/2 leading-none select-none pointer-events-none">
+      <div className="absolute top-10 left-12 font-serif text-[18rem] text-heading/2 leading-none select-none pointer-events-none">
         “
       </div>
       
@@ -74,7 +74,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-16 md:mb-10">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-6 block">
               Client Chronicles
             </span>
           </Reveal>
@@ -97,16 +97,16 @@ export default function Testimonials() {
               <span className="font-serif text-6xl text-accent/60 leading-none mb-6">“</span>
 
               {/* Quote text */}
-              <blockquote className="font-serif text-xl sm:text-2xl md:text-3xl text-black-luxury font-light leading-relaxed max-w-4xl italic mb-10">
+              <blockquote className="font-serif text-xl sm:text-2xl md:text-3xl text-heading font-normal leading-relaxed max-w-4xl italic mb-10">
                 {testimonials[activeIdx].quote}
               </blockquote>
 
               {/* Client Info */}
               <div>
-                <cite className="not-italic text-xs uppercase tracking-[0.25em] text-black-luxury font-semibold block mb-1">
+                <cite className="not-italic text-xs uppercase tracking-[0.25em] text-heading font-semibold block mb-1">
                   {testimonials[activeIdx].author}
                 </cite>
-                <span className="text-[10px] tracking-[0.2em] text-black-luxury/45 uppercase font-sans">
+                <span className="text-[10px] tracking-[0.2em] text-text-muted uppercase font-sans">
                   {testimonials[activeIdx].role} &bull; {testimonials[activeIdx].project}
                 </span>
               </div>
@@ -117,21 +117,21 @@ export default function Testimonials() {
           <div className="flex items-center space-x-8 mt-16">
             <button
               onClick={handlePrev}
-              className="p-3 border border-black-luxury/10 rounded-full text-black-luxury hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
+              className="p-3 border border-border rounded-full text-heading hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
               aria-label="Previous Testimonial"
             >
               <ArrowLeft size={16} />
             </button>
             
-            <div className="text-xs tracking-[0.2em] text-black-luxury/45 font-mono">
-              <span className="text-black-luxury font-bold">{(activeIdx + 1).toString().padStart(2, "0")}</span>
+            <div className="text-xs tracking-[0.2em] text-text-muted font-mono">
+              <span className="text-heading font-bold">{(activeIdx + 1).toString().padStart(2, "0")}</span>
               <span className="mx-2">/</span>
               <span>{testimonials.length.toString().padStart(2, "0")}</span>
             </div>
 
             <button
               onClick={handleNext}
-              className="p-3 border border-black-luxury/10 rounded-full text-black-luxury hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
+              className="p-3 border border-border rounded-full text-heading hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
               aria-label="Next Testimonial"
             >
               <ArrowRight size={16} />

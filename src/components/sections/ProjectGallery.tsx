@@ -191,11 +191,11 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
   if (images.length === 0) return null;
 
   return (
-    <div id="project-gallery" className="border-t border-black-luxury/10 pt-12">
-      <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block mb-2">
+    <div id="project-gallery" className="border-t border-border pt-12">
+      <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block mb-2">
         Visual Showcase
       </span>
-      <h3 className="text-2xl md:text-3xl font-extrabold text-text-onyx tracking-tight mb-8 uppercase">
+      <h3 className="text-2xl md:text-3xl font-extrabold text-heading tracking-tight mb-8 uppercase">
         Project Gallery
       </h3>
       
@@ -205,7 +205,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
           <div
             key={index}
             onClick={() => handleOpen(index)}
-            className="h-64 rounded-xl overflow-hidden border border-[#eae7e3] group cursor-pointer bg-black-luxury relative shadow-sm hover:shadow-md transition-all duration-300"
+            className="h-64 rounded-xl overflow-hidden border border-border group cursor-pointer bg-bg-green-soft relative shadow-sm hover:shadow-md transition-all duration-300"
           >
             <Image
               src={img}
@@ -228,17 +228,17 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
             role="dialog"
             aria-modal="true"
             aria-label={`${projectName} image gallery`}
-            className="fixed inset-0 z-100 bg-black/95 backdrop-blur-md flex flex-col items-center justify-between p-4 select-none"
+            className="fixed inset-0 z-100 bg-white/95 backdrop-blur-md flex flex-col items-center justify-between p-4 select-none"
           >
             {/* Top Toolbar */}
-            <div className="w-full max-w-400 flex items-center justify-between text-white/70 py-2.5 px-4 z-10">
-              <span className="text-xs uppercase tracking-widest font-extrabold text-white">
+            <div className="w-full max-w-400 flex items-center justify-between text-text py-2.5 px-4 z-10">
+              <span className="text-xs uppercase tracking-widest font-extrabold text-heading">
                 {projectName} — {getFeature(activeIndex)}
               </span>
               <button
                 onClick={handleClose}
                 aria-label="Close gallery"
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/15 text-heading flex items-center justify-center transition-all duration-300 cursor-pointer"
               >
                 <X size={20} />
               </button>
@@ -250,7 +250,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               <button
                 onClick={handlePrev}
                 aria-label="Previous image"
-                className="absolute left-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
+                className="absolute left-4 w-12 h-12 rounded-full bg-primary/5 hover:bg-primary/10 text-heading flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -286,46 +286,46 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               <button
                 onClick={handleNext}
                 aria-label="Next image"
-                className="absolute right-4 w-12 h-12 rounded-full bg-white/5 hover:bg-white/10 text-white flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
+                className="absolute right-4 w-12 h-12 rounded-full bg-primary/5 hover:bg-primary/10 text-heading flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
               >
                 <ChevronRight size={24} />
               </button>
             </div>
 
             {/* Bottom Toolbar Controls (Zoom & Numbers) */}
-            <div className="w-full max-w-400 flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-6 border-t border-white/10 z-10">
-              <span className="text-xs uppercase tracking-widest font-extrabold text-white/50">
+            <div className="w-full max-w-400 flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-6 border-t border-border z-10">
+              <span className="text-xs uppercase tracking-widest font-extrabold text-text-muted">
                 Image {activeIndex + 1} of {images.length}
               </span>
 
               {/* Zoom Buttons Group */}
-              <div className="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-full border border-white/5 shadow-inner">
+              <div className="flex items-center gap-3 bg-primary/10 px-4 py-2 rounded-full border border-border shadow-inner">
                 <button
                   onClick={handleZoomOut}
                   disabled={zoom <= 1}
-                  className="w-8 h-8 text-white hover:text-accent disabled:text-white/30 flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                  className="w-8 h-8 text-heading hover:text-primary disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
                   title="Zoom Out"
                 >
                   <ZoomOut size={16} />
                 </button>
 
                 {/* Vertical Divider */}
-                <div className="w-px h-4 bg-white/10" />
+                <div className="w-px h-4 bg-primary/10" />
 
                 <button
                   onClick={handleZoomReset}
-                  className="text-[10px] text-white hover:text-accent font-extrabold tracking-widest uppercase px-2 transition-colors duration-300 cursor-pointer"
+                  className="text-[10px] text-heading hover:text-accent-text font-extrabold tracking-widest uppercase px-2 transition-colors duration-300 cursor-pointer"
                   title="Reset Zoom"
                 >
                   <RotateCcw size={14} className="inline mr-1" /> {zoom.toFixed(1)}x
                 </button>
 
-                <div className="w-px h-4 bg-white/10" />
+                <div className="w-px h-4 bg-primary/10" />
 
                 <button
                   onClick={handleZoomIn}
                   disabled={zoom >= 3}
-                  className="w-8 h-8 text-white hover:text-accent disabled:text-white/30 flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                  className="w-8 h-8 text-heading hover:text-primary disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
                   title="Zoom In"
                 >
                   <ZoomIn size={16} />
@@ -333,7 +333,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               </div>
 
               {/* Guide Hint */}
-              <span className="text-[9px] uppercase tracking-wider text-white/40 font-bold hidden md:inline">
+              <span className="text-[9px] uppercase tracking-wider text-text-muted font-bold hidden md:inline">
                 Use Arrow Keys to Navigate • Esc to Close • Drag to pan zoom
               </span>
             </div>

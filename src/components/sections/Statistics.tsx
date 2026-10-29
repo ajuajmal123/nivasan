@@ -45,14 +45,14 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
   return (
     <div
       ref={ref}
-      className="relative bg-white border border-[#eae7e3] p-8 rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02),0_2px_4px_rgba(0,0,0,0.01)] hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col items-start text-left group overflow-hidden"
+      className="relative bg-white border border-border p-8 rounded-xl shadow-[0_4px_20px_-4px_rgba(15,120,62,0.02),0_2px_4px_rgba(15,120,62,0.01)] hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col items-start text-left group overflow-hidden"
     >
       {/* Glow highlight */}
       <div className="absolute -right-12 -bottom-12 w-32 h-32 rounded-full bg-primary/0 blur-2xl group-hover:bg-primary/4 transition-all duration-500 pointer-events-none" />
       
       {/* Icon & Index Row */}
       <div className="flex items-center justify-between w-full mb-6">
-        <div className="w-14 h-14 rounded-xl bg-[#f7f6f4] flex items-center justify-center border border-[#eae7e3] text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-500">
+        <div className="w-14 h-14 rounded-xl bg-bg-cream flex items-center justify-center border border-border text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-500">
           {iconSvg}
         </div>
         <span className="text-[10px] font-black text-accent/35 group-hover:text-primary/30 transition-colors tracking-widest font-mono">
@@ -61,21 +61,21 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
       </div>
 
       {/* Large Counter Number */}
-      <div className="text-4xl font-extrabold tracking-tight leading-none mb-1 text-black-luxury flex items-baseline">
+      <div className="text-4xl font-extrabold tracking-tight leading-none mb-1 text-heading flex items-baseline">
         <span>{count.toLocaleString()}</span>
         <span className="text-xl text-primary font-bold ml-0.5">{suffix}</span>
       </div>
       
       {/* Stat Units Tag */}
-      <div className="text-[9px] font-bold text-accent uppercase tracking-[0.2em] mb-4">
+      <div className="text-[9px] font-bold text-accent-text uppercase tracking-[0.2em] mb-4">
         {label}
       </div>
 
       {/* Card Header & Description */}
-      <h3 className="text-sm font-extrabold uppercase tracking-wider mb-2 text-[#2a2823]">
+      <h3 className="text-sm font-extrabold uppercase tracking-wider mb-2 text-heading">
         {label.split(" ")[0]} Project Specs
       </h3>
-      <p className="text-xs leading-relaxed text-[#6D675E] group-hover:text-[#2a2823] transition-colors">
+      <p className="text-xs leading-relaxed text-text-muted group-hover:text-heading transition-colors">
         {description}
       </p>
     </div>
@@ -84,9 +84,9 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
 
 export default function Statistics() {
   return (
-    <section className="relative py-12 md:py-16 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-t border-[#eae7e3] border-b border-[#eae7e3]">
+    <section className="relative py-12 md:py-16 bg-bg-cream text-heading overflow-hidden border-t border-border border-b border-border">
       {/* Linear Grid lines background matching reference */}
-      <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[4rem_4rem] z-0 pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[4rem_4rem] z-0 pointer-events-none" />
       
       {/* Smooth light highlights */}
       <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
@@ -95,14 +95,14 @@ export default function Statistics() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#eae7e3] text-[10px] font-bold tracking-widest text-primary uppercase shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border text-[10px] font-bold tracking-widest text-primary uppercase shadow-[0_2px_10px_rgba(15,120,62,0.02)]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
             Heritage & Scale: Established in 1996
           </div>
-          <h2 className="font-sans font-extrabold text-3xl sm:text-5xl tracking-tight uppercase text-black-luxury">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-5xl tracking-tight uppercase text-heading">
             Engineered Spaces
           </h2>
-          <p className="text-sm sm:text-base leading-relaxed text-[#4F4C42] max-w-xl">
+          <p className="text-sm sm:text-base leading-relaxed text-text max-w-xl">
             A high-performance portfolio of precision construction and premium residential landmarks completed across major sectors.
           </p>
         </div>

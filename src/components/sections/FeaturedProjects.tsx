@@ -11,6 +11,7 @@ interface Project {
   status: string;
   tag: string;
   image: string;
+  lightImage?: boolean; // very light photo behind the card text -> heading-colored text
 }
 
 const projects: Project[] = [
@@ -84,18 +85,18 @@ export default function FeaturedProjects() {
     if (status === "Completed") {
       return "bg-primary border-primary/20 text-white";
     }
-    return "bg-accent border-accent/20 text-white"; // Ongoing (Golden)
+    return "bg-accent-text border-accent-text/20 text-white"; // Ongoing (Golden)
   };
 
   return (
-    <section id="projects" className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-[#eae7e3]">
+    <section id="projects" className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-border">
       {/* Linear backdrop grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-black-luxury">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading">
             Landmark Projects
           </h2>
         </div>
@@ -112,9 +113,9 @@ export default function FeaturedProjects() {
             >
               <Link
                 href={`/projects/${project.id}`}
-                className="group relative overflow-hidden bg-[#1c1a17] border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
+                className="group relative overflow-hidden bg-bg-green-soft border border-border hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
               >
-                {/* Background image & gradient overlay */}
+                {/* Background image */}
                 <div className="absolute -inset-0.75 z-0 overflow-hidden">
                   <Image
                     src={project.image}
@@ -123,7 +124,6 @@ export default function FeaturedProjects() {
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="w-full h-full object-cover scale-[1.03] transition-transform duration-750 ease-out group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
                 </div>
 
                 {/* Top Left Status Badge */}
@@ -135,10 +135,14 @@ export default function FeaturedProjects() {
 
                 {/* Bottom content details - Name and Tag with high legibility drop shadow */}
                 <div className="relative z-10 p-6 flex flex-col gap-1.5 drop-shadow-md">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-accent drop-shadow-sm">
+                  <span className={`text-[10px] font-extrabold uppercase tracking-wider drop-shadow-sm ${
+                    project.lightImage ? "text-accent-text text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
+                  }`}>
                     {project.tag}
                   </span>
-                  <h3 className="font-sans text-xl font-extrabold tracking-tight text-white leading-tight">
+                  <h3 className={`font-sans text-xl font-extrabold tracking-tight leading-tight ${
+                    project.lightImage ? "text-heading text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
+                  }`}>
                     {project.name}
                   </h3>
                 </div>
@@ -151,7 +155,7 @@ export default function FeaturedProjects() {
         <div className="mt-12 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-extrabold text-primary hover:text-accent transition-colors duration-300 group/link cursor-pointer border border-primary/20 hover:border-accent px-8 py-3.5 rounded-full bg-white shadow-sm hover:shadow"
+            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link cursor-pointer border border-primary/20 hover:border-accent px-8 py-3.5 rounded-full bg-white shadow-sm hover:shadow"
           >
             View More Projects
           </Link>

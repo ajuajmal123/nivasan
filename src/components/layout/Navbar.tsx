@@ -94,9 +94,11 @@ export default function Navbar() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`text-xs uppercase tracking-[0.2em] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-accent after:origin-right hover:after:origin-left after:transition-transform after:duration-500 ${
                     isActive
-                      ? "text-accent font-semibold after:scale-x-100 after:origin-left"
+                      ? `font-semibold after:scale-x-100 after:origin-left ${
+                          shouldBeGlass ? "text-accent-text" : "text-accent text-shadow-on-dark-media"
+                        }`
                       : `after:scale-x-0 hover:after:scale-x-100 ${
-                          shouldBeGlass ? "text-primary/80 hover:text-accent" : "text-white/80 hover:text-accent"
+                          shouldBeGlass ? "text-primary/80 hover:text-accent-text" : "text-white text-shadow-on-dark-media hover:text-accent"
                         }`
                   }`}
                 >
@@ -112,7 +114,7 @@ export default function Navbar() {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className={`md:hidden transition-colors duration-300 focus:outline-none z-50 ${
-              shouldBeGlass || isMobileMenuOpen ? "text-primary hover:text-accent" : "text-white hover:text-accent"
+              shouldBeGlass || isMobileMenuOpen ? "text-primary hover:text-accent-text" : "text-white hover:text-accent"
             }`}
             aria-label="Toggle Menu"
           >
@@ -129,13 +131,13 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className={`fixed inset-0 bg-primary z-45 flex flex-col justify-between p-8 md:hidden ${
+            className={`fixed inset-0 bg-bg-cream z-45 flex flex-col justify-between p-8 md:hidden ${
               shouldBeGlass ? "pt-[calc(var(--navbar-height)+2rem)]" : "pt-[calc(var(--navbar-height-tall)+2rem)]"
             }`}
           >
             {/* Background elements */}
             <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none">
-              <span className="font-serif text-[15rem] text-white">N</span>
+              <span className="font-serif text-[15rem] text-primary">N</span>
             </div>
 
             <nav className="flex flex-col space-y-6">
@@ -156,17 +158,17 @@ export default function Navbar() {
                       }}
                       className="flex items-baseline group"
                     >
-                      <span className="font-sans text-accent text-sm tracking-widest mr-4 font-bold">
+                      <span className="font-sans text-accent-text text-sm tracking-widest mr-4 font-bold">
                         {link.num}
                       </span>
                       <span className={`font-sans text-3xl font-extrabold transition-colors duration-300 ${
-                        isActive ? "text-accent" : "text-white/90 group-hover:text-accent"
+                        isActive ? "text-accent-text" : "text-heading group-hover:text-accent-text"
                       }`}>
                         {link.name}
                       </span>
                       <ArrowUpRight
                         size={18}
-                        className="ml-2 text-white/40 group-hover:text-accent group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                        className="ml-2 text-text-muted group-hover:text-accent-text group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 opacity-0 group-hover:opacity-100"
                       />
                     </Link>
                   </motion.div>
@@ -178,36 +180,36 @@ export default function Navbar() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="border-t border-white/10 pt-8"
+              className="border-t border-border pt-8"
             >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-white/40 mb-2">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-2">
                 Inquiries
               </p>
               <a
                 href="mailto:info@nivasanhomes.com"
-                className="text-sm font-sans font-bold text-accent hover:underline block mb-4"
+                className="text-sm font-sans font-bold text-accent-text hover:underline block mb-4"
               >
                 info@nivasanhomes.com
               </a>
               <div className="space-y-3 mt-4">
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.15em] text-white/40 mb-0.5">
+                  <p className="text-[9px] uppercase tracking-[0.15em] text-text-muted mb-0.5">
                     Customer Advisory
                   </p>
                   <a
                     href="tel:+919842323071"
-                    className="text-xs text-white hover:text-accent font-semibold transition-colors duration-300"
+                    className="text-xs text-text hover:text-accent-text font-semibold transition-colors duration-300"
                   >
                     +91 98423 23071
                   </a>
                 </div>
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.15em] text-white/40 mb-0.5">
+                  <p className="text-[9px] uppercase tracking-[0.15em] text-text-muted mb-0.5">
                     Site Visit Scheduling
                   </p>
                   <a
                     href="tel:+919942223013"
-                    className="text-xs text-white hover:text-accent font-semibold transition-colors duration-300"
+                    className="text-xs text-text hover:text-accent-text font-semibold transition-colors duration-300"
                   >
                     +91 99422 23013
                   </a>

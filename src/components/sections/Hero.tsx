@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative h-screen w-full overflow-hidden bg-black-luxury flex items-center justify-center"
+      className="relative h-screen w-full overflow-hidden bg-bg-green-soft flex items-center justify-center"
     >
       {/* Background Video Container */}
       <div className="absolute inset-0 w-full h-full select-none pointer-events-none z-0">
@@ -34,9 +34,9 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white tracking-tight leading-tight sm:leading-none text-center drop-shadow-lg sm:whitespace-nowrap select-none"
+            className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-shadow-on-dark-media tracking-tight leading-tight sm:leading-none text-center drop-shadow-lg sm:whitespace-nowrap select-none"
           >
-            Welcome to <br className="sm:hidden" /> <span className="text-accent">Nivasan Homes</span>
+            Welcome to <br className="sm:hidden" /> <span className="text-accent-text">Nivasan Homes</span>
           </motion.h1>
 
           {/* Animated Subtitle - Centered and responsive */}
@@ -44,7 +44,7 @@ export default function Hero() {
             initial={{ opacity: 0, letterSpacing: "0.1em" }}
             animate={{ opacity: 1, letterSpacing: "0.25em" }}
             transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white/95 text-[9px] sm:text-xs tracking-[0.12em] sm:tracking-[0.25em] uppercase text-center font-extrabold mt-2 drop-shadow-md select-none max-w-xs sm:max-w-none px-4 sm:px-0 leading-relaxed sm:leading-normal"
+            className="text-white text-shadow-on-dark-media text-[9px] sm:text-xs tracking-[0.12em] sm:tracking-[0.25em] uppercase text-center font-extrabold mt-2 drop-shadow-md select-none max-w-xs sm:max-w-none px-4 sm:px-0 leading-relaxed sm:leading-normal"
           >
             LUXURY VILLAS & APARTMENTS <br className="sm:hidden" /> IN COIMBATORE
           </motion.p>
@@ -52,8 +52,8 @@ export default function Hero() {
       </div>
 
       {/* Side Vertical Lines matching reference layout */}
-      <div className="absolute inset-y-0 left-[8%] w-px bg-white/2 hidden lg:block pointer-events-none z-10" />
-      <div className="absolute inset-y-0 right-[8%] w-px bg-white/2 hidden lg:block pointer-events-none z-10" />
+      <div className="absolute inset-y-0 left-[8%] w-px bg-primary/10 hidden lg:block pointer-events-none z-10" />
+      <div className="absolute inset-y-0 right-[8%] w-px bg-primary/10 hidden lg:block pointer-events-none z-10" />
     </section>
   );
 }

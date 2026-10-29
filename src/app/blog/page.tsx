@@ -12,14 +12,14 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-primary relative">
+    <main className="bg-bg-cream min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans text-primary relative">
       {/* Subtle background pattern grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-400 mx-auto px-6 md:px-12 relative z-10 flex flex-col gap-12">
         
         {/* Header Section */}
-        <div className="max-w-3xl mx-auto border-b border-black-luxury/10 pb-8 text-center w-full">
+        <div className="max-w-3xl mx-auto border-b border-border pb-8 text-center w-full">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight leading-none uppercase">
             Nivasan Chronicles
           </h1>
@@ -31,17 +31,15 @@ export default function BlogPage() {
             {blogs.map((blog) => (
               <article 
                 key={blog.slug} 
-                className="bg-white border border-[#eae7e3] hover:border-accent/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group h-full"
+                className="bg-white border border-border hover:border-accent/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group h-full"
               >
                 {/* Visual Header/Cover placeholder with beautiful gradient */}
                 <div 
                   style={{ background: blog.coverImage }}
-                  className="w-full h-48 relative overflow-hidden flex items-end p-6 border-b border-[#eae7e3]"
+                  className="w-full h-48 relative overflow-hidden flex items-end p-6 border-b border-border"
                 >
-                  {/* Overlay shadow */}
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent opacity-90 pointer-events-none" />
                   
-                  <span className="relative z-10 bg-accent text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1.5 rounded">
+                  <span className="relative z-10 bg-accent-text text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1.5 rounded">
                     {blog.category}
                   </span>
                 </div>
@@ -69,16 +67,16 @@ export default function BlogPage() {
                     </h3>
 
                     {/* Brief description */}
-                    <p className="text-xs text-primary/65 leading-relaxed font-sans font-medium line-clamp-3">
+                    <p className="text-xs text-primary/65 leading-relaxed font-sans font-normal line-clamp-3">
                       {blog.brief}
                     </p>
                   </div>
 
                   {/* Read More link */}
-                  <div className="border-t border-[#eae7e3] pt-4 mt-2">
+                  <div className="border-t border-border pt-4 mt-2">
                     <Link
                       href={`/blog/${blog.slug}`}
-                      className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-extrabold text-primary hover:text-accent transition-colors duration-300 group/link"
+                      className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link"
                     >
                       Read Full Article
                       <ArrowRight size={12} className="group-hover/link:translate-x-0.5 transition-transform duration-300" />
@@ -90,7 +88,7 @@ export default function BlogPage() {
           </div>
         ) : (
           /* Empty State fallback (just in case) */
-          <div className="bg-white border border-[#eae7e3] rounded-2xl p-12 md:p-20 text-center flex flex-col items-center gap-6 shadow-sm max-w-4xl mx-auto w-full">
+          <div className="bg-white border border-border rounded-2xl p-12 md:p-20 text-center flex flex-col items-center gap-6 shadow-sm max-w-4xl mx-auto w-full">
             <div className="w-16 h-16 rounded-full bg-accent/10 text-accent flex items-center justify-center">
               <BookOpen size={28} />
             </div>

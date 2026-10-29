@@ -10,6 +10,7 @@ export interface Project {
   status: string;
   tag: string;
   image: string;
+  lightImage?: boolean; // very light photo behind the card text -> heading-colored text
 }
 
 const projectsList: Project[] = [
@@ -111,6 +112,7 @@ const projectsList: Project[] = [
     status: "Completed",
     tag: "Villas and Apartments",
     image: "/completed/p12/1.png",
+    lightImage: true,
   },
   {
     id: "meenakshi-vishranth",
@@ -133,11 +135,11 @@ export default function ProjectsList() {
     if (status === "Completed") {
       return "bg-primary border-primary/20 text-white";
     }
-    return "bg-accent border-accent/20 text-white"; // Ongoing (Golden)
+    return "bg-accent-text border-accent-text/20 text-white"; // Ongoing (Golden)
   };
 
   return (
-    <main className="bg-background-luxury min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans">
+    <main className="bg-bg-cream min-h-screen pt-6 md:pt-8 pb-16 md:pb-10 font-sans">
       <div className="max-w-400 mx-auto px-6 md:px-12">
         {/* Header Section - Centered, Heading "Our Creations" Only */}
         <div className="text-center max-w-3xl mx-auto mb-8">
@@ -155,7 +157,7 @@ export default function ProjectsList() {
                 onClick={() => setFilter(tab)}
                 className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
                   ? "bg-primary text-white shadow-md shadow-primary/20"
-                  : "bg-white border border-[#eae7e3] text-primary/70 hover:text-primary hover:border-primary/30"
+                  : "bg-white border border-border text-primary/70 hover:text-primary hover:border-primary/30"
                   }`}
               >
                 {tab}
@@ -170,9 +172,9 @@ export default function ProjectsList() {
             <Link
               key={project.id}
               href={`/projects/${project.id}`}
-              className="group relative overflow-hidden bg-black-luxury border border-white/10 hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden bg-bg-green-soft border border-border hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
             >
-              {/* Background image & gradient overlay */}
+              {/* Background image */}
               <div className="absolute -inset-0.75 z-0 overflow-hidden">
                 <Image
                   src={project.image}
@@ -182,7 +184,6 @@ export default function ProjectsList() {
                   loading={index < 3 ? "eager" : "lazy"}
                   className="w-full h-full object-cover scale-[1.03] transition-transform duration-750 ease-out group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black-luxury/95 via-black-luxury/70 to-transparent transition-opacity duration-500" />
               </div>
 
               {/* Status Badge */}
@@ -195,14 +196,24 @@ export default function ProjectsList() {
               {/* Text content - highly readable */}
               <div className="relative z-10 p-8 flex flex-col gap-3 drop-shadow-md">
                 <div className="flex flex-col gap-1">
-                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-accent drop-shadow-sm">
+                  <span className={`text-[10px] font-extrabold uppercase tracking-wider drop-shadow-sm ${
+                    project.lightImage ? "text-accent-text text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
+                  }`}>
                     {project.tag}
                   </span>
-                  <h3 className="font-sans text-xl font-extrabold tracking-tight text-white group-hover:text-accent transition-colors duration-300 leading-tight">
+                  <h3 className={`font-sans text-xl font-extrabold tracking-tight transition-colors duration-300 leading-tight ${
+                    project.lightImage
+                      ? "text-heading group-hover:text-primary text-shadow-on-light-media"
+                      : "text-white group-hover:text-accent text-shadow-on-dark-media"
+                  }`}>
                     {project.name}
                   </h3>
                 </div>
-                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs tracking-wider uppercase font-bold text-white/80 group-hover:text-accent transition-colors duration-300">
+                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-bold transition-colors duration-300 ${
+                  project.lightImage
+                    ? "border-border text-heading group-hover:text-primary text-shadow-on-light-media"
+                    : "border-white/30 text-white group-hover:text-accent text-shadow-on-dark-media"
+                }`}>
                   <span>View Details</span>
                   <svg
                     className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"

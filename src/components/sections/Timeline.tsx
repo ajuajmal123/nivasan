@@ -58,19 +58,19 @@ export default function Timeline() {
   return (
     <section id="timeline" ref={containerRef} className="py-16 bg-white relative overflow-hidden">
       {/* Subtle background decoration grid */}
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Header - Centered via width="full" on Reveal */}
         <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">
           <Reveal delay={0.1} width="full">
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-4 block text-center w-full">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-4 block text-center w-full">
               Our Journey
             </span>
           </Reveal>
           <Reveal delay={0.2} width="full">
-            <h2 className="font-sans text-3xl md:text-4xl font-extrabold text-black-luxury leading-tight text-center w-full">
+            <h2 className="font-sans text-3xl md:text-4xl font-extrabold text-heading leading-tight text-center w-full">
               A Legacy in Time. <br />
               <span className="text-accent">Defining Generations.</span>
             </h2>
@@ -81,7 +81,7 @@ export default function Timeline() {
         <div className="relative max-w-4xl mx-auto">
           
           {/* Vertical central tracking line (Desktop) / Left tracking line (Mobile) */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-black-luxury/5 -translate-x-1/2" />
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/10 -translate-x-1/2" />
           
           {/* Scroll-driven gold progression line */}
           <motion.div
@@ -102,8 +102,8 @@ export default function Timeline() {
                   <div className="absolute left-4 md:left-1/2 top-2 md:top-4 -translate-x-1/2 z-20">
                     <motion.div
                       variants={{
-                        hidden: { scale: 0.8, backgroundColor: "#FFFFFF", borderColor: "rgba(179, 162, 53, 0.3)" },
-                        visible: { scale: 1.2, backgroundColor: "#B3A235", borderColor: "#B3A235" }
+                        hidden: { scale: 0.8, backgroundColor: "var(--color-bg)", borderColor: "rgba(168, 154, 51, 0.3)" },
+                        visible: { scale: 1.2, backgroundColor: "var(--color-accent)", borderColor: "var(--color-accent)" }
                       }}
                       initial="hidden"
                       whileInView="visible"
@@ -134,14 +134,14 @@ export default function Timeline() {
                       isEven ? "md:order-2" : "md:order-1"
                     }`}
                   >
-                    <div className="max-w-md bg-background-luxury border border-[#eae7e3] hover:border-accent hover:shadow-xl hover:shadow-primary/5 p-6 rounded-xl transition-all duration-300 group">
+                    <div className="max-w-md bg-bg-cream border border-border hover:border-accent hover:shadow-xl hover:shadow-primary/5 p-6 rounded-xl transition-all duration-300 group">
                       <Reveal delay={0.2} yOffset={25}>
-                        <h3 className="font-sans text-lg md:text-xl text-black-luxury font-bold mb-2 group-hover:text-primary transition-colors duration-300">
+                        <h3 className="font-sans text-lg md:text-xl text-heading font-bold mb-2 group-hover:text-primary transition-colors duration-300">
                           {milestone.title}
                         </h3>
                       </Reveal>
                       <Reveal delay={0.3} yOffset={30}>
-                        <p className="text-black-luxury/80 text-sm leading-relaxed tracking-wide font-medium">
+                        <p className="text-text text-sm leading-relaxed tracking-wide font-normal">
                           {milestone.description}
                         </p>
                       </Reveal>

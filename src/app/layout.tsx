@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StickyCTA from "@/components/ui/StickyCTA";
 
-const manrope = Manrope({
+const roboto = Roboto({
   subsets: ["latin"],
-  variable: "--font-manrope",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-roboto",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -42,9 +42,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} min-h-screen antialiased`}
+      className={`${roboto.variable} min-h-screen antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-background-luxury text-text-onyx font-sans">
+      <body className="min-h-screen flex flex-col bg-bg-cream text-heading font-sans">
         <LenisProvider>
           <Navbar />
           <div className="site-content flex-1 flex flex-col">

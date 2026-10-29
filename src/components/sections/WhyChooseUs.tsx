@@ -19,7 +19,7 @@ function ValueCard({ iconSvg, title, description, badgeColorClass, lineColorClas
       </div>
 
       {/* Value Title */}
-      <h3 className="font-sans text-base font-extrabold tracking-wider uppercase mb-3 text-black-luxury">
+      <h3 className="font-sans text-base font-extrabold tracking-wider uppercase mb-3 text-heading">
         {title}
       </h3>
 
@@ -27,7 +27,7 @@ function ValueCard({ iconSvg, title, description, badgeColorClass, lineColorClas
       <div className={`w-8 h-0.5 opacity-60 my-1 transition-all duration-300 group-hover:w-16 rounded-full ${lineColorClass}`} />
 
       {/* Description */}
-      <p className="text-[#6D675E] text-xs leading-relaxed mt-3 group-hover:text-black-luxury transition-colors font-light">
+      <p className="text-text-muted text-xs leading-relaxed mt-3 group-hover:text-heading transition-colors font-normal">
         {description}
       </p>
     </div>
@@ -36,9 +36,9 @@ function ValueCard({ iconSvg, title, description, badgeColorClass, lineColorClas
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative py-12 md:py-16 bg-[#f7f6f4] text-[#1c1a17] overflow-hidden border-b border-[#eae7e3]">
+    <section className="relative py-12 md:py-16 bg-bg-cream text-heading overflow-hidden border-b border-border">
       {/* Backdrop linear grid matching reference */}
-      <div className="absolute inset-0 opacity-[0.012] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[4rem_4rem] pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.012] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[4rem_4rem] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -46,10 +46,10 @@ export default function WhyChooseUs() {
           <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
             Core Beliefs
           </span>
-          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-black-luxury">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading">
             Our Corporate Values
           </h2>
-          <p className="text-sm leading-relaxed text-[#4F4C42] max-w-xl">
+          <p className="text-sm leading-relaxed text-text max-w-xl">
             The foundation of our business execution, engineering ethics, and long-standing partnership legacy completed since 1996.
           </p>
         </div>
@@ -85,8 +85,8 @@ export default function WhyChooseUs() {
           />
           <ValueCard
             title="Cost & Time Consciousness"
-            badgeColorClass="bg-black-luxury shadow-black-luxury/20"
-            lineColorClass="bg-black-luxury"
+            badgeColorClass="bg-primary-hover shadow-primary/20"
+            lineColorClass="bg-primary-hover"
             description="We believe in reducing cost and shortening the delivery period of our products and services. High quality and cost-effectiveness are achieved by eliminating waste in all activities."
             iconSvg={
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">

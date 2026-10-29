@@ -36,7 +36,7 @@ export const blogs: BlogPost[] = [
     category: "Apartment",
     date: "11 July 2026",
     readTime: "3 min read",
-    coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Elegant dark background gradient
+    coverImage: "linear-gradient(135deg, var(--color-bg-green-soft) 0%, var(--color-bg-gold-soft) 100%)", // Soft brand green-to-gold gradient
     brief: "Vakulam is built for people who want a well-planned apartment lifestyle close to Coimbatore's IT corridor, without giving up the comforts that make an apartment feel like home.",
     sections: [
       {
@@ -96,7 +96,7 @@ export const blogs: BlogPost[] = [
     category: "Comparison",
     date: "12 July 2026",
     readTime: "3 min read",
-    coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
+    coverImage: "linear-gradient(135deg, var(--color-bg-green-soft) 0%, var(--color-bg-gold-soft) 100%)", // Matching soft brand gradient
     brief: "Coimbatore has no shortage of residential areas, but not all of them give you what Kalapatti does — a genuine mix of calm, gated living and real proximity to the city's key landmarks.",
     sections: [
       {
@@ -156,7 +156,7 @@ export const blogs: BlogPost[] = [
     category: "Investment Guide",
     date: "12 July 2026",
     readTime: "3 min read",
-    coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
+    coverImage: "linear-gradient(135deg, var(--color-bg-green-soft) 0%, var(--color-bg-gold-soft) 100%)", // Matching soft brand gradient
     brief: "Vakulam's location near Tidel Park puts it right in the middle of one of Coimbatore's most actively developing corridors.",
     sections: [
       {
@@ -203,7 +203,7 @@ export const blogs: BlogPost[] = [
     category: "Investment Guide",
     date: "12 July 2026",
     readTime: "3 min read",
-    coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
+    coverImage: "linear-gradient(135deg, var(--color-bg-green-soft) 0%, var(--color-bg-gold-soft) 100%)", // Matching soft brand gradient
     brief: "Coimbatore is growing fast, but two corridors in particular stand out right now for genuine, infrastructure-backed growth: Kalapatti and the Tidel Park corridor.",
     sections: [
       {
@@ -259,7 +259,7 @@ export const blogs: BlogPost[] = [
     category: "Villas",
     date: "12 July 2026",
     readTime: "4 min read",
-    coverImage: "linear-gradient(135deg, #181c24 0%, #0a0c10 100%)", // Matching premium dark gradient
+    coverImage: "linear-gradient(135deg, var(--color-bg-green-soft) 0%, var(--color-bg-gold-soft) 100%)", // Matching soft brand gradient
     brief: "Nivasan Swarnapuraa offers 4 BHK Premium Villas in Kalapatti, Coimbatore — a gated community of just 19 exclusive villas spread across 2.01 acres, with villa sizes ranging from ~4,179 to 6,635 sq.ft.",
     sections: [
       {

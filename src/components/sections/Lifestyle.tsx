@@ -28,11 +28,9 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
     <motion.div
       ref={cardRef}
       style={{ y: yOffset }}
-      className={`${colSpan} relative overflow-hidden group border border-black-luxury/5`}
+      className={`${colSpan} relative overflow-hidden group border border-border`}
     >
-      <div className={`relative w-full ${aspect} overflow-hidden bg-black-luxury`}>
-        {/* Dark overlay that fades out on hover */}
-        <div className="absolute inset-0 bg-black-luxury/25 group-hover:bg-black-luxury/5 transition-colors duration-500 z-10" />
+      <div className={`relative w-full ${aspect} overflow-hidden bg-bg-green-soft`}>
 
         <img
           src={image}
@@ -41,12 +39,12 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
         />
 
         {/* Text Details overlay */}
-        <div className="absolute bottom-6 left-6 z-20 flex items-baseline space-x-3 text-white">
-          <span className="font-serif text-[10px] tracking-widest text-accent">
+        <div className="absolute bottom-6 left-6 z-20 flex items-baseline space-x-3 text-heading">
+          <span className="font-serif text-[10px] tracking-widest text-accent-text">
             {num}
           </span>
           <span className="h-px w-4 bg-accent/60" />
-          <h3 className="font-serif text-lg md:text-xl font-light tracking-wide">
+          <h3 className="font-serif text-lg md:text-xl font-normal tracking-wide">
             {title}
           </h3>
         </div>
@@ -57,18 +55,18 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
 
 export default function Lifestyle() {
   return (
-    <section id="gallery" className="py-16 md:py-10 bg-background-luxury overflow-hidden">
+    <section id="gallery" className="py-16 md:py-10 bg-bg-cream overflow-hidden">
       <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Header */}
         <div className="mb-10 md:mb-16 text-center max-w-xl mx-auto">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent font-semibold mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-6 block">
               The Nivasan Life
             </span>
           </Reveal>
           <Reveal delay={0.2}>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-black-luxury font-light leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-heading font-normal leading-tight">
               A Curated Lifestyle. <br />
               <span className="italic text-accent">Timeless Spaces.</span>
             </h2>

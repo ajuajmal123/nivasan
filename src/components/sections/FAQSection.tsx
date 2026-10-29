@@ -28,20 +28,20 @@ const homepageFAQs = [
 
 export default function FAQSection() {
   return (
-    <section className="relative py-12 md:py-16 bg-background-luxury overflow-hidden border-b border-[#eae7e3]">
-      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,#000000_1px,transparent_1px),linear-gradient(to_bottom,#000000_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
+    <section className="relative py-12 md:py-16 bg-bg-cream overflow-hidden border-b border-border">
+      <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-300 mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-accent font-black block">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block">
             Information Guide
           </span>
-          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-black-luxury select-none">
+          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading select-none">
             Frequently Asked Questions
           </h2>
-          <p className="text-sm text-text-onyx/65 max-w-xl">
+          <p className="text-sm text-text max-w-xl">
             Explore detailed information regarding our legacy, project locations, regulatory approvals, and home buying details.
           </p>
         </div>

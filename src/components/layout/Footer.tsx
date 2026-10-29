@@ -68,16 +68,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black-luxury text-white pt-10 pb-6 overflow-hidden border-t border-white/5">
+    <footer className="bg-bg-green-soft text-text pt-10 pb-6 overflow-hidden border-t border-border">
       <div className="max-w-400 mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-6 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-6 border-b border-border">
           {/* Brand Info */}
           <div className="md:col-span-5 flex flex-col justify-between">
             <div>
               <Link href="/" className="group inline-block mb-4">
                 <Logo size={52} showText={true} textColor="white" className="items-start" />
               </Link>
-              <p className="text-white/60 text-xs leading-relaxed max-w-xs font-sans tracking-wide mt-2">
+              <p className="text-text text-xs leading-relaxed max-w-xs font-sans tracking-wide mt-2">
                 Crafting exceptional living spaces inspired by minimalist purity, premium materiality, and timeless architectural sophistication.
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Footer() {
                 href="https://www.instagram.com/nivasanhomes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-accent transition-colors duration-300"
+                className="text-text hover:text-primary transition-colors duration-300"
                 aria-label="Instagram"
               >
                 <InstagramIcon size={18} />
@@ -96,7 +96,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/nivasan-homes"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-accent transition-colors duration-300"
+                className="text-text hover:text-primary transition-colors duration-300"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon size={18} />
@@ -105,7 +105,7 @@ export default function Footer() {
                 href="https://www.facebook.com/nivasanhomes/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-accent transition-colors duration-300"
+                className="text-text hover:text-primary transition-colors duration-300"
                 aria-label="Facebook"
               >
                 <FacebookIcon size={18} />
@@ -114,7 +114,7 @@ export default function Footer() {
                 href="https://x.com/HomesNivasan?s=09"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/60 hover:text-accent transition-colors duration-300"
+                className="text-text hover:text-primary transition-colors duration-300"
                 aria-label="Twitter"
               >
                 <TwitterIcon size={18} />
@@ -124,14 +124,14 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
               Navigation
             </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Home
                 </Link>
@@ -139,7 +139,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#about"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Profile
                 </Link>
@@ -147,7 +147,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/projects"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Projects
                 </Link>
@@ -155,7 +155,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#contact"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Enquiry
                 </Link>
@@ -164,7 +164,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/blog"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Blog
                 </Link>
@@ -172,7 +172,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/#contact"
-                  className="text-xs text-white/70 hover:text-white transition-colors duration-300"
+                  className="text-xs text-text hover:text-primary transition-colors duration-300"
                 >
                   Contact Us
                 </Link>
@@ -182,35 +182,35 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-accent font-semibold mb-3">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
               Head Office
             </h4>
-            <p className="text-xs text-white/70 leading-relaxed mb-3 font-sans">
+            <p className="text-xs text-text leading-relaxed mb-3 font-sans">
               No. 252, Avinashi Road (Opp: Varadharaja Mills),<br />
               Peelamedu, Coimbatore - 641 004
             </p>
-            <div className="space-y-2.5 text-xs text-white/70">
+            <div className="space-y-2.5 text-xs text-text">
               <div>
-                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                <span className="block text-[9px] uppercase tracking-wider text-accent-text font-bold mb-0.5">
                   Customer Advisory
                 </span>
-                <a href="tel:+919842323071" className="hover:text-accent text-white font-semibold transition-colors duration-300 block">
+                <a href="tel:+919842323071" className="hover:text-primary text-heading font-semibold transition-colors duration-300 block">
                   +91 98423 23071
                 </a>
               </div>
               <div>
-                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                <span className="block text-[9px] uppercase tracking-wider text-accent-text font-bold mb-0.5">
                   Site Visit Scheduling
                 </span>
-                <a href="tel:+919942223013" className="hover:text-accent text-white font-semibold transition-colors duration-300 block">
+                <a href="tel:+919942223013" className="hover:text-primary text-heading font-semibold transition-colors duration-300 block">
                   +91 99422 23013
                 </a>
               </div>
               <div>
-                <span className="block text-[9px] uppercase tracking-wider text-accent/80 font-bold mb-0.5">
+                <span className="block text-[9px] uppercase tracking-wider text-accent-text font-bold mb-0.5">
                   Email Inquiry
                 </span>
-                <a href="mailto:info@nivasanhomes.com" className="hover:text-accent transition-colors duration-300 block">
+                <a href="mailto:info@nivasanhomes.com" className="hover:text-primary transition-colors duration-300 block">
                   info@nivasanhomes.com
                 </a>
               </div>
@@ -219,12 +219,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center pt-4 mt-4 text-[10px] text-white/40 tracking-wider gap-4 md:gap-8 text-center">
+        <div className="flex flex-col md:flex-row flex-wrap items-center justify-center pt-4 mt-4 text-[10px] text-text-muted tracking-wider gap-4 md:gap-8 text-center">
           <div className="flex items-center space-x-4 md:space-x-6">
-            <a href="/Nivasan_Homes_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 whitespace-nowrap">
+            <a href="/Nivasan_Homes_Privacy_Policy.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300 whitespace-nowrap">
               Privacy Policy
             </a>
-            <a href="/Nivasan_Homes_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-300 whitespace-nowrap">
+            <a href="/Nivasan_Homes_Terms_and_Conditions.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors duration-300 whitespace-nowrap">
               Terms & Conditions
             </a>
           </div>
