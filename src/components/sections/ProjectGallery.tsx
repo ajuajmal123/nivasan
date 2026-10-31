@@ -192,7 +192,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
 
   return (
     <div id="project-gallery" className="border-t border-border pt-12">
-      <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block mb-2">
+      <span className="text-xs uppercase font-display tracking-[0.3em] text-accent-text font-black block mb-2">
         Visual Showcase
       </span>
       <h3 className="text-2xl md:text-3xl font-extrabold text-heading tracking-tight mb-8 uppercase">
@@ -205,14 +205,14 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
           <div
             key={index}
             onClick={() => handleOpen(index)}
-            className="h-64 rounded-xl overflow-hidden border border-border group cursor-pointer bg-bg-green-soft relative shadow-sm hover:shadow-md transition-all duration-300"
+            className="h-64 rounded-xl overflow-hidden border border-border group cursor-pointer bg-bg-green-soft relative shadow-sm card-interactive"
           >
             <Image
               src={img}
               alt={getAltText(index)}
               fill
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"
-              className="w-full h-full object-cover scale-[1.05] transition-all duration-500 opacity-95 group-hover:opacity-100"
+              className="w-full h-full object-cover scale-100 transition-transform duration-300 ease-out group-hover:scale-105"
             />
           </div>
         ))}
@@ -238,7 +238,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               <button
                 onClick={handleClose}
                 aria-label="Close gallery"
-                className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/15 text-heading flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="btn btn-secondary w-10 h-10"
               >
                 <X size={20} />
               </button>
@@ -250,7 +250,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               <button
                 onClick={handlePrev}
                 aria-label="Previous image"
-                className="absolute left-4 w-12 h-12 rounded-full bg-primary/5 hover:bg-primary/10 text-heading flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
+                className="btn btn-secondary absolute left-4 w-12 h-12 pointer-events-auto z-10"
               >
                 <ChevronLeft size={24} />
               </button>
@@ -286,7 +286,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               <button
                 onClick={handleNext}
                 aria-label="Next image"
-                className="absolute right-4 w-12 h-12 rounded-full bg-primary/5 hover:bg-primary/10 text-heading flex items-center justify-center transition-all duration-300 pointer-events-auto cursor-pointer z-10"
+                className="btn btn-secondary absolute right-4 w-12 h-12 pointer-events-auto z-10"
               >
                 <ChevronRight size={24} />
               </button>
@@ -303,7 +303,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
                 <button
                   onClick={handleZoomOut}
                   disabled={zoom <= 1}
-                  className="w-8 h-8 text-heading hover:text-primary disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                  className="w-8 h-8 text-primary hover:text-primary-hover disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
                   title="Zoom Out"
                 >
                   <ZoomOut size={16} />
@@ -314,7 +314,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
 
                 <button
                   onClick={handleZoomReset}
-                  className="text-[10px] text-heading hover:text-accent-text font-extrabold tracking-widest uppercase font-display px-2 transition-colors duration-300 cursor-pointer"
+                  className="label-caps text-primary hover:text-primary-hover px-2 transition-colors duration-300 cursor-pointer"
                   title="Reset Zoom"
                 >
                   <RotateCcw size={14} className="inline mr-1" /> {zoom.toFixed(1)}x
@@ -325,7 +325,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
                 <button
                   onClick={handleZoomIn}
                   disabled={zoom >= 3}
-                  className="w-8 h-8 text-heading hover:text-primary disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
+                  className="w-8 h-8 text-primary hover:text-primary-hover disabled:text-text-muted/50 flex items-center justify-center transition-colors duration-300 cursor-pointer"
                   title="Zoom In"
                 >
                   <ZoomIn size={16} />
@@ -333,7 +333,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
               </div>
 
               {/* Guide Hint */}
-              <span className="text-[9px] uppercase tracking-wider text-text-muted font-bold hidden md:inline">
+              <span className="label-caps text-text-muted hidden md:inline">
                 Use Arrow Keys to Navigate • Esc to Close • Drag to pan zoom
               </span>
             </div>

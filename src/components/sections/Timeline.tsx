@@ -1,13 +1,17 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { motion, useReducedMotion } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "../ui/Reveal";
+import LogoMark from "../ui/LogoMark";
 
 interface Milestone {
   year: string;
   title: string;
   description: string;
+  image: string | null; // null -> brand panel with the logo mark
 }
 
 const milestones: Milestone[] = [
@@ -15,143 +19,205 @@ const milestones: Milestone[] = [
     year: "2010",
     title: "Nivasan Homes Founded",
     description: "Established with a vision to deliver quality homes in Coimbatore with customer-first values and ethical practices.",
+    image: null,
   },
   {
     year: "2013",
     title: "First Projects Delivered",
     description: "Early premium apartment projects demonstrated the Nivasan commitment to quality and on-time possession.",
+    image: "/completed/p8/1.png",
   },
   {
     year: "2016",
     title: "Nivasan Bliss & Ramaas",
     description: "Landmark luxury apartment developments on Avinashi Road set new standards for premium living in the city.",
+    image: "/completed/p2/1.png",
   },
   {
     year: "2019",
     title: "Echo Point Projects",
     description: "Expanded into commercial real estate with Echo Point Plaza premium offices and retail opposite KMCH.",
+    image: "/completed/p4/1.png",
   },
   {
     year: "2022",
     title: "CREDAI Membership",
     description: "Recognised as a leading Coimbatore developer with formal affiliation to the industry apex body CREDAI.",
+    image: "/completed/p11/1.png",
   },
   {
     year: "2024",
     title: "Swarnapuraa & Vakulam",
     description: "Two simultaneous RERA-registered active projects premium villas and apartments serving multiple buyer profiles.",
+    image: "/ongoing/p1/image.png",
   },
 ];
 
-export default function Timeline() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Track scroll progress of the timeline container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"],
-  });
+const TRACK_GAP_PX = 24; // gap-6
+const AUTOPLAY_MS = 4000;
 
-  // Scale the progress line height from 0% to 100%
-  const scaleY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+export default function Timeline() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(false); // true while hovered / focused
+  const reduceMotion = useReducedMotion();
+  const [thumb, setThumb] = useState({ width: 100, left: 0 });
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  // Gold progress bar: thumb width = visible share of the track, position = scroll position
+  const updateProgress = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const max = track.scrollWidth - track.clientWidth;
+    const width = (track.clientWidth / track.scrollWidth) * 100;
+    const progress = max > 0 ? track.scrollLeft / max : 0;
+    setThumb({ width, left: progress * (100 - width) });
+    setAtStart(track.scrollLeft <= 2);
+    setAtEnd(track.scrollLeft >= max - 2);
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    updateProgress();
+    track?.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    return () => {
+      track?.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, [updateProgress]);
+
+  const scrollByCard = useCallback((direction: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector<HTMLElement>("[data-milestone]");
+    const step = card ? card.offsetWidth + TRACK_GAP_PX : track.clientWidth;
+    track.scrollBy({ left: direction * step, behavior: reduceMotion ? "auto" : "smooth" });
+  }, [reduceMotion]);
+
+  // Auto-advance one card at a time, looping back to the start; paused on hover/focus,
+  // when the tab is hidden, and for visitors who prefer reduced motion.
+  useEffect(() => {
+    if (reduceMotion) return;
+    const timer = setInterval(() => {
+      const track = trackRef.current;
+      if (!track || pausedRef.current || document.hidden) return;
+      const max = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= max - 2) track.scrollTo({ left: 0, behavior: "smooth" });
+      else scrollByCard(1);
+    }, AUTOPLAY_MS);
+    return () => clearInterval(timer);
+  }, [reduceMotion, scrollByCard]);
+
+  const pause = () => { pausedRef.current = true; };
+  const resume = () => { pausedRef.current = false; };
 
   return (
-    <section id="timeline" ref={containerRef} className="py-16 bg-white relative overflow-hidden">
+    <section id="timeline" className="py-16 md:py-24 bg-white relative overflow-hidden">
       {/* Subtle background decoration grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-400 mx-auto px-6 md:px-12">
-        
+
         {/* Header - Centered via width="full" on Reveal */}
         <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">
           <Reveal delay={0.1} width="full">
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-4 block text-center w-full">
+            <span className="text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-4 block text-center w-full">
               Our Journey
             </span>
           </Reveal>
           <Reveal delay={0.2} width="full">
             <h2 className="font-sans text-3xl md:text-4xl font-extrabold text-heading leading-tight text-center w-full">
               A Legacy in Time. <br />
-              <span className="text-accent">Defining Generations.</span>
+              <span className="text-accent-text">Defining Generations.</span>
             </h2>
           </Reveal>
         </div>
 
-        {/* Timeline body wrapper */}
-        <div className="relative max-w-4xl mx-auto">
-          
-          {/* Vertical central tracking line (Desktop) / Left tracking line (Mobile) */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-primary/10 -translate-x-1/2" />
-          
-          {/* Scroll-driven gold progression line */}
-          <motion.div
-            style={{ scaleY, originY: 0 }}
-            className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-accent -translate-x-1/2"
-          />
-
-          {/* Milestones list */}
-          <div className="space-y-12 md:space-y-16">
-            {milestones.map((milestone, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <div
-                  key={milestone.year}
-                  className="relative grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-start"
-                >
-                  {/* Gold Node dot on the timeline line */}
-                  <div className="absolute left-4 md:left-1/2 top-2 md:top-4 -translate-x-1/2 z-20">
-                    <motion.div
-                      variants={{
-                        hidden: { scale: 0.8, backgroundColor: "var(--color-bg)", borderColor: "rgba(168, 154, 51, 0.3)" },
-                        visible: { scale: 1.2, backgroundColor: "var(--color-accent)", borderColor: "var(--color-accent)" }
-                      }}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true, margin: "-10% 0px" }}
-                      transition={{ duration: 0.5 }}
-                      className="w-4 h-4 rounded-full border-2 bg-white flex items-center justify-center shadow-md"
-                    >
-                      <div className="w-1.5 h-1.5 rounded-full bg-white" />
-                    </motion.div>
-                  </div>
-
-                  {/* Left Column / Year side */}
-                  <div
-                    className={`pl-10 md:pl-0 md:text-right ${
-                      isEven ? "md:order-1" : "md:order-2"
-                    }`}
-                  >
-                    <Reveal delay={0.1} yOffset={20}>
-                      <span className="font-sans text-4xl md:text-5xl lg:text-6xl text-accent font-extrabold drop-shadow-sm">
-                        {milestone.year}
-                      </span>
-                    </Reveal>
-                  </div>
-
-                  {/* Right Column / Content side - Premium Card Container */}
-                  <div
-                    className={`pl-10 md:pl-0 ${
-                      isEven ? "md:order-2" : "md:order-1"
-                    }`}
-                  >
-                    <div className="max-w-md bg-bg-cream border border-border hover:border-accent hover:shadow-xl hover:shadow-primary/5 p-6 rounded-xl transition-all duration-300 group">
-                      <Reveal delay={0.2} yOffset={25}>
-                        <h3 className="font-sans text-lg md:text-xl text-heading font-bold mb-2 group-hover:text-primary transition-colors duration-300">
-                          {milestone.title}
-                        </h3>
-                      </Reveal>
-                      <Reveal delay={0.3} yOffset={30}>
-                        <p className="text-text text-sm leading-relaxed tracking-wide font-normal">
-                          {milestone.description}
-                        </p>
-                      </Reveal>
+        {/* Milestone slider: 1 card (mobile, swipe) / 2 (tablet) / 3 (desktop), CSS scroll-snap */}
+        <div
+          className="max-w-6xl mx-auto"
+          onMouseEnter={pause}
+          onMouseLeave={resume}
+          onFocus={pause}
+          onBlur={resume}
+          onTouchStart={pause}
+          onTouchEnd={resume}
+        >
+          <div
+            ref={trackRef}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-none pt-2 pb-8 -mx-2 px-2"
+            aria-label="Nivasan milestones"
+          >
+            {milestones.map((milestone, idx) => (
+              <motion.article
+                key={milestone.year}
+                data-milestone
+                initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: reduceMotion ? 0 : (idx % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="group snap-start shrink-0 basis-full md:basis-[calc((100%-1.5rem)/2)] lg:basis-[calc((100%-3rem)/3)] bg-bg-cream border border-border rounded-xl overflow-hidden card-interactive flex flex-col"
+              >
+                <div className="relative aspect-4/3 overflow-hidden bg-bg-green-soft">
+                  {milestone.image ? (
+                    <Image
+                      src={milestone.image}
+                      alt={milestone.title}
+                      fill
+                      sizes="(min-width: 1024px) 368px, (min-width: 768px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center transition-transform duration-300 ease-out group-hover:scale-105">
+                      <LogoMark className="w-2/5" />
                     </div>
-                  </div>
+                  )}
                 </div>
-              );
-            })}
+                <div className="p-6 flex flex-col gap-2">
+                  <span className="font-display text-4xl md:text-5xl font-bold text-accent-text leading-none">
+                    {milestone.year}
+                  </span>
+                  <h3 className="text-lg md:text-xl text-heading mt-2">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-text text-sm leading-relaxed tracking-wide font-normal">
+                    {milestone.description}
+                  </p>
+                </div>
+              </motion.article>
+            ))}
           </div>
 
+          {/* Position: thin gold progress bar + prev/next (arrows from tablet up; mobile swipes) */}
+          <div className="flex items-center gap-6">
+            <div className="relative flex-1 h-0.5 bg-primary/10 rounded-full overflow-hidden" aria-hidden="true">
+              <div
+                className="absolute inset-y-0 bg-accent rounded-full transition-[left,width] duration-300 ease-out"
+                style={{ width: `${thumb.width}%`, left: `${thumb.left}%` }}
+              />
+            </div>
+            <div className="hidden md:flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => scrollByCard(-1)}
+                disabled={atStart}
+                aria-label="Previous milestone"
+                className="btn btn-secondary w-11 h-11"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <button
+                type="button"
+                onClick={() => scrollByCard(1)}
+                disabled={atEnd}
+                aria-label="Next milestone"
+                className="btn btn-secondary w-11 h-11"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
         </div>
 
       </div>

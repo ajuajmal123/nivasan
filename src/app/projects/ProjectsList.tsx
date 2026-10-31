@@ -10,7 +10,6 @@ export interface Project {
   status: string;
   tag: string;
   image: string;
-  lightImage?: boolean; // very light photo behind the card text -> heading-colored text
 }
 
 const projectsList: Project[] = [
@@ -19,7 +18,7 @@ const projectsList: Project[] = [
     name: "Nivasan Swarnapuraa",
     status: "Ongoing",
     tag: "Premium 4 BHK Gated Villas",
-    image: "/ongoing/p1/image.png",
+    image: "/ongoing/p1/image2.png",
   },
   {
     id: "nivasan-vakulam",
@@ -112,7 +111,6 @@ const projectsList: Project[] = [
     status: "Completed",
     tag: "Villas and Apartments",
     image: "/completed/p12/1.png",
-    lightImage: true,
   },
   {
     id: "meenakshi-vishranth",
@@ -155,10 +153,7 @@ export default function ProjectsList() {
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase font-display tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
-                  ? "bg-primary text-white shadow-md shadow-primary/20"
-                  : "bg-white border border-border text-primary/70 hover:text-primary hover:border-primary/30"
-                  }`}
+                className={`btn btn-sm ${filter === tab ? "btn-primary" : "btn-secondary"}`}
               >
                 {tab}
               </button>
@@ -172,7 +167,7 @@ export default function ProjectsList() {
             <Link
               key={project.id}
               href={`/projects/${project.id}`}
-              className="group relative overflow-hidden bg-bg-green-soft border border-border hover:border-primary/50 rounded-xl shadow-lg hover:shadow-2xl aspect-3/4 w-full flex flex-col justify-end transition-all duration-500 cursor-pointer"
+              className="group relative overflow-hidden bg-bg-green-soft border border-border rounded-xl shadow-lg card-interactive aspect-3/4 w-full flex flex-col justify-end cursor-pointer"
             >
               {/* Background image */}
               <div className="absolute -inset-0.75 z-0 overflow-hidden">
@@ -182,13 +177,13 @@ export default function ProjectsList() {
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   loading={index < 3 ? "eager" : "lazy"}
-                  className="w-full h-full object-cover scale-[1.03] transition-transform duration-750 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover scale-100 transition-transform duration-300 ease-out group-hover:scale-105"
                 />
               </div>
 
               {/* Status Badge */}
               <div className="absolute top-4 left-4 z-10">
-                <span className={`text-[9px] font-black tracking-widest uppercase font-display px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
+                <span className={`label-caps px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
                   {project.status}
                 </span>
               </div>
@@ -196,24 +191,14 @@ export default function ProjectsList() {
               {/* Text content - highly readable */}
               <div className="relative z-10 p-8 flex flex-col gap-3 drop-shadow-md">
                 <div className="flex flex-col gap-1">
-                  <span className={`text-[10px] font-extrabold uppercase font-display tracking-wider drop-shadow-sm ${
-                    project.lightImage ? "text-accent-text text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
-                  }`}>
+                  <span className="label-caps drop-shadow-sm text-white text-shadow-on-dark-media">
                     {project.tag}
                   </span>
-                  <h3 className={`font-sans text-xl font-extrabold tracking-tight transition-colors duration-300 leading-tight ${
-                    project.lightImage
-                      ? "text-heading group-hover:text-primary text-shadow-on-light-media"
-                      : "text-white group-hover:text-accent text-shadow-on-dark-media"
-                  }`}>
+                  <h3 className="font-sans text-xl font-extrabold tracking-tight leading-tight text-accent text-shadow-on-dark-media">
                     {project.name}
                   </h3>
                 </div>
-                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-display font-bold transition-colors duration-300 ${
-                  project.lightImage
-                    ? "border-border text-heading group-hover:text-primary text-shadow-on-light-media"
-                    : "border-white/30 text-white group-hover:text-accent text-shadow-on-dark-media"
-                }`}>
+                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-display font-bold transition-colors duration-300 border-white/30 text-white text-shadow-on-dark-media`}>
                   <span>View Details</span>
                   <svg
                     className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"

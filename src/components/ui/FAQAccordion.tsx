@@ -31,13 +31,13 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
             className={`bg-white border rounded-xl overflow-hidden transition-all duration-300 ${
               isOpen
                 ? "border-accent shadow-md shadow-accent/5"
-                : "border-border hover:border-primary/30 shadow-sm"
+                : "border-border hover:border-primary/20 shadow-sm"
             }`}
           >
             {/* Header/Question Trigger */}
             <button
               onClick={() => toggleFAQ(idx)}
-              className="w-full p-5 md:p-6 flex items-center justify-between text-left cursor-pointer group select-none outline-none"
+              className="w-full p-5 md:p-6 flex items-center justify-between text-left cursor-pointer group select-none"
             >
               <span className="text-base font-bold text-heading group-hover:text-primary transition-colors duration-300 pr-4">
                 {faq.question}
@@ -46,7 +46,7 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
                 className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center border transition-all duration-300 ${
                   isOpen
                     ? "bg-accent border-accent text-white rotate-180"
-                    : "bg-bg-cream border-border text-accent group-hover:border-accent/40"
+                    : "bg-bg-cream border-border text-accent group-hover:border-primary/20"
                 }`}
               >
                 <ChevronDown size={16} />

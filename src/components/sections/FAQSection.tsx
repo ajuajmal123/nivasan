@@ -28,14 +28,14 @@ const homepageFAQs = [
 
 export default function FAQSection() {
   return (
-    <section className="relative py-12 md:py-16 bg-bg-cream overflow-hidden border-b border-border">
+    <section className="relative py-16 md:py-24 bg-bg-cream overflow-hidden border-b border-border">
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-300 mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
         
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 flex flex-col items-center gap-4">
+          <span className="text-xs uppercase font-display tracking-[0.3em] text-accent-text font-black block">
             Information Guide
           </span>
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading select-none">

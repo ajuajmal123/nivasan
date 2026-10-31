@@ -45,17 +45,17 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
   return (
     <div
       ref={ref}
-      className="relative bg-white border border-border p-8 rounded-xl shadow-[0_4px_20px_-4px_rgba(15,120,62,0.02),0_2px_4px_rgba(15,120,62,0.01)] hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col items-start text-left group overflow-hidden"
+      className="relative bg-white border border-border p-8 rounded-xl shadow-[0_4px_20px_-4px_rgba(15,120,62,0.02),0_2px_4px_rgba(15,120,62,0.01)] card-interactive flex flex-col items-start text-left group overflow-hidden"
     >
       {/* Glow highlight */}
-      <div className="absolute -right-12 -bottom-12 w-32 h-32 rounded-full bg-primary/0 blur-2xl group-hover:bg-primary/4 transition-all duration-500 pointer-events-none" />
+      <div className="absolute -right-12 -bottom-12 w-32 h-32 rounded-full bg-transparent blur-2xl group-hover:bg-primary/5 transition-all duration-500 pointer-events-none" />
       
       {/* Icon & Index Row */}
       <div className="flex items-center justify-between w-full mb-6">
         <div className="w-14 h-14 rounded-xl bg-bg-cream flex items-center justify-center border border-border text-primary group-hover:bg-primary group-hover:text-white group-hover:border-primary group-hover:shadow-lg group-hover:shadow-primary/20 transition-all duration-500">
           {iconSvg}
         </div>
-        <span className="text-[10px] font-black text-accent/35 group-hover:text-primary/30 transition-colors tracking-widest font-mono">
+        <span className="text-[11px] font-black text-accent transition-colors tracking-widest font-mono">
           {numStr}
         </span>
       </div>
@@ -67,7 +67,7 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
       </div>
       
       {/* Stat Units Tag */}
-      <div className="text-[9px] font-bold text-accent-text uppercase tracking-[0.2em] mb-4">
+      <div className="label-caps text-accent-text mb-4">
         {label}
       </div>
 
@@ -84,18 +84,18 @@ function StatCard({ value, suffix = "", label, description, numStr, iconSvg }: S
 
 export default function Statistics() {
   return (
-    <section className="relative py-12 md:py-16 bg-bg-cream text-heading overflow-hidden border-t border-border border-b border-border">
+    <section className="relative py-16 md:py-24 bg-bg-cream text-heading overflow-hidden border-t border-border border-b border-border">
       {/* Linear Grid lines background matching reference */}
       <div className="absolute inset-0 opacity-[0.015] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[4rem_4rem] z-0 pointer-events-none" />
       
       {/* Smooth light highlights */}
-      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/3 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-150 h-150 bg-accent/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border text-[10px] font-bold tracking-widest text-primary uppercase font-display shadow-[0_2px_10px_rgba(15,120,62,0.02)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border text-xs font-bold tracking-widest text-primary uppercase font-display shadow-[0_2px_10px_rgba(15,120,62,0.02)]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
             Heritage & Scale: Established in 1996
           </div>

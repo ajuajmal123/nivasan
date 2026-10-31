@@ -63,7 +63,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-16 md:py-10 bg-bg-cream overflow-hidden relative">
+    <section className="py-16 md:py-24 bg-bg-cream overflow-hidden relative">
       {/* Decorative quotes background */}
       <div className="absolute top-10 left-12 font-serif text-[18rem] text-heading/2 leading-none select-none pointer-events-none">
         “
@@ -74,7 +74,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-16 md:mb-10">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
+            <span className="text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
               Client Chronicles
             </span>
           </Reveal>
@@ -106,7 +106,7 @@ export default function Testimonials() {
                 <cite className="not-italic text-xs uppercase tracking-[0.25em] text-heading font-semibold block mb-1">
                   {testimonials[activeIdx].author}
                 </cite>
-                <span className="text-[10px] tracking-[0.2em] text-text-muted uppercase font-sans">
+                <span className="label-caps text-text-muted">
                   {testimonials[activeIdx].role} &bull; {testimonials[activeIdx].project}
                 </span>
               </div>
@@ -117,7 +117,7 @@ export default function Testimonials() {
           <div className="flex items-center space-x-8 mt-16">
             <button
               onClick={handlePrev}
-              className="p-3 border border-border rounded-full text-heading hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
+              className="btn btn-secondary w-11 h-11"
               aria-label="Previous Testimonial"
             >
               <ArrowLeft size={16} />
@@ -131,7 +131,7 @@ export default function Testimonials() {
 
             <button
               onClick={handleNext}
-              className="p-3 border border-border rounded-full text-heading hover:border-accent hover:text-accent transition-all duration-300 focus:outline-none"
+              className="btn btn-secondary w-11 h-11"
               aria-label="Next Testimonial"
             >
               <ArrowRight size={16} />

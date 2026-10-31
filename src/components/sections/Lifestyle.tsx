@@ -28,19 +28,19 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
     <motion.div
       ref={cardRef}
       style={{ y: yOffset }}
-      className={`${colSpan} relative overflow-hidden group border border-border`}
+      className={`${colSpan} relative overflow-hidden group border border-border card-interactive`}
     >
       <div className={`relative w-full ${aspect} overflow-hidden bg-bg-green-soft`}>
 
         <img
           src={image}
           alt={title}
-          className="w-full h-[115%] absolute top-[-7.5%] object-cover transform scale-100 group-hover:scale-105 transition-all duration-[1.8s] ease-out"
+          className="w-full h-[115%] absolute top-[-7.5%] object-cover scale-100 group-hover:scale-105 transition-transform duration-300 ease-out"
         />
 
         {/* Text Details overlay */}
         <div className="absolute bottom-6 left-6 z-20 flex items-baseline space-x-3 text-heading">
-          <span className="font-serif text-[10px] tracking-widest text-accent-text">
+          <span className="font-serif text-[11px] tracking-widest text-accent-text">
             {num}
           </span>
           <span className="h-px w-4 bg-accent/60" />
@@ -55,20 +55,20 @@ function GalleryCard({ title, num, image, parallaxSpeed, colSpan, aspect }: Grid
 
 export default function Lifestyle() {
   return (
-    <section id="gallery" className="py-16 md:py-10 bg-bg-cream overflow-hidden">
+    <section id="gallery" className="py-16 md:py-24 bg-bg-cream overflow-hidden">
       <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Header */}
-        <div className="mb-10 md:mb-16 text-center max-w-xl mx-auto">
+        <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
+            <span className="text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
               The Nivasan Life
             </span>
           </Reveal>
           <Reveal delay={0.2}>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-heading font-normal leading-tight">
               A Curated Lifestyle. <br />
-              <span className="italic text-accent">Timeless Spaces.</span>
+              <span className="italic text-accent-text">Timeless Spaces.</span>
             </h2>
           </Reveal>
         </div>

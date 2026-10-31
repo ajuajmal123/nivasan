@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "../ui/Logo";
+import { handleNavClick, scrollAfterArrival, scrollToId } from "@/lib/smoothNav";
 
 const navLinks = [
   { name: "Home", href: "/", num: "01" },
@@ -16,10 +17,21 @@ const navLinks = [
   { name: "Contact Us", href: "/#contact", num: "06" },
 ];
 
+// Home-page section id -> nav item highlighted by scroll-spy (#contact maps to "Contact Us" only)
+const sectionToNav: Record<string, string> = {
+  home: "Home",
+  about: "Profile",
+  projects: "Projects",
+  contact: "Contact Us",
+};
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>("home");
   const pathname = usePathname();
+  const router = useRouter();
+  const prevPathname = useRef<string | null>(null);
 
   const isHome = pathname === "/";
   const shouldBeGlass = !isHome || isScrolled;
@@ -37,32 +49,50 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Smooth scroll logic for hash anchors on Home route
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("/#") && isHome) {
-      e.preventDefault();
-      setIsMobileMenuOpen(false);
-      const targetId = href.substring(2);
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  // Check URL hash on page load / pathname change to scroll smoothly
+  // Landing on "/": from another page start at the top (then glide to any #hash);
+  // on a fresh load with a #hash, glide to that section once the page has settled.
   useEffect(() => {
-    if (isHome && typeof window !== "undefined" && window.location.hash) {
-      const targetId = window.location.hash.substring(1);
-      const target = document.getElementById(targetId);
-      if (target) {
-        const timer = setTimeout(() => {
-          target.scrollIntoView({ behavior: "smooth" });
-        }, 300);
-        return () => clearTimeout(timer);
-      }
+    const cameFrom = prevPathname.current;
+    prevPathname.current = pathname;
+    if (!isHome) return;
+    const hash = window.location.hash.substring(1);
+    if (cameFrom !== null && cameFrom !== "/") {
+      scrollAfterArrival(hash);
+    } else if (cameFrom === null && hash) {
+      const timer = setTimeout(() => scrollToId(hash), 300);
+      return () => clearTimeout(timer);
     }
   }, [pathname, isHome]);
+
+  // Scroll-spy on the home page: highlight the nav item of the section in the middle of the viewport.
+  // Sections without a nav item (timeline, FAQ) clear the highlight.
+  useEffect(() => {
+    if (!isHome) return;
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("main section"));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveSection(entry.target.id || null);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px" }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [isHome]);
+
+  const activeNav = isHome
+    ? (activeSection && sectionToNav[activeSection]) || null
+    : pathname.startsWith("/projects")
+      ? "Projects"
+      : pathname.startsWith("/blog")
+        ? "Blog"
+        : null;
+
+  const onNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    handleNavClick(e, href, pathname, router);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -75,7 +105,7 @@ export default function Navbar() {
       >
         <div className="w-full max-w-400 mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="group z-50 flex items-center">
+          <Link href="/" onClick={(e) => onNavClick(e, "/")} className="group z-50 flex items-center">
             <Logo
               textColor={shouldBeGlass ? "primary" : "white"}
               showText={true}
@@ -83,23 +113,20 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation: body font 11px on tablet, Lemon Milk from lg */}
           <nav className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href === "/" && pathname === "/");
+              const isActive = activeNav === link.name;
               return (
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-[9px] lg:text-xs uppercase font-display tracking-[0.02em] lg:tracking-[0.2em] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-accent after:origin-right hover:after:origin-left after:transition-transform after:duration-500 ${
-                    isActive
-                      ? `font-semibold after:scale-x-100 after:origin-left ${
-                          shouldBeGlass ? "text-accent-text" : "text-accent text-shadow-on-dark-media"
-                        }`
-                      : `after:scale-x-0 hover:after:scale-x-100 ${
-                          shouldBeGlass ? "text-primary/80 hover:text-accent-text" : "text-white text-shadow-on-dark-media hover:text-accent"
-                        }`
+                  onClick={(e) => onNavClick(e, link.href)}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`text-[11px] font-semibold tracking-[0.02em] lg:font-display lg:text-xs lg:font-normal lg:tracking-[0.2em] uppercase transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-accent after:origin-right hover:after:origin-left after:transition-transform after:duration-500 hover:after:scale-x-100 ${
+                    isActive ? "after:scale-x-100 after:origin-left" : "after:scale-x-0"
+                  } ${
+                    shouldBeGlass ? "text-primary hover:text-primary-hover" : "text-white text-shadow-on-dark-media"
                   }`}
                 >
                   {link.name}
@@ -113,10 +140,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden transition-colors duration-300 focus:outline-none z-50 ${
-              shouldBeGlass || isMobileMenuOpen ? "text-primary hover:text-accent-text" : "text-white hover:text-accent"
+            className={`md:hidden transition-colors duration-300 z-50 ${
+              shouldBeGlass || isMobileMenuOpen ? "text-primary hover:text-primary-hover" : "text-white"
             }`}
             aria-label="Toggle Menu"
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -142,7 +170,7 @@ export default function Navbar() {
 
             <nav className="flex flex-col space-y-6">
               {navLinks.map((link, idx) => {
-                const isActive = pathname === link.href || (link.href === "/" && pathname === "/");
+                const isActive = activeNav === link.name;
                 return (
                   <motion.div
                     key={link.name}
@@ -152,23 +180,21 @@ export default function Navbar() {
                   >
                     <Link
                       href={link.href}
-                      onClick={(e) => {
-                        handleLinkClick(e, link.href);
-                        setIsMobileMenuOpen(false);
-                      }}
+                      onClick={(e) => onNavClick(e, link.href)}
+                      aria-current={isActive ? "page" : undefined}
                       className="flex items-baseline group"
                     >
                       <span className="font-display text-accent-text text-sm tracking-widest mr-4 font-bold">
                         {link.num}
                       </span>
-                      <span className={`font-display text-3xl font-extrabold transition-colors duration-300 ${
-                        isActive ? "text-accent-text" : "text-heading group-hover:text-accent-text"
+                      <span className={`font-display text-3xl font-extrabold text-primary group-hover:text-primary-hover transition-colors duration-300 underline-offset-8 decoration-2 decoration-accent ${
+                        isActive ? "underline" : ""
                       }`}>
                         {link.name}
                       </span>
                       <ArrowUpRight
                         size={18}
-                        className="ml-2 text-text-muted group-hover:text-accent-text group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 opacity-0 group-hover:opacity-100"
+                        className="ml-2 text-text-muted group-hover:text-primary-hover group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 opacity-0 group-hover:opacity-100"
                       />
                     </Link>
                   </motion.div>
@@ -182,34 +208,34 @@ export default function Navbar() {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="border-t border-border pt-8"
             >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-2">
+              <p className="label-caps text-text-muted mb-2">
                 Inquiries
               </p>
               <a
                 href="mailto:info@nivasanhomes.com"
-                className="text-sm font-sans font-bold text-accent-text hover:underline block mb-4"
+                className="text-sm font-sans font-bold text-primary hover:text-primary-hover transition-colors duration-300 block mb-4"
               >
                 info@nivasanhomes.com
               </a>
               <div className="space-y-3 mt-4">
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.15em] text-text-muted mb-0.5">
+                  <p className="label-caps text-text-muted mb-0.5">
                     Customer Advisory
                   </p>
                   <a
                     href="tel:+919842323071"
-                    className="text-xs text-text hover:text-accent-text font-semibold transition-colors duration-300"
+                    className="text-xs text-primary hover:text-primary-hover font-semibold transition-colors duration-300"
                   >
                     +91 98423 23071
                   </a>
                 </div>
                 <div>
-                  <p className="text-[9px] uppercase tracking-[0.15em] text-text-muted mb-0.5">
+                  <p className="label-caps text-text-muted mb-0.5">
                     Site Visit Scheduling
                   </p>
                   <a
                     href="tel:+919942223013"
-                    className="text-xs text-text hover:text-accent-text font-semibold transition-colors duration-300"
+                    className="text-xs text-primary hover:text-primary-hover font-semibold transition-colors duration-300"
                   >
                     +91 99422 23013
                   </a>

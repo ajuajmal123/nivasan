@@ -3,6 +3,10 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
+// The running Lenis instance, so nav code can scroll through it instead of fighting it
+let activeLenis: Lenis | null = null;
+export const getLenis = () => activeLenis;
+
 export default function LenisProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const lenis = new Lenis({
@@ -15,6 +19,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
       touchMultiplier: 1.2,
       infinite: false,
     });
+    activeLenis = lenis;
 
     // Foolproof browser requestAnimationFrame loop
     let rafId: number;
@@ -26,6 +31,7 @@ export default function LenisProvider({ children }: { children: React.ReactNode 
     rafId = requestAnimationFrame(raf);
 
     return () => {
+      if (activeLenis === lenis) activeLenis = null;
       lenis.destroy();
       cancelAnimationFrame(rafId);
     };

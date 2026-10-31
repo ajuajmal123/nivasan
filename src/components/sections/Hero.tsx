@@ -19,6 +19,8 @@ export default function Hero() {
           loop
           muted
           playsInline
+          preload="metadata"
+          poster="/hero-poster.jpg"
           className="w-full h-full object-cover"
         >
           <source src="/herovideo.mp4" type="video/mp4" />
@@ -44,7 +46,7 @@ export default function Hero() {
             initial={{ opacity: 0, letterSpacing: "0.1em" }}
             animate={{ opacity: 1, letterSpacing: "0.25em" }}
             transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="text-white text-shadow-on-dark-media text-[9px] sm:text-xs tracking-[0.12em] sm:tracking-[0.25em] uppercase text-center font-extrabold mt-2 drop-shadow-md select-none max-w-xs sm:max-w-none px-4 sm:px-0 leading-relaxed sm:leading-normal"
+            className="text-white text-shadow-on-dark-media text-[11px] sm:text-xs tracking-[0.12em] sm:tracking-[0.25em] uppercase text-center font-extrabold mt-2 drop-shadow-md select-none max-w-xs sm:max-w-none px-4 sm:px-0 leading-relaxed sm:leading-normal"
           >
             LUXURY VILLAS & APARTMENTS <br className="sm:hidden" /> IN COIMBATORE
           </motion.p>

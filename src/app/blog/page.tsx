@@ -31,7 +31,7 @@ export default function BlogPage() {
             {blogs.map((blog) => (
               <article 
                 key={blog.slug} 
-                className="bg-white border border-border hover:border-accent/40 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col group h-full"
+                className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm card-interactive flex flex-col group h-full"
               >
                 {/* Visual Header/Cover placeholder with beautiful gradient */}
                 <div 
@@ -39,7 +39,7 @@ export default function BlogPage() {
                   className="w-full h-48 relative overflow-hidden flex items-end p-6 border-b border-border"
                 >
                   
-                  <span className="relative z-10 bg-accent-text text-white text-[9px] font-black uppercase font-display tracking-widest px-2.5 py-1.5 rounded">
+                  <span className="relative z-10 bg-accent-text text-white label-caps px-2.5 py-1.5 rounded">
                     {blog.category}
                   </span>
                 </div>
@@ -48,7 +48,7 @@ export default function BlogPage() {
                 <div className="p-6 md:p-8 flex flex-col grow justify-between gap-6">
                   <div className="flex flex-col gap-3">
                     {/* Date / Read time */}
-                    <div className="flex items-center gap-4 text-[10px] text-primary/50 font-bold uppercase tracking-wider">
+                    <div className="flex items-center gap-4 label-caps text-text-muted">
                       <span className="flex items-center gap-1">
                         <Calendar size={11} className="text-accent" />
                         {blog.date}
@@ -60,14 +60,14 @@ export default function BlogPage() {
                     </div>
 
                     {/* Blog Title */}
-                    <h3 className="font-sans text-xl font-extrabold text-primary tracking-wide leading-snug group-hover:text-accent transition-colors duration-300 uppercase mt-1">
+                    <h3 className="font-sans text-xl font-extrabold text-primary tracking-wide leading-snug group-hover:text-primary-hover transition-colors duration-300 uppercase mt-1">
                       <Link href={`/blog/${blog.slug}`} className="hover:underline">
                         {blog.title}
                       </Link>
                     </h3>
 
                     {/* Brief description */}
-                    <p className="text-xs text-primary/65 leading-relaxed font-sans font-normal line-clamp-3">
+                    <p className="text-xs text-text leading-relaxed font-sans font-normal line-clamp-3">
                       {blog.brief}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ export default function BlogPage() {
                   <div className="border-t border-border pt-4 mt-2">
                     <Link
                       href={`/blog/${blog.slug}`}
-                      className="inline-flex items-center gap-1 text-[10px] uppercase font-display tracking-widest font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link"
+                      className="btn-text group/link"
                     >
                       Read Full Article
                       <ArrowRight size={12} className="group-hover/link:translate-x-0.5 transition-transform duration-300" />
@@ -96,7 +96,7 @@ export default function BlogPage() {
               <h3 className="text-xl font-bold text-primary uppercase tracking-wider">
                 No Articles Published Yet
               </h3>
-              <p className="text-sm text-primary/65 leading-relaxed font-sans max-w-md mx-auto">
+              <p className="text-sm text-text leading-relaxed font-sans max-w-md mx-auto">
                 Our architectural journals, material design philosophies, and luxury living case studies are currently being curated by our editorial team. We will publish our first release of insights shortly.
               </p>
             </div>

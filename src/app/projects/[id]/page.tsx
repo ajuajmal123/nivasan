@@ -897,7 +897,7 @@ export default async function ProjectDetailsPage({
               <div>
                 <Link
                   href="/projects"
-                  className="inline-flex items-center gap-2 text-[10px] uppercase font-display tracking-[0.25em] font-extrabold text-accent-text hover:text-primary transition-all duration-300 group"
+                  className="btn-text group"
                 >
                   <ArrowLeft size={12} className="group-hover:-translate-x-1 transition-transform duration-300" />
                   Back to Projects
@@ -907,14 +907,14 @@ export default async function ProjectDetailsPage({
               {/* Title & Badges */}
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3">
-                  <span className="text-[9px] font-black tracking-widest uppercase font-display px-3 py-1 bg-accent-text text-white rounded-full">
+                  <span className="label-caps px-3 py-1 bg-accent-text text-white rounded-full">
                     {project.status}
                   </span>
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-text-muted flex items-center gap-1">
+                  <span className="label-caps text-text-muted flex items-center gap-1">
                     <MapPin size={11} className="text-accent" /> {project.location.split(',')[0]}
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-heading tracking-tight leading-none uppercase">
+                <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-accent-text tracking-tight leading-none uppercase">
                   {project.name}
                 </h1>
               </div>
@@ -923,7 +923,7 @@ export default async function ProjectDetailsPage({
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-border mt-2">
                 {project.specs.slice(0, 3).map((spec, index) => (
                   <div key={index} className="flex flex-col">
-                    <span className="text-[9px] uppercase tracking-widest text-text-muted font-bold">
+                    <span className="label-caps text-text-muted">
                       {spec.label}
                     </span>
                     <span className="text-sm text-heading font-black mt-1">
@@ -945,13 +945,13 @@ export default async function ProjectDetailsPage({
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     loading="eager"
-                    className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.07] transition-all duration-750 ease-out"
+                    className="w-full h-full object-cover scale-100 group-hover:scale-105 transition-transform duration-300 ease-out"
                   />
                 </div>
 
                 {/* Visual hover indicator */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                  <span className="bg-white/95 text-heading font-black text-[10px] uppercase font-display tracking-widest px-5 py-2.5 rounded-lg shadow-xl border border-border transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                  <span className="bg-white/95 text-heading label-caps px-5 py-2.5 rounded-lg shadow-xl border border-border transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                     View Project Gallery
                   </span>
                 </div>
@@ -963,7 +963,7 @@ export default async function ProjectDetailsPage({
                   <a
                     href={project.brochureUrl}
                     download
-                    className="inline-flex items-center gap-2 bg-accent-text hover:bg-accent-text-hover text-white font-extrabold text-[10px] uppercase font-display tracking-widest py-3 px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-xl hover:shadow-accent/20 cursor-pointer select-none"
+                    className="btn btn-primary btn-sm select-none"
                   >
                     <Download size={12} />
                     Download Brochure
@@ -1005,7 +1005,7 @@ export default async function ProjectDetailsPage({
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
                     {project.specs.map((spec, index) => (
                       <div key={index} className="flex flex-col border-b border-border pb-2">
-                        <span className="text-[9px] uppercase tracking-widest text-text-muted font-bold">
+                        <span className="label-caps text-text-muted">
                           {spec.label}
                         </span>
                         <span className="text-sm text-heading font-extrabold mt-1">
@@ -1098,7 +1098,7 @@ export default async function ProjectDetailsPage({
                 <span className="font-serif text-[18rem] text-primary">N</span>
               </div>
               <div className="max-w-4xl relative z-10 flex flex-col items-center">
-                <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block mb-3">
+                <span className="text-xs uppercase font-display tracking-[0.3em] text-accent-text font-black block mb-3">
                   The Builder
                 </span>
                 <h2 className="text-3xl font-extrabold mb-6 uppercase tracking-tight">
@@ -1107,23 +1107,23 @@ export default async function ProjectDetailsPage({
                 <p className="text-text text-sm md:text-base leading-relaxed mb-10 font-sans max-w-3xl">
                   {project.aboutDeveloper.content}
                 </p>
-                {/* Stats grid - Forced 4 columns on single line with vertical alignment inside */}
-                <div className="grid grid-cols-4 gap-2 md:gap-8 pt-8 border-t border-border w-full text-center">
+                {/* Stats grid - 2x2 below lg (keeps the 11px minimum label size readable), 4 across from lg */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-6 md:gap-8 pt-8 border-t border-border w-full text-center">
                   <div className="flex flex-col items-center">
                     <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">15+ Years</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Coimbatore Legacy</span>
+                    <span className="label-caps text-text-muted block mt-1.5">Coimbatore Legacy</span>
                   </div>
                   <div className="flex flex-col items-center">
                     <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">10+ Projects</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Delivered</span>
+                    <span className="label-caps text-text-muted block mt-1.5">Delivered</span>
                   </div>
                   <div className="flex flex-col items-center">
                     <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">500+ Housed</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">Happy Families</span>
+                    <span className="label-caps text-text-muted block mt-1.5">Happy Families</span>
                   </div>
                   <div className="flex flex-col items-center">
                     <span className="text-sm sm:text-lg md:text-xl font-black text-primary leading-none whitespace-nowrap">CREDAI Member</span>
-                    <span className="text-[7.5px] sm:text-[9px] uppercase tracking-wider text-text-muted font-bold block mt-1.5 whitespace-nowrap">RERA Registered</span>
+                    <span className="label-caps text-text-muted block mt-1.5">RERA Registered</span>
                   </div>
                 </div>
               </div>
@@ -1134,7 +1134,7 @@ export default async function ProjectDetailsPage({
           {project.faqs && project.faqs.length > 0 && (
             <div className="flex flex-col items-center max-w-4xl mx-auto w-full border-t border-border pt-12">
               <div className="text-center max-w-3xl mx-auto mb-12 flex flex-col items-center gap-3">
-                <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block">
+                <span className="text-xs uppercase font-display tracking-[0.3em] text-accent-text font-black block">
                   Information Guide
                 </span>
                 <h2 className="text-2xl md:text-3xl font-extrabold text-heading tracking-tight uppercase">

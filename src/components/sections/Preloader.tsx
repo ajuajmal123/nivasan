@@ -52,7 +52,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           className="fixed inset-0 z-50 bg-bg-cream flex flex-col items-center justify-between p-12 text-heading"
         >
           {/* Logo / Brand Header */}
-          <div className="w-full flex justify-between items-center text-text-muted text-[9px] tracking-[0.25em] font-sans">
+          <div className="w-full flex justify-between items-center text-text-muted text-[11px] tracking-[0.25em] font-sans">
             <span>NIVASAN HOMES</span>
             <span>EST. 1996</span>
           </div>
@@ -80,7 +80,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
             </div>
             
             <div className="w-full flex justify-between items-baseline">
-              <span className="text-text-muted text-[8px] tracking-[0.2em] uppercase font-sans">
+              <span className="label-caps text-text-muted">
                 LOADING EXPERIENCE
               </span>
               <span className="text-accent text-3xl font-light font-serif">

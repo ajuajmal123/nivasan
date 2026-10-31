@@ -45,15 +45,15 @@ export default async function BlogPostPage({ params }: PageProps) {
         <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-[10px] font-extrabold uppercase font-display tracking-widest text-primary/60 hover:text-accent-text transition-colors duration-300 group"
+            className="btn-text group"
           >
             <ArrowLeft size={12} className="group-hover:-translate-x-0.5 transition-transform duration-300" />
             Back to Journals
           </Link>
-          <div className="text-[9px] font-black uppercase tracking-widest text-primary/40 select-none flex items-center gap-1.5">
-            <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <div className="label-caps text-text-muted select-none flex items-center gap-1.5">
+            <Link href="/" className="text-primary hover:text-primary-hover transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/blog" className="hover:text-primary transition-colors">Journal</Link>
+            <Link href="/blog" className="text-primary hover:text-primary-hover transition-colors">Journal</Link>
             <span>/</span>
             <span className="text-accent-text">{blog.category}</span>
           </div>
@@ -66,7 +66,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         >
 
           <div className="relative z-10 flex flex-col gap-4 max-w-4xl">
-            <span className="inline-block bg-accent/20 border border-accent/40 text-accent-text text-[9px] font-black uppercase font-display tracking-widest px-3 py-1.5 rounded-full w-max">
+            <span className="inline-block bg-accent/20 border border-accent/40 text-accent-text label-caps px-3 py-1.5 rounded-full w-max">
               {blog.category}
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight uppercase font-sans">
@@ -74,7 +74,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </h1>
             
             {/* Meta row */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[10px] md:text-xs text-text font-bold uppercase tracking-wider mt-2 border-t border-border pt-4">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-[11px] md:text-xs text-text font-bold uppercase tracking-wider mt-2 border-t border-border pt-4">
               <span className="flex items-center gap-1.5">
                 <User size={13} className="text-accent" />
                 {blog.author}
@@ -161,14 +161,14 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Content Call/WhatsApp Contact Footer */}
             <div className="mt-12 pt-8 border-t border-border flex flex-wrap items-center justify-between gap-6">
-              <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-extrabold text-primary/80 uppercase tracking-wider">
-                <a href="tel:+919842323071" className="hover:text-accent-text transition-colors">Call: +91 98423 23071</a>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-extrabold text-primary uppercase tracking-wider">
+                <a href="tel:+919842323071" className="hover:text-primary-hover transition-colors">Call: +91 98423 23071</a>
                 <span className="text-primary/20 hidden sm:inline">|</span>
-                <a href="https://wa.me/919842323006" target="_blank" rel="noopener noreferrer" className="hover:text-accent-text transition-colors">WhatsApp: +91 98423 23006</a>
+                <a href="https://wa.me/919842323006" target="_blank" rel="noopener noreferrer" className="hover:text-primary-hover transition-colors">WhatsApp: +91 98423 23006</a>
                 <span className="text-primary/20 hidden sm:inline">|</span>
-                <a href="mailto:info@nivasanhomes.com" className="hover:text-accent-text transition-colors">Email: info@nivasanhomes.com</a>
+                <a href="mailto:info@nivasanhomes.com" className="hover:text-primary-hover transition-colors">Email: info@nivasanhomes.com</a>
               </div>
-              <Link href="/#contact" className="text-[10px] uppercase font-display tracking-widest font-black text-accent-text hover:text-primary transition-colors flex items-center gap-1 group/btn">
+              <Link href="/#contact" className="btn-text group/btn">
                 Book a Site Visit 
                 <ArrowRight size={11} className="group-hover/btn:translate-x-0.5 transition-transform duration-300" />
               </Link>
@@ -184,7 +184,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="absolute inset-0 opacity-[0.02] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[2rem_2rem] pointer-events-none" />
               <div className="absolute -right-16 -top-16 w-36 h-36 rounded-full bg-accent/10 pointer-events-none blur-xl" />
 
-              <span className="text-[9px] font-black uppercase font-display tracking-[0.25em] text-accent-text block">
+              <span className="text-xs font-black uppercase font-display tracking-[0.25em] text-accent-text block">
                 Exclusive Bookings
               </span>
               <h3 className="font-sans text-xl font-bold uppercase tracking-wide leading-snug">
@@ -196,7 +196,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="pt-2">
                 <Link
                   href="/#contact"
-                  className="w-full bg-accent-text hover:bg-accent-text-hover text-white font-extrabold text-[10px] uppercase font-display tracking-widest py-3 px-5 rounded-lg transition-all duration-300 shadow-md shadow-accent/10 hover:shadow-xl hover:shadow-accent/20 cursor-pointer flex items-center justify-center gap-2 group"
+                  className="btn btn-primary btn-md w-full group"
                 >
                   Book Private Site Visit
                   <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform duration-300" />
