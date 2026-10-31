@@ -95,7 +95,7 @@ export default function Statistics() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border text-[10px] font-bold tracking-widest text-primary uppercase shadow-[0_2px_10px_rgba(15,120,62,0.02)]">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-border text-[10px] font-bold tracking-widest text-primary uppercase font-display shadow-[0_2px_10px_rgba(15,120,62,0.02)]">
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
             Heritage & Scale: Established in 1996
           </div>

@@ -192,7 +192,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
 
   return (
     <div id="project-gallery" className="border-t border-border pt-12">
-      <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block mb-2">
+      <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block mb-2">
         Visual Showcase
       </span>
       <h3 className="text-2xl md:text-3xl font-extrabold text-heading tracking-tight mb-8 uppercase">
@@ -314,7 +314,7 @@ export default function ProjectGallery({ projectId, projectName, images }: Proje
 
                 <button
                   onClick={handleZoomReset}
-                  className="text-[10px] text-heading hover:text-accent-text font-extrabold tracking-widest uppercase px-2 transition-colors duration-300 cursor-pointer"
+                  className="text-[10px] text-heading hover:text-accent-text font-extrabold tracking-widest uppercase font-display px-2 transition-colors duration-300 cursor-pointer"
                   title="Reset Zoom"
                 >
                   <RotateCcw size={14} className="inline mr-1" /> {zoom.toFixed(1)}x

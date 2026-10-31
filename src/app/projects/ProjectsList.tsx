@@ -155,7 +155,7 @@ export default function ProjectsList() {
               <button
                 key={tab}
                 onClick={() => setFilter(tab)}
-                className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
+                className={`px-4 py-1.5 rounded-full text-[10px] font-extrabold uppercase font-display tracking-wider transition-all duration-300 cursor-pointer ${filter === tab
                   ? "bg-primary text-white shadow-md shadow-primary/20"
                   : "bg-white border border-border text-primary/70 hover:text-primary hover:border-primary/30"
                   }`}
@@ -188,7 +188,7 @@ export default function ProjectsList() {
 
               {/* Status Badge */}
               <div className="absolute top-4 left-4 z-10">
-                <span className={`text-[9px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
+                <span className={`text-[9px] font-black tracking-widest uppercase font-display px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
                   {project.status}
                 </span>
               </div>
@@ -196,7 +196,7 @@ export default function ProjectsList() {
               {/* Text content - highly readable */}
               <div className="relative z-10 p-8 flex flex-col gap-3 drop-shadow-md">
                 <div className="flex flex-col gap-1">
-                  <span className={`text-[10px] font-extrabold uppercase tracking-wider drop-shadow-sm ${
+                  <span className={`text-[10px] font-extrabold uppercase font-display tracking-wider drop-shadow-sm ${
                     project.lightImage ? "text-accent-text text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
                   }`}>
                     {project.tag}
@@ -209,7 +209,7 @@ export default function ProjectsList() {
                     {project.name}
                   </h3>
                 </div>
-                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-bold transition-colors duration-300 ${
+                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-display font-bold transition-colors duration-300 ${
                   project.lightImage
                     ? "border-border text-heading group-hover:text-primary text-shadow-on-light-media"
                     : "border-white/30 text-white group-hover:text-accent text-shadow-on-dark-media"

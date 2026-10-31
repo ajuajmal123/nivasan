@@ -39,8 +39,12 @@
   --drop-shadow-xl: 0 9px 7px rgb(15 120 62 / 0.08);
   --drop-shadow-2xl: 0 25px 25px rgb(15 120 62 / 0.10);
 
-  --font-serif: var(--font-roboto), sans-serif;
-  --font-sans: var(--font-roboto), sans-serif;
+  /* Body: the device's own system font (Segoe UI / San Francisco / Roboto) - nothing downloaded */
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-body);
+  /* Display: Lemon Milk (loaded in layout.tsx) for headings, nav, buttons, badges, eyebrows */
+  --font-display: var(--font-lemon-milk), var(--font-body);
 }
 
 :root {
@@ -82,9 +86,18 @@ html {
   scroll-behavior: auto; /* Handled smoothly by Lenis */
 }
 
-/* Headings in bold (unlayered, so it wins over per-heading weight utilities) */
+/* Headings in bold Lemon Milk (unlayered, so it wins over per-heading font/weight utilities) */
 h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
   font-weight: 700;
+}
+
+/* Form controls don't inherit the page font by default in every browser
+   (base layer, so a font-display class on a button still wins) */
+@layer base {
+  input, textarea, select, button {
+    font-family: inherit;
+  }
 }
 
 body {

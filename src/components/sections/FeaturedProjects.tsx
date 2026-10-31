@@ -128,14 +128,14 @@ export default function FeaturedProjects() {
 
                 {/* Top Left Status Badge */}
                 <div className="absolute top-4 left-4 z-10">
-                  <span className={`text-[9px] font-black tracking-widest uppercase px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
+                  <span className={`text-[9px] font-black tracking-widest uppercase font-display px-3.5 py-1.5 rounded-full shadow-md border ${getStatusBadgeClass(project.status)}`}>
                     {project.status}
                   </span>
                 </div>
 
                 {/* Bottom content details - Name and Tag with high legibility drop shadow */}
                 <div className="relative z-10 p-6 flex flex-col gap-1.5 drop-shadow-md">
-                  <span className={`text-[10px] font-extrabold uppercase tracking-wider drop-shadow-sm ${
+                  <span className={`text-[10px] font-extrabold uppercase font-display tracking-wider drop-shadow-sm ${
                     project.lightImage ? "text-accent-text text-shadow-on-light-media" : "text-white text-shadow-on-dark-media"
                   }`}>
                     {project.tag}
@@ -155,7 +155,7 @@ export default function FeaturedProjects() {
         <div className="mt-12 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link cursor-pointer border border-primary/20 hover:border-accent px-8 py-3.5 rounded-full bg-white shadow-sm hover:shadow"
+            className="inline-flex items-center gap-2 text-xs uppercase font-display tracking-[0.2em] font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link cursor-pointer border border-primary/20 hover:border-accent px-8 py-3.5 rounded-full bg-white shadow-sm hover:shadow"
           >
             View More Projects
           </Link>

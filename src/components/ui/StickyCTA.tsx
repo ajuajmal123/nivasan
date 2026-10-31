@@ -32,7 +32,7 @@ export default function StickyCTA() {
         className="bg-primary hover:bg-primary-hover text-white border border-primary/20 px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
       >
         <WhatsAppIcon />
-        <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold">
+        <span className="text-[10px] uppercase font-display tracking-[0.15em] font-extrabold">
           WhatsApp Chat
         </span>
       </motion.a>
@@ -46,7 +46,7 @@ export default function StickyCTA() {
         className="bg-white hover:bg-bg-cream text-primary border border-border px-4 py-2.5 rounded-full flex items-center gap-2 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
       >
         <Phone size={13} className="text-accent" strokeWidth={2.5} />
-        <span className="text-[10px] uppercase tracking-[0.15em] font-extrabold">
+        <span className="text-[10px] uppercase font-display tracking-[0.15em] font-extrabold">
           Call Advisory
         </span>
       </motion.a>

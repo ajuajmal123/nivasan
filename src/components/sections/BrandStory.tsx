@@ -26,7 +26,7 @@ export default function BrandStory() {
         {/* Intro Section - Expanded & Centered */}
         <div className="text-center max-w-4xl mx-auto mb-12 flex flex-col items-center gap-3">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold block text-center">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold block text-center">
               The Nivasan Legacy
             </span>
           </Reveal>
@@ -140,7 +140,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Heart size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   Customer First
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">
@@ -155,7 +155,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Leaf size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   Eco-Conscious Design
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">
@@ -170,7 +170,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Award size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   Uncompromising Build
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">
@@ -185,7 +185,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <ShieldCheck size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   Complete Transparency
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">
@@ -200,7 +200,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Clock size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   On-Time Delivery
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">
@@ -215,7 +215,7 @@ export default function BrandStory() {
                 <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <TrendingUp size={15} />
                 </div>
-                <h4 className="font-extrabold text-xs sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
+                <h4 className="font-extrabold text-[10px] sm:text-sm text-heading uppercase tracking-wider mb-1.5 group-hover:text-primary transition-colors duration-300">
                   Long-Term Value
                 </h4>
                 <p className="text-[10px] sm:text-[11px] text-text leading-relaxed font-normal">

@@ -124,7 +124,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="md:col-span-2 md:col-start-7">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] md:tracking-[0.1em] lg:tracking-[0.25em] text-primary font-semibold mb-3">
               Navigation
             </h4>
             <ul className="space-y-2">
@@ -182,7 +182,7 @@ export default function Footer() {
 
           {/* Contact Details */}
           <div className="md:col-span-3 md:col-start-10">
-            <h4 className="text-[10px] uppercase tracking-[0.25em] text-primary font-semibold mb-3">
+            <h4 className="text-[10px] uppercase tracking-[0.25em] md:tracking-[0.1em] lg:tracking-[0.25em] text-primary font-semibold mb-3">
               Head Office
             </h4>
             <p className="text-xs text-text leading-relaxed mb-3 font-sans">

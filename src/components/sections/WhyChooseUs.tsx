@@ -43,7 +43,7 @@ export default function WhyChooseUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 flex flex-col items-center gap-4">
-          <span className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
+          <span className="text-xs font-bold uppercase font-display tracking-[0.25em] text-primary">
             Core Beliefs
           </span>
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading">

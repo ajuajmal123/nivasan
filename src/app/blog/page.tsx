@@ -39,7 +39,7 @@ export default function BlogPage() {
                   className="w-full h-48 relative overflow-hidden flex items-end p-6 border-b border-border"
                 >
                   
-                  <span className="relative z-10 bg-accent-text text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1.5 rounded">
+                  <span className="relative z-10 bg-accent-text text-white text-[9px] font-black uppercase font-display tracking-widest px-2.5 py-1.5 rounded">
                     {blog.category}
                   </span>
                 </div>
@@ -76,7 +76,7 @@ export default function BlogPage() {
                   <div className="border-t border-border pt-4 mt-2">
                     <Link
                       href={`/blog/${blog.slug}`}
-                      className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link"
+                      className="inline-flex items-center gap-1 text-[10px] uppercase font-display tracking-widest font-extrabold text-primary hover:text-accent-text transition-colors duration-300 group/link"
                     >
                       Read Full Article
                       <ArrowRight size={12} className="group-hover/link:translate-x-0.5 transition-transform duration-300" />

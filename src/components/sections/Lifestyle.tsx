@@ -61,7 +61,7 @@ export default function Lifestyle() {
         {/* Header */}
         <div className="mb-10 md:mb-16 text-center max-w-xl mx-auto">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
               The Nivasan Life
             </span>
           </Reveal>

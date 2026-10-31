@@ -35,7 +35,7 @@ export default function FAQSection() {
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-4">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-accent-text font-black block">
+          <span className="text-[10px] uppercase font-display tracking-[0.3em] text-accent-text font-black block">
             Information Guide
           </span>
           <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading select-none">

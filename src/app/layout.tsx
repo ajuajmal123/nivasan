@@ -1,15 +1,25 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import LenisProvider from "@/components/layout/LenisProvider";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import StickyCTA from "@/components/ui/StickyCTA";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  variable: "--font-roboto",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+// Lemon Milk (brand display face) for headings, nav, buttons, badges and eyebrows.
+// Body text uses the device system font stack (see --font-body in globals.css).
+const lemonMilk = localFont({
+  src: [
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-Light.woff2", weight: "300", style: "normal" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-LightItalic.woff2", weight: "300", style: "italic" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-RegularItalic.woff2", weight: "400", style: "italic" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-MediumItalic.woff2", weight: "500", style: "italic" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../../public/fonts/lemon-milk/LEMONMILK-BoldItalic.woff2", weight: "700", style: "italic" },
+  ],
+  variable: "--font-lemon-milk",
   display: "swap",
 });
 
@@ -42,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${roboto.variable} min-h-screen antialiased`}
+      className={`${lemonMilk.variable} min-h-screen antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-bg-cream text-heading font-sans">
         <LenisProvider>

@@ -92,7 +92,7 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-xs uppercase tracking-[0.2em] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-accent after:origin-right hover:after:origin-left after:transition-transform after:duration-500 ${
+                  className={`text-[9px] lg:text-xs uppercase font-display tracking-[0.02em] lg:tracking-[0.2em] transition-colors duration-300 relative py-2 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[1px] after:bg-accent after:origin-right hover:after:origin-left after:transition-transform after:duration-500 ${
                     isActive
                       ? `font-semibold after:scale-x-100 after:origin-left ${
                           shouldBeGlass ? "text-accent-text" : "text-accent text-shadow-on-dark-media"
@@ -158,10 +158,10 @@ export default function Navbar() {
                       }}
                       className="flex items-baseline group"
                     >
-                      <span className="font-sans text-accent-text text-sm tracking-widest mr-4 font-bold">
+                      <span className="font-display text-accent-text text-sm tracking-widest mr-4 font-bold">
                         {link.num}
                       </span>
-                      <span className={`font-sans text-3xl font-extrabold transition-colors duration-300 ${
+                      <span className={`font-display text-3xl font-extrabold transition-colors duration-300 ${
                         isActive ? "text-accent-text" : "text-heading group-hover:text-accent-text"
                       }`}>
                         {link.name}

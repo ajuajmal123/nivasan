@@ -74,7 +74,7 @@ export default function Testimonials() {
         {/* Header */}
         <div className="text-center mb-16 md:mb-10">
           <Reveal delay={0.1}>
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-6 block">
               Client Chronicles
             </span>
           </Reveal>

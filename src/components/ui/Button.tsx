@@ -16,7 +16,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center font-sans text-xs tracking-[0.2em] uppercase transition-all duration-500 ease-out focus:outline-none disabled:opacity-50 disabled:pointer-events-none";
+    "inline-flex items-center justify-center text-xs tracking-[0.2em] uppercase font-display transition-all duration-500 ease-out focus:outline-none disabled:opacity-50 disabled:pointer-events-none";
 
   const variants = {
     primary:

@@ -91,7 +91,7 @@ export default function ContactCTA() {
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-16 flex flex-col items-center gap-3">
           <Reveal delay={0.1} width="full">
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold block text-center w-full">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold block text-center w-full">
               Start Your Journey With Us
             </span>
           </Reveal>
@@ -203,7 +203,7 @@ export default function ContactCTA() {
                   href="https://maps.google.com/?q=No.+252,+Avinashi+Road+(Opp:+Varadharaja+Mills),+Peelamedu,+Coimbatore+-+641+004"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[9px] uppercase tracking-wider font-extrabold text-accent-text hover:text-primary transition-colors mt-2"
+                  className="inline-flex items-center gap-1 text-[9px] uppercase font-display tracking-wider font-extrabold text-accent-text hover:text-primary transition-colors mt-2"
                 >
                   View on Google Maps &rarr;
                 </a>
@@ -356,7 +356,7 @@ export default function ContactCTA() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/50 text-white font-extrabold text-xs uppercase tracking-widest py-3.5 px-6 rounded-lg transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 cursor-pointer flex items-center justify-center gap-2 mt-2"
+                    className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/50 text-white font-extrabold text-xs uppercase font-display tracking-widest py-3.5 px-6 rounded-lg transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 cursor-pointer flex items-center justify-center gap-2 mt-2"
                   >
                     {isSubmitting ? "Processing Request..." : "Submit Inquiry"}
                     <Send size={13} className="ml-1" />
@@ -385,7 +385,7 @@ export default function ContactCTA() {
                       setIsSubmitted(false);
                       setErrorMessage(null);
                     }}
-                    className="text-[10px] uppercase font-extrabold tracking-widest text-accent-text hover:text-primary transition-colors cursor-pointer mt-4 border border-border px-5 py-2 rounded-full hover:border-accent"
+                    className="text-[10px] uppercase font-display font-extrabold tracking-widest text-accent-text hover:text-primary transition-colors cursor-pointer mt-4 border border-border px-5 py-2 rounded-full hover:border-accent"
                   >
                     Submit New Inquiry
                   </button>

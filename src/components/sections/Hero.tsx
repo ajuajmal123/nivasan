@@ -34,7 +34,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-sans font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white text-shadow-on-dark-media tracking-tight leading-tight sm:leading-none text-center drop-shadow-lg sm:whitespace-nowrap select-none"
+            className="font-sans font-extrabold text-3xl sm:text-4xl md:text-[2.6rem] lg:text-6xl xl:text-7xl text-white text-shadow-on-dark-media tracking-tight leading-tight sm:leading-none text-center drop-shadow-lg sm:whitespace-nowrap select-none"
           >
             Welcome to <br className="sm:hidden" /> <span className="text-accent-text">Nivasan Homes</span>
           </motion.h1>

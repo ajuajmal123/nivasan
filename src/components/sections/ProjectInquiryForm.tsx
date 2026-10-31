@@ -187,7 +187,7 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/50 text-white font-extrabold text-xs uppercase tracking-widest py-3.5 px-6 rounded-lg transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 cursor-pointer flex items-center justify-center gap-2 mt-2"
+              className="w-full bg-primary hover:bg-primary-hover disabled:bg-primary/50 text-white font-extrabold text-xs uppercase font-display tracking-widest py-3.5 px-6 rounded-lg transition-all duration-300 shadow-md shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 cursor-pointer flex items-center justify-center gap-2 mt-2"
             >
               {isSubmitting ? "Sending Inquiry..." : "Submit Inquiry"}
               <Send size={13} className="ml-1" />
@@ -221,7 +221,7 @@ export default function ProjectInquiryForm({ projectName }: ProjectInquiryFormPr
                 setIsSubmitted(false);
                 setErrorMessage(null);
               }}
-              className="text-[10px] uppercase font-extrabold tracking-widest text-accent-text hover:text-primary transition-colors cursor-pointer mt-4 border border-border px-5 py-2 rounded-full hover:border-accent"
+              className="text-[10px] uppercase font-display font-extrabold tracking-widest text-accent-text hover:text-primary transition-colors cursor-pointer mt-4 border border-border px-5 py-2 rounded-full hover:border-accent"
             >
               Submit New Inquiry
             </button>

@@ -65,7 +65,7 @@ export default function Timeline() {
         {/* Header - Centered via width="full" on Reveal */}
         <div className="mb-12 md:mb-16 text-center max-w-xl mx-auto w-full">
           <Reveal delay={0.1} width="full">
-            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-accent-text font-semibold mb-4 block text-center w-full">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold mb-4 block text-center w-full">
               Our Journey
             </span>
           </Reveal>
