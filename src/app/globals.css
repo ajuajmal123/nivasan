@@ -206,7 +206,6 @@ body {
 @utility text-shadow-on-dark-media {
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
 }
-
 @utility text-shadow-on-light-media {
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.9), 0 1px 12px rgba(255, 255, 255, 0.75);
 }

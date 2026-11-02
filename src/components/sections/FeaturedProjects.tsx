@@ -19,63 +19,63 @@ const projects: Project[] = [
     name: "Nivasan Swarnapuraa",
     status: "Ongoing",
     tag: "Premium 4 BHK Gated Villas",
-    image: "/ongoing/p1/image2.png",
+    image: "/covers/nivasan-swarnapuraa.webp",
   },
   {
     id: "nivasan-vakulam",
     name: "Nivasan Vakulam",
     status: "Ongoing",
     tag: "Premium 2 & 3 BHK Apartments",
-    image: "/ongoing/p2/image2.png",
+    image: "/covers/nivasan-vakulam.webp",
   },
   {
     id: "nivasan-udhyana",
     name: "Nivasan Udhyana",
     status: "Completed",
     tag: "Ultra Luxury Gated Villas",
-    image: "/completed/p1/1.png",
+    image: "/covers/nivasan-udhyana.webp",
   },
   {
     id: "nivasan-bliss",
     name: "Nivasan Bliss",
     status: "Completed",
     tag: "Luxury Residential Apartments",
-    image: "/completed/p2/1.png",
+    image: "/covers/nivasan-bliss.webp",
   },
   {
     id: "nivasan-ramaas",
     name: "Nivasan Ramaas",
     status: "Completed",
     tag: "Premium Residential Apartments",
-    image: "/completed/p3/1.png",
+    image: "/covers/nivasan-ramaas.webp",
   },
   {
     id: "echo-point-plaza",
     name: "Echo Point Plaza",
     status: "Completed",
     tag: "Premium Commercial Spaces",
-    image: "/completed/p4/1.png",
+    image: "/covers/echo-point-plaza.webp",
   },
   {
     id: "echo-point-aavaas",
     name: "Echo Point Aavaas",
     status: "Completed",
     tag: "Designer Luxury Apartments",
-    image: "/completed/p5/image.png",
+    image: "/covers/echo-point-aavaas.webp",
   },
   {
     id: "saradha-greens",
     name: "Saradha Greens",
     status: "Completed",
     tag: "Ultra Luxury Independent Villas",
-    image: "/completed/p6/1.png",
+    image: "/covers/saradha-greens.webp",
   },
   {
     id: "nivasan-springs",
     name: "Nivasan Springs",
     status: "Completed",
     tag: "Premium Residential Apartments",
-    image: "/completed/p7/image.png",
+    image: "/covers/nivasan-springs.webp",
   },
 ];
 
@@ -88,14 +88,14 @@ export default function FeaturedProjects() {
   };
 
   return (
-    <section id="projects" className="relative py-16 md:py-24 bg-white overflow-hidden border-b border-border">
+    <section id="projects" className="relative py-12 md:py-16 bg-white overflow-hidden border-b border-border">
       {/* Linear backdrop grid */}
       <div className="absolute inset-0 opacity-[0.01] bg-[linear-gradient(to_right,var(--color-primary)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-primary)_1px,transparent_1px)] bg-size-[5rem_5rem] pointer-events-none" />
 
       <div className="max-w-400 mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 flex flex-col items-center gap-4">
-          <h2 className="font-sans font-extrabold text-3xl sm:text-4xl tracking-tight uppercase text-heading">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 flex flex-col items-center gap-4">
+          <h2 className="font-sans font-extrabold text-2xl sm:text-4xl tracking-tight uppercase text-heading">
             Landmark Projects
           </h2>
         </div>
@@ -121,6 +121,7 @@ export default function FeaturedProjects() {
                     alt={project.name}
                     fill
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    loading="eager"
                     className="w-full h-full object-cover scale-100 transition-transform duration-300 ease-out group-hover:scale-105"
                   />
                 </div>
@@ -133,8 +134,8 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Bottom content details - Name and Tag with high legibility drop shadow */}
-                <div className="relative z-10 p-6 flex flex-col gap-1.5 drop-shadow-md">
-                  <span className="label-caps drop-shadow-sm text-white text-shadow-on-dark-media">
+                <div className="relative z-10 p-6 pt-16 flex flex-col gap-1.5 bg-linear-to-t from-heading/90 via-heading/60 to-transparent">
+                  <span className="label-caps text-white/90 text-shadow-on-dark-media">
                     {project.tag}
                   </span>
                   <h3 className="font-sans text-xl font-extrabold tracking-tight leading-tight text-accent text-shadow-on-dark-media">
@@ -147,7 +148,7 @@ export default function FeaturedProjects() {
         </div>
 
         {/* View More Projects Link */}
-        <div className="mt-12 text-center">
+        <div className="mt-10 text-center">
           <Link
             href="/projects"
             className="btn btn-secondary btn-md"

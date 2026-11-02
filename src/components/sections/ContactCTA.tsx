@@ -67,7 +67,7 @@ export default function ContactCTA() {
   ];
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-linear-to-br from-bg-cream to-bg-green-soft text-primary relative overflow-hidden border-t border-accent/30">
+    <section id="contact" className="py-12 md:py-16 bg-linear-to-br from-bg-cream to-bg-green-soft text-primary relative overflow-hidden border-t border-accent/30">
       {/* Premium backdrop: fine gold blueprint grid (masked away from the centre) + faint logo-mark watermark */}
       <div className="contact-blueprint absolute inset-0 pointer-events-none" aria-hidden="true" />
       <LogoMark className="hidden md:block absolute top-1/2 -right-40 lg:-right-32 w-105 lg:w-130 -translate-y-1/2 opacity-[0.05] pointer-events-none select-none" />
@@ -75,14 +75,14 @@ export default function ContactCTA() {
       <div className="max-w-400 mx-auto px-6 md:px-12 relative z-10">
 
         {/* Header Block */}
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 flex flex-col items-center gap-3">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 flex flex-col items-center gap-3">
           <Reveal delay={0.1} width="full">
             <span className="text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold block text-center w-full">
               Start Your Journey With Us
             </span>
           </Reveal>
           <Reveal delay={0.2} width="full">
-            <h2 className="font-sans text-3xl md:text-4xl font-extrabold text-heading leading-tight text-center w-full">
+            <h2 className="font-sans text-lg sm:text-3xl md:text-4xl font-extrabold text-heading leading-tight text-center w-full">
               Premium homes await. <br />
               <span className="text-accent-text">Book your site visit today.</span>
             </h2>
@@ -103,7 +103,7 @@ export default function ContactCTA() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="bg-white border border-border p-5 rounded-xl shadow-sm card-interactive flex items-start gap-4 group"
             >
-              <div className="p-3 bg-primary/5 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+              <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
                 <Phone size={18} />
               </div>
               <div>
@@ -127,7 +127,7 @@ export default function ContactCTA() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="bg-white border border-border p-5 rounded-xl shadow-sm card-interactive flex items-start gap-4 group"
             >
-              <div className="p-3 bg-primary/5 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+              <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
                 <Phone size={18} />
               </div>
               <div>
@@ -151,7 +151,7 @@ export default function ContactCTA() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white border border-border p-5 rounded-xl shadow-sm card-interactive flex items-start gap-4 group"
             >
-              <div className="p-3 bg-primary/5 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+              <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
                 <Mail size={18} />
               </div>
               <div>
@@ -175,7 +175,7 @@ export default function ContactCTA() {
               transition={{ duration: 0.6, delay: 0.4 }}
               className="bg-white border border-border p-5 rounded-xl shadow-sm card-interactive flex items-start gap-4 group"
             >
-              <div className="p-3 bg-primary/5 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
+              <div className="p-3 bg-primary/10 text-primary rounded-lg group-hover:bg-primary group-hover:text-white transition-all duration-300 shrink-0">
                 <MapPin size={18} />
               </div>
               <div>

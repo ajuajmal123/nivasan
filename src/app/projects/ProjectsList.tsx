@@ -18,63 +18,63 @@ const projectsList: Project[] = [
     name: "Nivasan Swarnapuraa",
     status: "Ongoing",
     tag: "Premium 4 BHK Gated Villas",
-    image: "/ongoing/p1/image2.png",
+    image: "/covers/nivasan-swarnapuraa.webp",
   },
   {
     id: "nivasan-vakulam",
     name: "Nivasan Vakulam",
     status: "Ongoing",
     tag: "Premium 2 & 3 BHK Apartments",
-    image: "/ongoing/p2/image2.png",
+    image: "/covers/nivasan-vakulam.webp",
   },
   {
     id: "nivasan-udhyana",
     name: "Nivasan Udhyana",
     status: "Completed",
     tag: "Ultra Luxury Gated Villas",
-    image: "/completed/p1/1.png",
+    image: "/covers/nivasan-udhyana.webp",
   },
   {
     id: "nivasan-bliss",
     name: "Nivasan Bliss",
     status: "Completed",
     tag: "Luxury Residential Apartments",
-    image: "/completed/p2/1.png",
+    image: "/covers/nivasan-bliss.webp",
   },
   {
     id: "nivasan-ramaas",
     name: "Nivasan Ramaas",
     status: "Completed",
     tag: "Premium Residential Apartments",
-    image: "/completed/p3/1.png",
+    image: "/covers/nivasan-ramaas.webp",
   },
   {
     id: "echo-point-plaza",
     name: "Echo Point Plaza",
     status: "Completed",
     tag: "Premium Commercial Spaces",
-    image: "/completed/p4/1.png",
+    image: "/covers/echo-point-plaza.webp",
   },
   {
     id: "echo-point-aavaas",
     name: "Echo Point Aavaas",
     status: "Completed",
     tag: "Designer Luxury Apartments",
-    image: "/completed/p5/image.png",
+    image: "/covers/echo-point-aavaas.webp",
   },
   {
     id: "saradha-greens",
     name: "Saradha Greens",
     status: "Completed",
     tag: "Ultra Luxury Independent Villas",
-    image: "/completed/p6/1.png",
+    image: "/covers/saradha-greens.webp",
   },
   {
     id: "nivasan-springs",
     name: "Nivasan Springs",
     status: "Completed",
     tag: "Premium Residential Apartments",
-    image: "/completed/p7/image.png",
+    image: "/covers/nivasan-springs.webp",
   },
 
   {
@@ -82,42 +82,42 @@ const projectsList: Project[] = [
     name: "Meadows",
     status: "Completed",
     tag: "2 & 3 BHK Apartments",
-    image: "/completed/p8/1.png",
+    image: "/covers/meadows-vilankurichi.webp",
   },
   {
     id: "blue-heaven-1",
     name: "Blue Heaven 1",
     status: "Completed",
     tag: "Premium 2 BHK Apartments",
-    image: "/completed/p9/viveka-4-1.jpg",
+    image: "/covers/blue-heaven-1.webp",
   },
   {
     id: "blue-heaven-2",
     name: "Blue Heaven 2",
     status: "Completed",
     tag: "Premium 2 BHK Apartments",
-    image: "/completed/p10/1.png",
+    image: "/covers/blue-heaven-2.webp",
   },
   {
     id: "nivasana",
     name: "Nivasana",
     status: "Completed",
     tag: "Residential Apartments",
-    image: "/completed/p11/1.png",
+    image: "/covers/nivasana.webp",
   },
   {
     id: "viveka-enclave",
     name: "Viveka Enclave",
     status: "Completed",
     tag: "Villas and Apartments",
-    image: "/completed/p12/1.png",
+    image: "/covers/viveka-enclave.webp",
   },
   {
     id: "meenakshi-vishranth",
     name: "Meenakshi Vishranth",
     status: "Completed",
     tag: "Residential Apartments",
-    image: "/completed/p13/meenakshi-vishranth-1.jpg",
+    image: "/covers/meenakshi-vishranth.webp",
   },
 ];
 
@@ -189,16 +189,16 @@ export default function ProjectsList() {
               </div>
 
               {/* Text content - highly readable */}
-              <div className="relative z-10 p-8 flex flex-col gap-3 drop-shadow-md">
+              <div className="relative z-10 p-8 pt-20 flex flex-col gap-3 bg-linear-to-t from-heading/90 via-heading/60 to-transparent">
                 <div className="flex flex-col gap-1">
-                  <span className="label-caps drop-shadow-sm text-white text-shadow-on-dark-media">
+                  <span className="label-caps text-white/90 text-shadow-on-dark-media">
                     {project.tag}
                   </span>
                   <h3 className="font-sans text-xl font-extrabold tracking-tight leading-tight text-accent text-shadow-on-dark-media">
                     {project.name}
                   </h3>
                 </div>
-                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-display font-bold transition-colors duration-300 border-white/30 text-white text-shadow-on-dark-media`}>
+                <div className={`pt-3 border-t flex items-center justify-between text-xs tracking-wider uppercase font-display font-bold transition-colors duration-300 border-white/30 text-white`}>
                   <span>View Details</span>
                   <svg
                     className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"

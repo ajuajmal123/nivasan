@@ -45,8 +45,8 @@ export default function FAQAccordion({ faqs }: FAQAccordionProps) {
               <span
                 className={`w-8 h-8 rounded-full shrink-0 flex items-center justify-center border transition-all duration-300 ${
                   isOpen
-                    ? "bg-accent border-accent text-white rotate-180"
-                    : "bg-bg-cream border-border text-accent group-hover:border-primary/20"
+                    ? "bg-primary border-primary text-white rotate-180"
+                    : "bg-primary/10 border-transparent text-primary group-hover:border-primary/20"
                 }`}
               >
                 <ChevronDown size={16} />

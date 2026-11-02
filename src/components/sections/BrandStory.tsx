@@ -19,19 +19,19 @@ export default function BrandStory() {
   return (
     <section
       id="about"
-      className="py-16 md:py-24 bg-bg-cream overflow-hidden border-b border-border"
+      className="py-12 md:py-16 bg-bg-cream overflow-hidden border-b border-border"
     >
       <div className="max-w-400 mx-auto px-6 md:px-12">
         
         {/* Intro Section - Expanded & Centered */}
-        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16 flex flex-col items-center gap-3">
+        <div className="text-center max-w-4xl mx-auto mb-8 md:mb-12 flex flex-col items-center gap-3">
           <Reveal delay={0.1}>
             <span className="text-xs tracking-[0.3em] uppercase font-display text-accent-text font-semibold block text-center">
               The Nivasan Legacy
             </span>
           </Reveal>
           <Reveal delay={0.2}>
-            <h2 className="font-sans font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight uppercase text-heading leading-tight text-center mt-1">
+            <h2 className="font-sans font-extrabold text-2xl sm:text-4xl lg:text-5xl tracking-tight uppercase text-heading leading-tight text-center mt-1">
               About Nivasan Homes
             </h2>
           </Reveal>
@@ -43,7 +43,7 @@ export default function BrandStory() {
         </div>
 
         {/* Horizontal Stats highlight bar - Full width ribbon */}
-        <div className="border-y border-accent/20 py-8 my-12 w-full">
+        <div className="border-y border-accent/20 py-8 my-8 md:my-10 w-full">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 max-w-375 mx-auto text-center items-start justify-items-center">
             
             {/* Stat 1 */}
@@ -88,8 +88,8 @@ export default function BrandStory() {
             {/* Stat 4 */}
             <Reveal delay={0.25}>
               <div className="flex flex-col items-center gap-2.5 group">
-                <div className="w-8 h-8 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                  <ShieldCheck size={14} className="text-primary group-hover:text-white" />
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                  <ShieldCheck size={14} />
                 </div>
                 <div>
                   <h4 className="label-caps! text-heading">RERA Registered</h4>
@@ -102,8 +102,8 @@ export default function BrandStory() {
             <div className="col-span-2 sm:col-span-1 flex justify-center w-full">
               <Reveal delay={0.3}>
                 <div className="flex flex-col items-center gap-2.5 group">
-                  <div className="w-8 h-8 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <CheckCircle2 size={14} className="text-primary group-hover:text-white" />
+                  <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <CheckCircle2 size={14} />
                   </div>
                   <div>
                     <h4 className="label-caps! text-heading">CREDAI Member</h4>
@@ -117,8 +117,8 @@ export default function BrandStory() {
         </div>
 
         {/* Vision & Values Section */}
-        <div className="mt-16 w-full">
-          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16 flex flex-col items-center gap-3">
+        <div className="mt-10 md:mt-12 w-full">
+          <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 flex flex-col items-center gap-3">
             <Reveal delay={0.1}>
               <h3 className="font-sans font-extrabold text-2xl sm:text-3xl tracking-tight uppercase text-heading leading-tight text-center">
                 Our Vision & Values
@@ -137,7 +137,7 @@ export default function BrandStory() {
             {/* Value 1 */}
             <Reveal delay={0.15} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Heart size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">
@@ -152,7 +152,7 @@ export default function BrandStory() {
             {/* Value 2 */}
             <Reveal delay={0.2} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Leaf size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">
@@ -167,7 +167,7 @@ export default function BrandStory() {
             {/* Value 3 */}
             <Reveal delay={0.25} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Award size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">
@@ -182,7 +182,7 @@ export default function BrandStory() {
             {/* Value 4 */}
             <Reveal delay={0.3} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <ShieldCheck size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">
@@ -197,7 +197,7 @@ export default function BrandStory() {
             {/* Value 5 */}
             <Reveal delay={0.35} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <Clock size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">
@@ -212,7 +212,7 @@ export default function BrandStory() {
             {/* Value 6 */}
             <Reveal delay={0.4} width="full">
               <div className="bg-white border border-border p-3.5 sm:p-5 rounded-xl card-interactive flex flex-col h-full group w-full">
-                <div className="w-8 h-8 rounded-full bg-primary/5 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                   <TrendingUp size={15} />
                 </div>
                 <h4 className="font-extrabold text-xs tracking-normal sm:text-sm sm:tracking-wider text-heading uppercase mb-1.5 group-hover:text-primary transition-colors duration-300">

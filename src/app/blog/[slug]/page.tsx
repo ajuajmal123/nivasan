@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <span className="inline-block bg-accent/20 border border-accent/40 text-accent-text label-caps px-3 py-1.5 rounded-full w-max">
               {blog.category}
             </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight uppercase font-sans">
+            <h1 className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight uppercase font-sans">
               {blog.title}
             </h1>
             
