@@ -266,6 +266,16 @@ body {
   }
 }
 
+/* Gold fill for highlight downloads (brochure); deep gold keeps white text at ~5:1 */
+@utility btn-gold {
+  background-color: var(--color-accent-text);
+  color: var(--color-white);
+  &:hover:not(:disabled) {
+    background-color: var(--color-accent-text-hover);
+    box-shadow: 0 8px 20px -6px rgb(122 111 34 / 0.4);
+  }
+}
+
 @utility btn-secondary {
   background-color: var(--color-white);
   color: var(--color-primary);

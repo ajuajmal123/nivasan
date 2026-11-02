@@ -914,13 +914,13 @@ export default async function ProjectDetailsPage({
                     <MapPin size={11} className="text-accent" /> {project.location.split(',')[0]}
                   </span>
                 </div>
-                <h1 className="text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-accent-text tracking-tight leading-none uppercase">
+                <h1 className="text-[1.375rem] min-[390px]:text-2xl sm:text-4xl md:text-5xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold text-accent-text tracking-tight leading-tight uppercase">
                   {project.name}
                 </h1>
               </div>
 
               {/* Quick Specs Highlight Matrix */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-border mt-2">
+              <div className="flex flex-wrap gap-x-10 gap-y-4 pt-4 border-t border-border mt-2">
                 {project.specs.slice(0, 3).map((spec, index) => (
                   <div key={index} className="flex flex-col">
                     <span className="label-caps text-text-muted">
@@ -963,7 +963,7 @@ export default async function ProjectDetailsPage({
                   <a
                     href={project.brochureUrl}
                     download
-                    className="btn btn-primary btn-sm select-none"
+                    className="btn btn-gold btn-sm select-none"
                   >
                     <Download size={12} />
                     Download Brochure
@@ -1002,9 +1002,9 @@ export default async function ProjectDetailsPage({
                   <h3 className="text-lg font-bold text-heading border-b border-border pb-3 uppercase tracking-wider">
                     Specifications & Details
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-flow-dense gap-x-8 gap-y-6">
                     {project.specs.map((spec, index) => (
-                      <div key={index} className="flex flex-col border-b border-border pb-2">
+                      <div key={index} className={`flex flex-col border-b border-border pb-2 ${spec.value.length > 26 ? "sm:col-span-2" : ""}`}>
                         <span className="label-caps text-text-muted">
                           {spec.label}
                         </span>
